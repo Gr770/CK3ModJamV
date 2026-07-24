@@ -1,0 +1,26 @@
+﻿# Custom governments have to be registered here or the game only half sets them up
+# (you get a bunch of government_type.cpp errors about missing modifiers).
+# Define overrides replace the whole list so the vanilla ones are repeated.
+NGovernment = {
+	GOVERNMENT_TYPES = {
+		"feudal_government"
+		"republic_government"
+		"theocracy_government"
+		"clan_government"
+		"tribal_government"
+		"mercenary_government"
+		"holy_order_government"
+		"administrative_government"
+		"landless_adventurer_government"
+		"nomad_government"
+		"herder_government"
+		"celestial_government"
+		"japan_administrative_government"
+		"japan_feudal_government"
+		"mandala_government"
+		"wanua_government"
+		"meritocratic_government"
+		"steppe_admin_government"
+		"feudal_estate_government"
+	}
+}

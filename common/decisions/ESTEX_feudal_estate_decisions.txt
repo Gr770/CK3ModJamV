@@ -1,0 +1,103 @@
+﻿# Lets a feudal ruler set up an estate. The estate itself comes from the noble family
+# title below, change_government on its own never creates estate domiciles (camps and
+# yurts yes, estates no, they hang off the title).
+establish_feudal_estate_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/ep3_decision_estate.dds"
+	}
+	decision_group_type = major
+	ai_check_interval = 0 # players only for now
+
+	desc = establish_feudal_estate_decision_desc
+	selection_tooltip = establish_feudal_estate_decision_tooltip
+	confirm_text = establish_feudal_estate_decision_confirm
+
+	is_shown = {
+		government_has_flag = government_is_feudal
+		NOT = { government_has_flag = government_is_feudal_estate }
+		is_landed = yes
+	}
+
+	is_valid = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		# noble family titles can only go to house heads, so sort that out first.
+		# Same logic as create_noble_family_effect: grab headship off a less important
+		# AI head, otherwise split off a cadet branch.
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = house.house_head
+					NOT = { house.house_head = root }
+				}
+				if = {
+					limit = {
+						house.house_head ?= {
+							is_ai = yes # Don't steal house head from a player
+							OR = {
+								# Within same realm but less important
+								AND = {
+									top_liege = root.top_liege
+									OR = {
+										is_ruler = no
+										highest_held_title_tier < root.highest_held_title_tier
+									}
+								}
+								# Wanderer
+								NOT = { exists = liege }
+							}
+						}
+					}
+					house = { set_house_head = root }
+				}
+				else = {
+					create_cadet_branch = {}
+				}
+			}
+		}
+		if = {
+			limit = { has_domicile = no }
+			# NOTE: this has to run before change_government, the title creation fails
+			# if the holder already has the government we pass in here.
+			# Tier matches the holder so counts don't get bumped up a rank by a
+			# landless duchy title. County tier NF titles are a thing in vanilla (japan/china).
+			if = {
+				limit = { highest_held_title_tier >= tier_duchy }
+				give_noble_family_title = {
+					name = noble_family_name
+					tier = duchy
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					government = feudal_estate_government
+					save_scope_as = feudal_estate_title
+				}
+			}
+			else = {
+				give_noble_family_title = {
+					name = noble_family_name
+					tier = county
+					article = DEFAULT_TITLE_NAME_ARTICLE
+					government = feudal_estate_government
+					save_scope_as = feudal_estate_title
+				}
+			}
+			# mark it as ours so the on_actions can find it (succession + cleanup on land loss)
+			scope:feudal_estate_title ?= {
+				set_variable = {
+					name = feudal_estate_title
+					value = yes
+				}
+			}
+		}
+		change_government = feudal_estate_government
+		domicile ?= {
+			move_domicile = root.capital_province
+			set_up_domicile_estate_effect = yes
+		}
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

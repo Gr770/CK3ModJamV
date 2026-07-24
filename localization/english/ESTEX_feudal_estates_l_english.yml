@@ -1,0 +1,10 @@
+﻿l_english:
+ feudal_estate_government:0 "Feudal Estate"
+ feudal_estate_government_adjective:0 "Feudal Estate"
+ feudal_estate_government_realm:0 "Feudal Estate Realm"
+ feudal_estate_government_vassals_label:0 "Feudal [obligations|E] are based on each [vassal|E]'s [vassal_contract|E]"
+ feudal_estate_government_desc:0 "A feudal government whose ruler keeps a personal [domicile|E], an estate built around their castle."
+ establish_feudal_estate_decision:0 "Establish a Feudal Estate"
+ establish_feudal_estate_decision_desc:0 "Set aside lands around our castle as a personal estate, to be managed directly by our own household."
+ establish_feudal_estate_decision_tooltip:0 "Establish a personal [domicile|E] at your capital"
+ establish_feudal_estate_decision_confirm:0 "Establish the estate"
