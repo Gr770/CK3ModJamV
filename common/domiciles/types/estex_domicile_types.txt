@@ -845,75 +845,8 @@
 	}
 
 	# Backgrounds
-	domicile_asset = {
-		trigger = {
-			domicile_location.culture = {
-				has_graphical_east_asia_culture_group_trigger = yes
-			}
-		}
-		background = "gfx/interface/window_domiciles/estate_background_steppe_terrain.dds"
-		foreground = "gfx/interface/window_domiciles/estate_background_steppe_terrain_foreground.dds"
-		ambience = "event:/DLC/CE2/Ambience/2D/Domicile/ce2_amb_2d_domicile_yurt"
-	}
-
-	domicile_asset = {
-		trigger = {
-			domicile_location = {
-				this = root.owner.top_liege.capital_province
-			}
-		}
-		background = "gfx/interface/window_domiciles/estate_background_urban_terrain.dds"
-		foreground = "gfx/interface/window_domiciles/estate_background_urban_terrain_foreground.dds"
-		ambience = "event:/DLC/EP3/SFX/Ambience/2D/Domicile/ep3_amb_2d_domicile_byzantine_urban"
-	}
-
-	domicile_asset = {
-		trigger = {
-			domicile_location = {
-				OR = {
-					terrain = jungle
-					terrain = wetlands
-					terrain = floodplains
-				}
-			}
-		}
-		background = "gfx/interface/window_domiciles/estate_background_jungle_terrain.dds"
-		foreground = "gfx/interface/window_domiciles/estate_background_jungle_terrain_foreground.dds"
-		ambience = "event:/DLC/EP3/SFX/Ambience/2D/Domicile/ep3_amb_2d_domicile_wetlands"
-	}
-
-	domicile_asset = {
-		trigger = {
-			domicile_location = {
-				OR = {
-					terrain = drylands
-					terrain = desert
-					terrain = desert_mountains
-					terrain = oasis
-					terrain = steppe
-				}
-			}
-		}
-		background = "gfx/interface/window_domiciles/estate_background_dry_terrain.dds"
-		foreground = "gfx/interface/window_domiciles/estate_background_dry_terrain_foreground.dds"
-		ambience = "event:/DLC/EP3/SFX/Ambience/2D/Domicile/ep3_amb_2d_domicile_dry_lands"
-	}
-
-	domicile_asset = {
-		trigger = {
-			domicile_location = {
-				OR = {
-					terrain = hills
-					terrain = mountains
-					terrain = terraced_hills
-				}
-			}
-		}
-		background = "gfx/interface/window_domiciles/estate_background_rough_terrain.dds"
-		foreground = "gfx/interface/window_domiciles/estate_background_rough_terrain_foreground.dds"
-		ambience = "event:/DLC/EP3/SFX/Ambience/2D/Domicile/ep3_amb_2d_domicile_rough_lands"
-	}
-
+	# Just the green terrain background for now, we can bring back the per terrain
+	# and culture variants once the estate look settles down
 	domicile_asset = {
 		background = "gfx/interface/window_domiciles/estate_background_green_terrain.dds"
 		foreground = "gfx/interface/window_domiciles/estate_background_green_terrain_foreground.dds"
