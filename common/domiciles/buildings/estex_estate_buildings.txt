@@ -76,10 +76,10 @@ estex_estate_main_02 = {
 	slot_type = main
 	internal_slots = 4
 	construction_time =730
-	allowed_domicile_types = { extes_estate }
+	allowed_domicile_types = { estex_estate }
 	previous_building = estex_estate_main_01
 
-	can_constrict = {
+	can_construct = {
 		culture ?= { has_innovation = innovation_burhs } #switch to different one
 	}
 

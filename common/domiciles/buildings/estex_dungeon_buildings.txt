@@ -1,0 +1,316 @@
+﻿# Dungeon line for an external estate slot.
+# Cellar Cells -> Dungeon, then the chain forks: Oubliette (terror path) or
+# Interrogation Chamber (counter intrigue path). Forks work fine, vanilla does the
+# same thing with library_02 splitting into observatory/education versions, you just
+# give two buildings the same previous_building and the player picks one.
+# External is the default slot_type so it's not declared here.
+
+estex_cellar_cells_01 = {
+	construction_time = 365
+	allowed_domicile_types = { estex_estate }
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_1_value
+	}
+
+	character_modifier = {
+		dread_baseline_add = 3
+	}
+
+	parameters = {
+		estex_estate_has_cells = yes
+	}
+
+	ai_value = {
+		value = 8
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/flat_icons/prisoner.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_guard_house_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_guard_house_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/flat_icons/prisoner.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_guard_house_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_guard_house_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/flat_icons/prisoner.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_guard_house_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_guard_house_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		icon = "gfx/interface/icons/flat_icons/prisoner.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_guard_house_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_guard_house_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}
+
+estex_dungeon_02 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_cellar_cells_01
+
+	# want a stone keep before you dig out proper cells
+	can_construct = {
+		domicile ?= { has_domicile_building_or_higher = estex_estate_main_02 }
+	}
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_2_value
+	}
+
+	character_modifier = {
+		dread_baseline_add = 6
+		dread_gain_mult = 0.1
+	}
+
+	parameters = {
+		estex_estate_has_cells = yes
+		estex_estate_has_dungeon = yes
+	}
+
+	ai_value = {
+		value = 8
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_prison.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_prison.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_prison.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_prison.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}
+
+# Terror path. Dread and it sticks around.
+estex_oubliette_03 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_dungeon_02
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_3_value
+	}
+
+	character_modifier = {
+		dread_baseline_add = 10
+		dread_gain_mult = 0.2
+		dread_decay_mult = -0.3
+	}
+
+	parameters = {
+		estex_estate_has_cells = yes
+		estex_estate_has_dungeon = yes
+		estex_estate_has_oubliette = yes
+	}
+
+	ai_value = {
+		value = 6
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_crypt.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_crypt.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_crypt.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_crypt.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}
+
+# Schemer path. No dedicated discovery modifier gets used by vanilla anywhere, so this
+# does it through proven ones: schemes against you run slower (more monthly discovery
+# rolls for your spymaster before they land) and have a lower success chance.
+estex_interrogation_chamber_03 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_dungeon_02
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_3_value
+	}
+
+	character_modifier = {
+		dread_baseline_add = 6
+		enemy_hostile_scheme_success_chance_add = -5
+		hostile_scheme_phase_duration_add = 15
+	}
+
+	parameters = {
+		estex_estate_has_cells = yes
+		estex_estate_has_dungeon = yes
+		estex_estate_has_interrogation_chamber = yes
+	}
+
+	ai_value = {
+		value = 8
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_torture.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_torture.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_torture.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_torture.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}

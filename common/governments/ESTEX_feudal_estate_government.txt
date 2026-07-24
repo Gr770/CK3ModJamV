@@ -13,7 +13,7 @@ feudal_estate_government = {
 
 	royal_court = any
 
-	domicile_type = estate
+	domicile_type = estex_estate
 
 	primary_holding = castle_holding
 	valid_holdings = { temple_citadel_holding }
