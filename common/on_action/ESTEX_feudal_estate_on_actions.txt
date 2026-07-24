@@ -1,0 +1,54 @@
+﻿# Careful here: putting an effect block straight into a vanilla on_action REPLACES
+# the vanilla effect (only the on_actions list merges between files). So we hook our
+# own on_actions in instead. Scopes carry through fine.
+
+on_title_gain = {
+	on_actions = { fe_on_title_gain_handler }
+}
+
+# The estate title follows the primary heir on succession, make sure whoever ends up
+# with it lands in our government. Vanilla does the same thing for admin.
+fe_on_title_gain_handler = {
+	effect = {
+		if = {
+			limit = {
+				scope:title = { has_variable = feudal_estate_title }
+				NOT = { government_has_flag = government_is_feudal_estate }
+			}
+			change_government = feudal_estate_government
+		}
+	}
+}
+
+on_title_lost = {
+	on_actions = { fe_on_title_lost_handler }
+}
+
+# When the holder loses their last landed title, get rid of the estate title too.
+# It's a landless title so conquest never removes it by itself, and the vanilla
+# cleanup in title_on_actions only handles admin governments. Without this the
+# realm never actually dies, you just get a landless noble family floating around.
+fe_on_title_lost_handler = {
+	effect = {
+		if = {
+			limit = {
+				# still holds our estate title (not counting the one being lost)
+				any_held_title = {
+					NOT = { this = scope:title }
+					has_variable = feudal_estate_title
+				}
+				# and nothing else left besides it
+				any_held_title = {
+					count = 0
+					NOT = { this = scope:title }
+					is_noble_family_title = no
+				}
+			}
+			random_held_title = {
+				limit = { has_variable = feudal_estate_title }
+				save_scope_as = fe_title_to_destroy
+			}
+			destroy_title = scope:fe_title_to_destroy
+		}
+	}
+}
