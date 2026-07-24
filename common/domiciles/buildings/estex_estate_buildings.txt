@@ -18,56 +18,12 @@ estex_estate_main_01 = { #keep
 		value = 100
 	}
 
+	# new keep placeholder art, no matching mask yet so borrowing the villa one,
+	# hover outline will be a bit off until we make a proper mask
 	asset = {
-		trigger = {
-			domicile_location.culture = {
-				has_graphical_east_asia_culture_group_trigger = yes
-			}
-		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_villa.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_villa_chinese.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_chinese_mask.png"
-		soundeffect = "event:/DLC/EP4/SFX/UI/domicile_buildings/tgp_ui_domicile_building_chinese_main_building"
-	}
-
-	asset = {
-		trigger = {
-			domicile_location.culture = {
-				OR = {
-					has_graphical_iranian_culture_group_trigger = yes
-					has_graphical_mena_culture_group_trigger = yes
-					has_graphical_steppe_culture_group_trigger = yes
-					has_graphical_african_culture_group_trigger = yes
-					has_graphical_india_culture_group_trigger = yes
-					has_graphical_iberian_culture_group_trigger = yes
-				}
-			}
-		}
-		icon = "gfx/interface/icons/domicile_building/domicile_building_villa.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_villa_mena.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_mena_mask.png"
-		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
-	}
-
-	asset = {
-		trigger = {
-			domicile_location.culture = {
-				OR = {
-					has_graphical_western_culture_group_trigger = yes
-					has_graphical_norse_culture_group_trigger = yes
-				}
-			}
-		}
-		icon = "gfx/interface/icons/domicile_building/domicile_building_villa.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_villa_western.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
 		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
-		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
-	}
-
-	asset = {
-		icon = "gfx/interface/icons/domicile_building/domicile_building_villa.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 }
@@ -108,8 +64,8 @@ estex_estate_main_02 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_manor.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_manor_chinese.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_manor_chinese_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP4/SFX/UI/domicile_buildings/tgp_ui_domicile_building_chinese_main_building"
 	}
 	
@@ -127,8 +83,8 @@ estex_estate_main_02 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_manor.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_manor_mena.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_manor_mena_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 
@@ -142,15 +98,15 @@ estex_estate_main_02 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_manor.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_manor_western.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_manor_western_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 
 	asset = {
 		icon = "gfx/interface/icons/domicile_building/domicile_building_manor.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_manor_byzantine.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_manor_byzantine_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 }
@@ -192,8 +148,8 @@ estex_estate_main_03 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_mansion.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_mansion_chinese.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_mansion_chinese_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP4/SFX/UI/domicile_buildings/tgp_ui_domicile_building_chinese_main_building"
 	}
 	
@@ -211,8 +167,8 @@ estex_estate_main_03 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_mansion.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_mansion_mena.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_mansion_mena_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 
@@ -226,15 +182,15 @@ estex_estate_main_03 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_mansion.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_mansion_western.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_mansion_western_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 
 	asset = {
 		icon = "gfx/interface/icons/domicile_building/domicile_building_mansion.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_mansion_byzantine.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_mansion_byzantine_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 }
@@ -276,8 +232,8 @@ estex_estate_main_04 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_estate.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_estate_chinese.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_estate_chinese_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP4/SFX/UI/domicile_buildings/tgp_ui_domicile_building_chinese_main_building"
 	}
 	
@@ -295,8 +251,8 @@ estex_estate_main_04 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_estate.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_estate_mena.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_estate_mena_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 
@@ -310,15 +266,15 @@ estex_estate_main_04 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_estate.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_estate_western.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_estate_western_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 
 	asset = {
 		icon = "gfx/interface/icons/domicile_building/domicile_building_estate.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_estate_byzantine.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_estate_byzantine_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 }
@@ -360,8 +316,8 @@ estex_estate_main_05 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_grand_estate.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_grand_estate_chinese.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_grand_estate_chinese_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP4/SFX/UI/domicile_buildings/tgp_ui_domicile_building_chinese_main_building"
 	}
 	
@@ -379,8 +335,8 @@ estex_estate_main_05 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_grand_estate.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_grand_estate_mena.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_grand_estate_mena_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 
@@ -394,15 +350,15 @@ estex_estate_main_05 = {
 			}
 		}
 		icon = "gfx/interface/icons/domicile_building/domicile_building_grand_estate.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_grand_estate_western.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_grand_estate_western_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 	
 	asset = {
 		icon = "gfx/interface/icons/domicile_building/domicile_building_grand_estate.dds"
-		texture = "gfx/interface/window_domiciles/estate_building_grand_estate_byzantine.dds"
-		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_grand_estate_byzantine_mask.png"
+		texture = "gfx/interface/window_domiciles/estate_building_keep_level_1.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_western_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 }
