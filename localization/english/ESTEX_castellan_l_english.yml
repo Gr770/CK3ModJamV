@@ -3,3 +3,4 @@
  estex_castellan_court_position_desc:0 "The $estex_castellan_court_position$ keeps the castle itself: the accounts, the stores, the garrison at the gate. When the lord rides out, it is the Castellan who holds the keys."
  estex_castellan_keep_aptitude: "Quality of the Keep"
  estex_castellan_needs_stone_keep_tt: "Your estate needs a stone keep before it warrants a Castellan"
+ government_is_feudal_estate: "Feudal Estate"

@@ -86,6 +86,9 @@ estex_castellan_court_position = {
 
 	# root is the court owner
 	valid_position = {
+		# the engine also checks minimum_rank (defaults to county) in code without
+		# showing it in the tooltip, this line makes it visible
+		highest_held_title_tier >= tier_county
 		government_has_flag = government_is_feudal_estate
 		custom_tooltip = {
 			text = estex_castellan_needs_stone_keep_tt
