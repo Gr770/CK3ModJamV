@@ -406,3 +406,228 @@ estex_estate_main_05 = {
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_estate_main_building"
 	}
 }
+
+estex_kitchen_01 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+
+	cost = {
+		gold = estate_internal_building_normal_cost_tier_1_value
+	}
+
+	character_modifier = {
+		courtier_and_guest_opinion = 5
+		negate_health_penalty_add = 0.05
+	}
+
+	parameters = {
+		estex_estate_has_kitchen = yes
+	}
+
+	ai_value = {
+		value = 8
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_watchtower.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_watchtower.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_watchtower.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+}
+
+estex_kitchen_02 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_kitchen_01
+
+	cost = {
+		gold = estate_internal_building_normal_cost_tier_2_value
+	}
+
+	character_modifier = {
+		courtier_and_guest_opinion = 5
+		negate_health_penalty_add = 0.05
+	}
+
+	parameters = {
+		estex_estate_has_kitchen = yes
+		estate_improved_feast_opinion = yes
+	}
+
+	ai_value = {
+		value = 8
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_watchtower.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_watchtower.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_watchtower.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+}
+
+estex_kitchen_03 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_kitchen_02
+
+	cost = {
+		gold = estate_internal_building_normal_cost_tier_3_value
+	}
+
+	character_modifier = {
+		negate_health_penalty_add = 0.05
+		courtier_and_guest_opinion = 5
+		monthly_court_grandeur_change_add = 0.2
+	}
+
+	parameters = {
+		estex_estate_has_kitchen = yes
+		estate_improved_feast_opinion = yes
+		estate_cheaper_feast_cost = yes
+	}
+
+	ai_value = {
+		value = 8
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_watchtower.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_watchtower.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_watchtower.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+}
