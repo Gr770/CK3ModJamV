@@ -1,0 +1,178 @@
+﻿# Tournament line for the external estate slots.
+# Tournament Grounds -> Berfrois (the raised stands where the lord watches, real
+# medieval term), then the usual fork: Jousting Lists (knights and glory) or
+# Archery Butts (levies and the common soldiery). Chivalry cultures lean jousting,
+# longbow cultures lean archery, everyone else picks on taste.
+#
+# Art note: placeholder textures again. Horse pastures (only has the japanese
+# variant but it's a fenced riding ground, looks fine) for the mounted side,
+# grazing fields for the archery side.
+
+estex_tournament_grounds_01 = {
+	construction_time = 365
+	allowed_domicile_types = { estex_estate }
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_1_value
+	}
+
+	character_modifier = {
+		monthly_martial_lifestyle_xp_gain_mult = 0.1
+		knight_effectiveness_mult = 0.05
+	}
+
+	parameters = {
+		estex_estate_has_tournament_grounds = yes
+	}
+
+	ai_value = {
+		value = 8
+		if = {
+			limit = {
+				scope:owner.culture ?= {
+					has_cultural_tradition = tradition_chivalry
+				}
+			}
+			add = 2
+		}
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_horse_run.dds"
+		texture = "gfx/interface/window_domiciles/laamp_building_proving_grounds.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/laamp_building_proving_grounds_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}
+
+estex_berfrois_02 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_tournament_grounds_01
+
+	# stands full of important guests means a proper keep to host them in
+	can_construct = {
+		domicile ?= { has_domicile_building_or_higher = estex_estate_main_02 }
+	}
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_2_value
+	}
+
+	character_modifier = {
+		monthly_prestige = 0.15
+		knight_effectiveness_mult = 0.1
+	}
+
+	parameters = {
+		estex_estate_has_tournament_grounds = yes
+		estex_estate_has_berfrois = yes
+	}
+
+	ai_value = {
+		value = 8
+		if = {
+			limit = {
+				scope:owner.culture ?= {
+					has_cultural_tradition = tradition_chivalry
+				}
+			}
+			add = 2
+		}
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_pavillion.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_horse_pastures_japanese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_horse_pastures_japanese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}
+
+# Knightly path
+estex_jousting_lists_03 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_berfrois_02
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_3_value
+	}
+
+	character_modifier = {
+		knight_effectiveness_mult = 0.2
+		accolade_glory_gain_mult = 0.1
+		monthly_prestige = 0.2
+		prowess = 1
+	}
+
+	parameters = {
+		estex_estate_has_tournament_grounds = yes
+		estex_estate_has_berfrois = yes
+		estex_estate_has_jousting_lists = yes
+	}
+
+	ai_value = {
+		value = 7
+		if = {
+			limit = {
+				scope:owner.culture ?= {
+					has_cultural_tradition = tradition_chivalry
+				}
+			}
+			add = 3
+		}
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_horse_run.dds"
+		texture = "gfx/interface/window_domiciles/laamp_building_proving_grounds.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/laamp_building_proving_grounds_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}
+
+# Commons path
+estex_archery_butts_03 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_berfrois_02
+
+	cost = {
+		gold = estate_external_building_high_cost_tier_3_value
+	}
+
+	character_modifier = {
+		levy_reinforcement_rate = 0.2
+		monthly_martial_lifestyle_xp_gain_mult = 0.1
+	}
+
+	parameters = {
+		estex_estate_has_tournament_grounds = yes
+		estex_estate_has_berfrois = yes
+		estex_estate_has_archery_butts = yes
+	}
+
+	ai_value = {
+		value = 7
+		if = {
+			limit = {
+				scope:owner.culture ?= {
+					has_cultural_tradition = tradition_longbow_competitions
+				}
+			}
+			add = 4
+		}
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_foot_archer_yurt.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_grazing_fields.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_grazing_fields_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}
