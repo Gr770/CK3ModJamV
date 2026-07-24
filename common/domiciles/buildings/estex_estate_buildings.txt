@@ -80,7 +80,7 @@ estex_estate_main_02 = {
 	previous_building = estex_estate_main_01
 
 	can_constrict = {
-		culture ?= { has_innovation = innovation_city_planning } #switch to different one
+		culture ?= { has_innovation = innovation_burhs } #switch to different one
 	}
 
 	cost = {
@@ -163,7 +163,7 @@ estex_estate_main_03 = {
 	previous_building = estex_estate_main_02
 	
 	can_construct = {
-		culture ?= { has_innovation = innovation_manorialism } #reasonable
+		culture ?= { has_innovation = innovation_castle_baileys } #reasonable
 	}
 
 	cost = {
@@ -247,7 +247,7 @@ estex_estate_main_04 = {
 	previous_building = estex_estate_main_03
 	
 	can_construct = {
-		culture ?= { has_innovation = innovation_development_03 } #switch if necessary
+		culture ?= { has_innovation = innovation_machicolations } #switch if necessary
 	}
 
 	cost = {
