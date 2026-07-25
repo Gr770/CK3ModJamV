@@ -4,3 +4,4 @@
  estex_castellan_keep_aptitude: "Quality of the Keep"
  estex_castellan_needs_stone_keep_tt: "Your estate needs a stone keep before it warrants a Castellan"
  government_is_feudal_estate: "Feudal Estate"
+ domicile_building_parameter_estex_estate_unlocks_castellan: "Unlocks the #high $estex_castellan_court_position$#! [court_position|E]"
