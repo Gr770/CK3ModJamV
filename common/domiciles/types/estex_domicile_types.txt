@@ -13,6 +13,20 @@
 	map_pin_anchor = left
 	map_pin_lobby = yes
 
+	# 3D estate on the map, placed at the province's activity locator (or standing
+	# in for the holding if the province has none). Model steps up with the keep,
+	# first matching entry wins so the highest tier is checked first.
+	# root = the domicile
+	map_entity = {
+		trigger = { has_domicile_building_or_higher = estex_estate_main_05 }
+		reference = "MODCON_estate_3_entity"
+	}
+	map_entity = {
+		trigger = { has_domicile_building_or_higher = estex_estate_main_03 }
+		reference = "MODCON_estate_2_entity"
+	}
+	map_entity = "MODCON_estate_1_entity"
+
 	can_move_manually = yes
 	move_cooldown = { days = estate_move_cooldown_value }
 	move_cost = {
