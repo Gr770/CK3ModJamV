@@ -1,0 +1,602 @@
+﻿namespace = estex_estate
+
+##################################################
+# Castellan events
+# 1001-1003 fire while the lord is away from home
+# 1010-1011 fire any time
+##################################################
+
+# A Dispute Below Stairs: the castellan settled a servant feud while you were away
+estex_estate.1001 = {
+	type = character_event
+	title = estex_estate.1001.t
+	desc = estex_estate.1001.desc
+	theme = travel_stewardship
+
+	cooldown = { years = 5 }
+
+	left_portrait = {
+		character = root
+		animation = reading
+	}
+	right_portrait = {
+		character = scope:fe_castellan
+		animation = personality_honorable
+	}
+
+	trigger = {
+		exists = court_position:estex_castellan_court_position
+		OR = {
+			is_travelling = yes
+			is_commanding_army = yes
+		}
+	}
+
+	immediate = {
+		court_position:estex_castellan_court_position = { save_scope_as = fe_castellan }
+	}
+
+	option = { # He has my trust
+		name = estex_estate.1001.a
+		scope:fe_castellan = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		add_prestige = 25
+		ai_chance = { base = 75 }
+	}
+	option = { # I will look into it myself when I return
+		name = estex_estate.1001.b
+		add_stewardship_lifestyle_xp = 25
+		scope:fe_castellan = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -5
+			}
+		}
+		ai_chance = { base = 25 }
+	}
+}
+
+# A Thief in the Night: the castellan caught someone in the stores
+estex_estate.1002 = {
+	type = character_event
+	title = estex_estate.1002.t
+	desc = estex_estate.1002.desc
+	theme = travel_stewardship
+
+	cooldown = { years = 5 }
+
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	right_portrait = {
+		character = scope:fe_castellan
+		animation = aggressive_sword
+	}
+
+	trigger = {
+		exists = court_position:estex_castellan_court_position
+		OR = {
+			is_travelling = yes
+			is_commanding_army = yes
+		}
+	}
+
+	immediate = {
+		court_position:estex_castellan_court_position = { save_scope_as = fe_castellan }
+	}
+
+	option = { # Reward his vigilance
+		name = estex_estate.1002.a
+		remove_short_term_gold = 20
+		scope:fe_castellan = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+	option = { # Hang the thief
+		name = estex_estate.1002.b
+		add_dread = 5
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+		}
+		ai_chance = { base = 25 }
+	}
+	option = { # Let him go with a scare
+		name = estex_estate.1002.c
+		add_piety = 25
+		ai_chance = { base = 25 }
+	}
+}
+
+# The Ledgers Don't Add Up: a greedy or dishonest castellan has been skimming
+estex_estate.1003 = {
+	type = character_event
+	title = estex_estate.1003.t
+	desc = estex_estate.1003.desc
+	theme = corruption
+
+	cooldown = { years = 10 }
+
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:fe_castellan
+		animation = fear
+	}
+
+	trigger = {
+		exists = court_position:estex_castellan_court_position
+		court_position:estex_castellan_court_position = {
+			OR = {
+				has_trait = greedy
+				has_trait = deceitful
+			}
+		}
+		OR = {
+			is_travelling = yes
+			is_commanding_army = yes
+		}
+	}
+
+	immediate = {
+		court_position:estex_castellan_court_position = { save_scope_as = fe_castellan }
+	}
+
+	option = { # Confront him and recover what was taken
+		name = estex_estate.1003.a
+		add_gold = 35
+		scope:fe_castellan = {
+			add_opinion = {
+				target = root
+				modifier = insulted_opinion
+			}
+		}
+		ai_chance = { base = 65 }
+	}
+	option = { # A loyal man is worth a little skimming
+		name = estex_estate.1003.b
+		remove_short_term_gold = 15
+		scope:fe_castellan = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 20
+			}
+		}
+		ai_chance = { base = 35 }
+	}
+}
+
+# The Castellan's Ambition: long service deserves a boon, or so he thinks
+estex_estate.1010 = {
+	type = character_event
+	title = estex_estate.1010.t
+	desc = estex_estate.1010.desc
+	theme = stewardship
+
+	cooldown = { years = 15 }
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	right_portrait = {
+		character = scope:fe_castellan
+		animation = obsequious_bow
+	}
+
+	trigger = {
+		exists = court_position:estex_castellan_court_position
+		gold >= 50
+	}
+
+	immediate = {
+		court_position:estex_castellan_court_position = { save_scope_as = fe_castellan }
+	}
+
+	option = { # Grant him a generous purse
+		name = estex_estate.1010.a
+		remove_short_term_gold = 50
+		scope:fe_castellan = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 30
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+	option = { # Faithful service is its own reward
+		name = estex_estate.1010.b
+		scope:fe_castellan = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -10
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+}
+
+# Old Keys: the aging castellan hands over a key you have never seen before
+estex_estate.1011 = {
+	type = character_event
+	title = estex_estate.1011.t
+	desc = estex_estate.1011.desc
+	theme = stewardship
+
+	cooldown = { years = 20 }
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	right_portrait = {
+		character = scope:fe_castellan
+		animation = personality_content
+	}
+
+	trigger = {
+		exists = court_position:estex_castellan_court_position
+		court_position:estex_castellan_court_position = {
+			age >= 60
+		}
+	}
+
+	immediate = {
+		court_position:estex_castellan_court_position = { save_scope_as = fe_castellan }
+	}
+
+	option = { # Open the old door
+		name = estex_estate.1011.a
+		random_list = {
+			60 = {
+				add_gold = 35
+				add_prestige = 25
+			}
+			40 = {
+				add_prestige = 10
+			}
+		}
+		ai_chance = { base = 80 }
+	}
+	option = { # Some doors are better left shut
+		name = estex_estate.1011.b
+		add_stress = minor_stress_loss
+		ai_chance = { base = 20 }
+	}
+}
+
+##################################################
+# Deer park events
+##################################################
+
+# Poachers! Caught red handed in your park
+estex_estate.2001 = {
+	type = character_event
+	title = estex_estate.2001.t
+	desc = estex_estate.2001.desc
+	theme = hunting
+
+	cooldown = { years = 4 }
+
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_hunting_grounds }
+	}
+
+	option = { # Fine them and send them home
+		name = estex_estate.2001.a
+		add_gold = 15
+		ai_chance = { base = 50 }
+	}
+	option = { # Make an example of them
+		name = estex_estate.2001.b
+		add_dread = 10
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+			forgiving = minor_stress_impact_gain
+		}
+		ai_chance = { base = 25 }
+	}
+	option = { # Throw them in the cells
+		name = estex_estate.2001.c
+		trigger = {
+			domicile ?= { has_domicile_parameter = estex_estate_has_cells }
+		}
+		add_dread = 5
+		add_prestige = 25
+		ai_chance = { base = 25 }
+	}
+}
+
+# The White Hart: a legend walks in your deer park
+estex_estate.2002 = {
+	type = character_event
+	title = estex_estate.2002.t
+	desc = estex_estate.2002.desc
+	theme = hunting
+
+	cooldown = { years = 20 }
+
+	left_portrait = {
+		character = root
+		animation = horse_surveying
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_deer_park }
+	}
+
+	option = { # Ride it down
+		name = estex_estate.2002.a
+		custom_tooltip = estex_estate.2002.a.tt
+		set_variable = {
+			name = estex_hart_chase_rounds
+			value = 0
+		}
+		trigger_event = {
+			id = estex_estate.2007
+			days = 1
+		}
+		ai_chance = { base = 60 }
+	}
+	option = { # Such a creature is an omen, let it roam
+		name = estex_estate.2002.b
+		add_piety = 50
+		ai_chance = { base = 40 }
+	}
+}
+
+# White hart chase loop: press on or give up
+estex_estate.2007 = {
+	type = character_event
+	title = estex_estate.2007.t
+	desc = estex_estate.2007.desc
+	theme = hunting
+
+	left_portrait = {
+		character = root
+		animation = horse_archer_aggressive
+	}
+
+	option = { # Spur on
+		name = estex_estate.2007.a
+		custom_tooltip = estex_estate.2007.a.tt
+		random_list = {
+			40 = { # The kill
+				modifier = {
+					add = 20
+					prowess >= 8
+				}
+				modifier = {
+					add = 15
+					domicile ?= { has_domicile_parameter = estex_estate_has_chase }
+				}
+				# the beast tires as the chase drags on
+				modifier = {
+					add = 10
+					var:estex_hart_chase_rounds >= 1
+				}
+				modifier = {
+					add = 10
+					var:estex_hart_chase_rounds >= 2
+				}
+				custom_tooltip = estex_estate.2007.success.tt
+				trigger_event = {
+					id = estex_estate.2005
+					days = 1
+				}
+			}
+			60 = { # It slips away again
+				custom_tooltip = estex_estate.2007.fail.tt
+				add_stress = 10
+				change_variable = {
+					name = estex_hart_chase_rounds
+					add = 1
+				}
+				if = { # three failed rounds and it is gone for good
+					limit = {
+						var:estex_hart_chase_rounds >= 3
+					}
+					trigger_event = {
+						id = estex_estate.2006
+						days = 1
+					}
+				}
+				else = {
+					trigger_event = {
+						id = estex_estate.2007
+						days = 2
+					}
+				}
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+	option = { # Abandon the chase
+		name = estex_estate.2007.b
+		remove_variable = estex_hart_chase_rounds
+		ai_chance = { base = 40 }
+	}
+}
+
+# White hart follow up: the kill. The antler trinket and the prestige are handed
+# out in immediate so the options stay clean, the choice is just about the meat.
+estex_estate.2005 = {
+	type = character_event
+	title = estex_estate.2005.t
+	desc = estex_estate.2005.desc
+	theme = hunting
+
+	immediate = {
+		if = {
+			limit = { has_variable = estex_hart_chase_rounds }
+			remove_variable = estex_hart_chase_rounds
+		}
+		add_prestige = 100
+		# antler trinket rather than a wall skull: personal artifact, works for
+		# any rank, no royal court needed
+		create_artifact_animal_trinket_effect = {
+			OWNER = root
+			HUNTER = root
+			LEGENDARY = yes
+			ANIMAL = flag:stag
+		}
+	}
+
+	left_portrait = {
+		character = root
+		animation = celebrate_spear
+	}
+
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_center_portrait
+	}
+
+	option = { # Keep the meat for a celebratory feast
+		name = estex_estate.2005.a
+		add_stress = minor_stress_loss
+		ai_chance = { base = 60 }
+	}
+	option = { # Share the meat with the village
+		name = estex_estate.2005.b
+		add_piety = 25
+		ai_chance = { base = 40 }
+	}
+}
+
+# White hart follow up: it got away
+estex_estate.2006 = {
+	type = character_event
+	title = estex_estate.2006.t
+	desc = estex_estate.2006.desc
+	theme = hunting
+
+	immediate = {
+		if = {
+			limit = { has_variable = estex_hart_chase_rounds }
+			remove_variable = estex_hart_chase_rounds
+		}
+	}
+
+	left_portrait = {
+		character = root
+		animation = horse_exhausted
+	}
+
+	option = { # It was only a deer
+		name = estex_estate.2006.a
+		add_stress = minor_stress_gain
+		ai_chance = { base = 60 }
+	}
+	option = { # It was a sign, and I hunted it anyway
+		name = estex_estate.2006.b
+		add_piety = 25
+		ai_chance = { base = 40 }
+	}
+}
+
+# The Carp Harvest: the fishponds have outdone themselves
+estex_estate.2003 = {
+	type = character_event
+	title = estex_estate.2003.t
+	desc = estex_estate.2003.desc
+	theme = stewardship
+
+	cooldown = { years = 5 }
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_fishponds }
+	}
+
+	option = { # Sell the surplus
+		name = estex_estate.2003.a
+		add_gold = 20
+		ai_chance = { base = 60 }
+	}
+	option = { # Send a barrel to my liege
+		name = estex_estate.2003.b
+		trigger = {
+			is_independent_ruler = no
+			exists = liege
+		}
+		liege = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# A Gift of Venison: the hunt went well, well enough to share
+estex_estate.2004 = {
+	type = character_event
+	title = estex_estate.2004.t
+	desc = estex_estate.2004.desc
+	theme = hunting
+
+	cooldown = { years = 5 }
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:fe_gift_target
+		animation = admiration
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_hunting_grounds }
+		any_vassal = { count >= 1 }
+	}
+
+	immediate = {
+		random_vassal = { save_scope_as = fe_gift_target }
+	}
+
+	option = { # Send a haunch with my compliments
+		name = estex_estate.2004.a
+		scope:fe_gift_target = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		ai_chance = { base = 70 }
+	}
+	option = { # My table needs it more
+		name = estex_estate.2004.b
+		add_stress = minor_stress_loss
+		ai_chance = { base = 30 }
+	}
+}
