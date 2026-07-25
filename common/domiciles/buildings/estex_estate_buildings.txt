@@ -532,7 +532,7 @@ estex_living_quarters_04 = {
 
 estex_trophy_room_01 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -1405,7 +1405,7 @@ estex_bath_04 = {
 ### Guest Room
 estex_guest_room_01 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_estate_main_01
 
@@ -1420,9 +1420,16 @@ estex_guest_room_01 = {
 		}
 	}
 
+	# reworked from the vanilla port: influence does nothing for feudal rulers,
+	# this line is now hospitality (opinion/prestige), honored hostages at higher
+	# tiers, court grandeur at the top
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.02
 		courtier_and_guest_opinion = 2
+		monthly_prestige = 0.1
+	}
+
+	parameters = {
+		estex_estate_has_guest_quarters = yes
 	}
 	
 	ai_value = {
@@ -1462,13 +1469,15 @@ estex_guest_room_02 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.02
+		courtier_and_guest_opinion = 3
+		monthly_prestige = 0.15
 	}
 
 	parameters = {
 		increased_success_personal_schemes_1 = yes
+		estex_estate_has_guest_quarters = yes
 	}
-	
+
 	ai_value = {
 		value = 7
 		if = {
@@ -1510,14 +1519,16 @@ estex_guest_room_03 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.02
-		courtier_and_guest_opinion = 2
+		courtier_and_guest_opinion = 3
+		monthly_prestige = 0.15
+		hostage_income_mult = 0.1
 	}
 
 	parameters = {
 		increased_success_personal_schemes_1 = yes
+		estex_estate_has_guest_quarters = yes
 	}
-	
+
 	ai_value = {
 		value = 6
 		if = {
@@ -1559,13 +1570,17 @@ estex_guest_room_04 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.02
+		courtier_and_guest_opinion = 4
+		monthly_prestige = 0.2
+		hostage_income_mult = 0.15
+		hostage_renown_mult = 0.1
 	}
 
 	parameters = {
 		increased_success_personal_schemes_2 = yes
+		estex_estate_has_guest_quarters = yes
 	}
-	
+
 	ai_value = {
 		value = 5
 		if = {
@@ -1607,14 +1622,18 @@ estex_guest_room_05 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.02
-		courtier_and_guest_opinion = 2
+		courtier_and_guest_opinion = 4
+		monthly_prestige = 0.25
+		hostage_income_mult = 0.2
+		hostage_renown_mult = 0.15
+		court_grandeur_baseline_add = 0.25
 	}
 
 	parameters = {
 		increased_success_personal_schemes_2 = yes
+		estex_estate_has_guest_quarters = yes
 	}
-	
+
 	ai_value = {
 		value = 4
 		if = {
@@ -1656,13 +1675,18 @@ estex_guest_room_06 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.02
+		courtier_and_guest_opinion = 5
+		monthly_prestige = 0.3
+		hostage_income_mult = 0.25
+		hostage_renown_mult = 0.2
+		court_grandeur_baseline_add = 0.5
 	}
 
 	parameters = {
 		increased_success_personal_schemes_3 = yes
+		estex_estate_has_guest_quarters = yes
 	}
-	
+
 	ai_value = {
 		value = 3
 		if = {

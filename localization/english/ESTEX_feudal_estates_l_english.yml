@@ -43,12 +43,8 @@
  estex_bath_02_domicile_building: "Noble Bath"
  estex_bath_03_domicile_building: "Oppulent Bath"
  estex_bath_04_domicile_building: "Grand Baths"
- estex_guest_room_01_domicile_building: "Guest Room"
- estex_guest_room_02_domicile_building: "Guest Rooms"
- estex_guest_room_03_domicile_building: "Noble Guest Rooms"
- estex_guest_room_04_domicile_building: "Oppulent Guest Rooms"
- estex_guest_room_05_domicile_building: "Grand Guest Rooms"
- estex_guest_room_06_domicile_building: "Royal Guest Rooms"
+ # guest room names and descs live in ESTEX_guest_quarters_l_english.yml,
+ # renamed alongside the guest quarters rework so they match the new mechanics
  estex_reception_hall_01_domicile_building: "Reception Hall"
  estex_reception_hall_02_domicile_building: "Noble Reception Hall"
  estex_reception_hall_03_domicile_building: "Oppulent Reception Hall"
