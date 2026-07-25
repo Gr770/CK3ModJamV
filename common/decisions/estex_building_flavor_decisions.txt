@@ -1,0 +1,77 @@
+﻿# Simple flavor decisions based on various estate buildings
+
+estex_inspect_kitchen_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_kitchen.dds" }
+	#decision_group_type = major
+
+	desc = estex_inspect_kitchen_decision_desc
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 64
+		duchy = 64
+		kingdom = 64
+		empire = 64
+		hegemony = 64
+	}
+
+	#cooldown = { days = 1095 } 
+
+	is_shown = {
+		is_playable_character = yes
+		government_has_flag = government_is_feudal_estate	
+	}
+	
+	is_valid = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_kitchen }	
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+
+		custom_tooltip = estex_inspect_kitchen_decision_effect_tooltip_1
+
+		show_as_tooltip = {			
+			estex_inspect_kitchen_decision_effect = yes
+		}
+
+		trigger_event = {
+			id = estex_building_flavor.0100
+		}
+	}
+
+	cost = { 
+		gold = { value = 666 } # Will depend 
+	}	
+
+	ai_potential = {
+		short_term_gold >= 666
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			add = 10
+			has_trait = gluttonous
+		}
+
+		modifier = {
+			add = -10
+			has_trait = temperate
+		}
+		modifier = {
+			add = 10
+			has_trait = diligent
+		}
+
+		modifier = {
+			add = -10
+			has_trait = lazy
+		}
+
+	}
+}

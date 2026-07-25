@@ -1,0 +1,141 @@
+﻿namespace = estex_building_flavor
+
+
+# Character inspects the kitchen
+estex_building_flavor.0100 = {
+	type = character_event
+	title = estex_building_flavor.0100.t
+	desc = estex_building_flavor.0100.desc
+	theme = family
+	override_background = { reference = bp1_kitchen_western }
+
+	left_portrait = {
+		character = root
+		animation = survey
+	}
+	
+	option = { # Begin the inspection!
+		name = estex_building_flavor.0100.a
+		random_list = {
+			5 = { # Nothing out of the ordinary
+				desc = estex_building_flavor.0100.toast.1
+				show_chance = no
+				trigger_event = estex_building_flavor.0101
+			}
+			5 = { # Inspired kitchen staff
+				desc = estex_building_flavor.0100.toast.2
+				show_chance = no
+				trigger_event = estex_building_flavor.0102
+			}
+			5 = { # Very bad!
+				desc = estex_building_flavor.0100.toast.3
+				show_chance = no
+				trigger_event = estex_building_flavor.0103
+			}
+			# 5 = { # Try out new experimental food
+			# 	desc = estex_building_flavor.0100.toast.4
+			# 	show_chance = no
+			# 	trigger_event = estex_building_flavor.0104
+			# }
+		}	
+	}
+}
+
+
+# Nothing out of the ordinary during inspection
+estex_building_flavor.0101 = {
+	type = character_event
+	title = estex_building_flavor.0101.t
+	desc = estex_building_flavor.0101.desc
+	theme = family
+	override_background = { reference = bp1_kitchen_western }
+
+	left_portrait = {
+		character = root
+		animation = war_over_tie
+	}
+	
+	option = { # ok
+		name = estex_building_flavor.0101.a
+		add_prestige = minor_prestige_gain
+		add_character_modifier = {
+			modifier = estex_inspected_kitchen_modifier
+			years = 10
+		}	
+	}
+}
+
+
+# Inspired kitchen staff
+estex_building_flavor.0102 = {
+	type = character_event
+	title = estex_building_flavor.0102.t
+	desc = estex_building_flavor.0102.desc
+	theme = family
+	override_background = { reference = bp1_kitchen_western }
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+	option = { # ok
+		name = estex_building_flavor.0102.a
+		add_prestige = medium_prestige_gain
+		add_character_modifier = {
+			modifier = estex_inspected_kitchen_inspired_modifier
+			years = 10
+		}	
+	}
+}
+
+
+# Bad result
+estex_building_flavor.0103 = {
+	type = character_event
+	title = estex_building_flavor.0103.t
+	desc = estex_building_flavor.0103.desc
+	theme = family
+	override_background = { reference = bp1_kitchen_western }
+
+	left_portrait = {
+		character = root
+		animation = disappointed
+	}
+	
+	option = { # ok
+		name = estex_building_flavor.0103.a
+		remove_short_term_gold = miniscule_gold_value
+		add_character_modifier = {
+			modifier = estex_inspected_kitchen_fixed_problems_modifier
+			years = 10
+		}	
+	}
+	
+	option = { # ok
+		name = estex_building_flavor.0103.b
+		add_character_modifier = {
+			modifier = estex_inspected_kitchen_problems_modifier
+			years = 10
+		}	
+	}
+}
+
+
+# Experimental Food
+# estex_building_flavor.0104 = {
+# 	type = character_event
+# 	title = estex_building_flavor.0104.t
+# 	desc = estex_building_flavor.0104.desc
+# 	theme = family
+# 	override_background = { reference = bp1_kitchen_western }
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = survey
+# 	}
+	
+# 	option = { # ok
+# 		name = estex_building_flavor.0104.a
+# 	}
+# }
