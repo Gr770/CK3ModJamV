@@ -44,6 +44,14 @@ estex_estate_yearly_pulse = {
 		# crossovers
 		50 = estex_estate.3201
 		50 = estex_estate.3202
+		# dovecote
+		75 = estex_estate.3301
+		60 = estex_estate.3302
+		60 = estex_estate.3303
+		75 = estex_estate.3304
+		50 = estex_estate.3305
+		10 = estex_estate.3306
+		75 = estex_estate.3307
 	}
 }
 
@@ -77,5 +85,12 @@ estex_estate_debug_pulse = {
 		100 = estex_estate.3106
 		100 = estex_estate.3201
 		100 = estex_estate.3202
+		100 = estex_estate.3301
+		100 = estex_estate.3302
+		100 = estex_estate.3303
+		100 = estex_estate.3304
+		100 = estex_estate.3305
+		100 = estex_estate.3306
+		100 = estex_estate.3307
 	}
 }

@@ -1,0 +1,149 @@
+﻿# Dovecote line for the external estate slots.
+# Dovecote -> Rookery, then the usual fork: Master's Loft (your plots coordinate
+# faster and better) or White Doves (courtly messages, personal schemes).
+# Fun fact, the right to keep a dovecote was a jealously guarded seigneurial
+# privilege, in France literally the droit de colombier.
+#
+# Art note: magnanery texture as the stand in (it's a suitably tower-ish farm
+# outbuilding), bird and whisper icons until we get real art.
+
+estex_dovecote_01 = {
+	construction_time = 1 # TESTING, was 365
+	allowed_domicile_types = { estex_estate }
+
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_1_value
+	#}
+
+	character_modifier = {
+		domicile_monthly_gold_add = 0.1
+		monthly_prestige = 0.05
+	}
+
+	parameters = {
+		estex_estate_has_dovecote = yes
+	}
+
+	ai_value = {
+		value = 7
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_falcon_yurt.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_magnanery.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_magnanery_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_garden_fruit"
+	}
+}
+
+estex_rookery_02 = {
+	construction_time = 1 # TESTING, was 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_dovecote_01
+
+	can_construct = {
+		domicile ?= { has_domicile_building_or_higher = estex_estate_main_02 }
+	}
+
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_2_value
+	#}
+
+	character_modifier = {
+		domicile_monthly_gold_add = 0.1
+		monthly_prestige = 0.05
+		monthly_intrigue_lifestyle_xp_gain_mult = 0.1
+	}
+
+	parameters = {
+		estex_estate_has_dovecote = yes
+		estex_estate_has_rookery = yes
+	}
+
+	ai_value = {
+		value = 7
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_falcon_yurt.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_magnanery.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_magnanery_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_garden_fruit"
+	}
+}
+
+# Plotter's path: your birds carry the words that make things happen
+estex_masters_loft_03 = {
+	construction_time = 1 # TESTING, was 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_rookery_02
+
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_3_value
+	#}
+
+	character_modifier = {
+		domicile_monthly_gold_add = 0.1
+		owned_hostile_scheme_success_chance_add = 5
+		monthly_intrigue_lifestyle_xp_gain_mult = 0.15
+	}
+
+	parameters = {
+		estex_estate_has_dovecote = yes
+		estex_estate_has_rookery = yes
+		estex_estate_has_masters_loft = yes
+	}
+
+	ai_value = {
+		value = 6
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_juicy_rumors.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_magnanery.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_magnanery_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_garden_fruit"
+	}
+}
+
+# Courtier's path: love letters, sweet nothings and elegant persuasion
+estex_white_doves_03 = {
+	construction_time = 1 # TESTING, was 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_rookery_02
+
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_3_value
+	#}
+
+	character_modifier = {
+		domicile_monthly_gold_add = 0.1
+		owned_personal_scheme_success_chance_add = 5
+		monthly_prestige = 0.2
+	}
+
+	parameters = {
+		estex_estate_has_dovecote = yes
+		estex_estate_has_rookery = yes
+		estex_estate_has_white_doves = yes
+	}
+
+	ai_value = {
+		value = 6
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_friendly.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_magnanery.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_magnanery_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_garden_fruit"
+	}
+}
