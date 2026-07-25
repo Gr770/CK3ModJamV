@@ -1,21 +1,21 @@
 ﻿l_english:
 
  ### Modifiers
- estex_inspected_kitchen_modifier:0 "Inspected Estate Kitchen"
- estex_inspected_kitchen_modifier_desc:0 "This character recently inspected their estate's kitchen and found nothing wrong with how it was run."
- estex_inspected_kitchen_inspired_modifier:0 "Inspired Kitchen Staff"
- estex_inspected_kitchen_inspired_modifier_desc:0 "This character's recent inspection of their estate's kitchen inspired the kitchen staff to work even harder."
- estex_inspected_kitchen_fixed_problems_modifier:0 "Fixed Problems in the Estate Kitchen"
- estex_inspected_kitchen_fixed_problems_modifier_desc:0 "This character recently inspected their estate's kitchen and found some issues with how it was run. They have done their best to rectify these issues."
- estex_inspected_kitchen_problems_modifier:0 "Ongoing Problems in the Estate Kitchen"
- estex_inspected_kitchen_problems_modifier_desc:0 "This character recently inspected their estate's kitchen and found some issues with how it was run. They were unable to resolve those issues."
+ estex_inspected_kitchen_modifier: "Inspected Estate Kitchen"
+ estex_inspected_kitchen_modifier_desc: "This character recently inspected their estate's kitchen and found nothing wrong with how it was run."
+ estex_inspected_kitchen_inspired_modifier: "Inspired Kitchen Staff"
+ estex_inspected_kitchen_inspired_modifier_desc: "This character's recent inspection of their estate's kitchen inspired the kitchen staff to work even harder."
+ estex_inspected_kitchen_fixed_problems_modifier: "Fixed Problems in the Estate Kitchen"
+ estex_inspected_kitchen_fixed_problems_modifier_desc: "This character recently inspected their estate's kitchen and found some issues with how it was run. They have done their best to rectify these issues."
+ estex_inspected_kitchen_problems_modifier: "Ongoing Problems in the Estate Kitchen"
+ estex_inspected_kitchen_problems_modifier_desc: "This character recently inspected their estate's kitchen and found some issues with how it was run. They were unable to resolve those issues."
 
  ### Decisions
- estex_inspect_kitchen_decision:0 "Inspect the Kitchens"
- estex_inspect_kitchen_decision_tooltip:0 "Receive random [modifiers|E] for inspecting your kitchens"
- estex_inspect_kitchen_decision_desc:0 "My estate has an extensive kitchen and staff. However, I need to inspect them regularly to ensure that they are up to my standards, both for feeding myself and when I host banquets or other social occasions."
- estex_inspect_kitchen_decision_effect_tooltip_1:0 "Can potentially gain [prestige_i|E] [prestige|E] as well as #P positive#! (and occasionally #N negative#!) [modifiers|E]"
- estex_inspect_kitchen_decision_confirm:0 "Send word to the kitchen staff!"
+ estex_inspect_kitchen_decision: "Inspect the Kitchens"
+ estex_inspect_kitchen_decision_tooltip: "Receive random [modifiers|E] for inspecting your kitchens"
+ estex_inspect_kitchen_decision_desc: "My estate has an extensive kitchen and staff. However, I need to inspect them regularly to ensure that they are up to my standards, both for feeding myself and when I host banquets or other social occasions."
+ estex_inspect_kitchen_decision_effect_tooltip_1: "Can potentially gain [prestige_i|E] [prestige|E] as well as #P positive#! (and occasionally #N negative#!) [modifiers|E]"
+ estex_inspect_kitchen_decision_confirm: "Send word to the kitchen staff!"
 
  ### Events
  estex_building_flavor.1001.t: "xxxxx"

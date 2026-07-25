@@ -1,6 +1,6 @@
 ﻿l_english:
- estex_estate_domicile_title: "The [CHARACTER.GetHouse.GetBaseNameNoTooltip] $game_concept_estate$"
- estex_estate_domicile_type: "$game_concept_estate$"
+ estex_estate_domicile_title: "The [CHARACTER.GetHouse.GetBaseNameNoTooltip] Manor"
+ estex_estate_domicile_type: "Manor"
  estex_estate_domicile_type_tooltip: "$ESTATE$"
- estex_estate_domicile_type_possessive: "Estate's"
+ estex_estate_domicile_type_possessive: "Manor's"
  estex_estate_move_desc: "$estate_move_desc$"
