@@ -1,0 +1,29 @@
+﻿# DEBUG ONLY, delete or comment out before release.
+# Fires a random estate event from our pool, respecting each event's own trigger
+# (so no castellan means no castellan events etc). Event cooldowns still apply,
+# spam it a few times and you'll run the pool dry until the cooldowns tick over.
+estex_debug_fire_estate_event_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
+	sort_order = 100
+	ai_check_interval = 0
+
+	desc = estex_debug_fire_estate_event_decision_desc
+	selection_tooltip = estex_debug_fire_estate_event_decision_tooltip
+
+	is_shown = {
+		is_ai = no
+		government_has_flag = government_is_feudal_estate
+	}
+
+	effect = {
+		trigger_event = {
+			on_action = estex_estate_debug_pulse
+		}
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

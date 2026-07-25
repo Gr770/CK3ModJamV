@@ -9,12 +9,13 @@
 # grazing fields for the archery side.
 
 estex_tournament_grounds_01 = {
-	construction_time = 365
+	construction_time = 1 # TESTING, was 365
 	allowed_domicile_types = { estex_estate }
 
-	cost = {
-		gold = estate_external_building_high_cost_tier_1_value
-	}
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_1_value
+	#}
 
 	character_modifier = {
 		monthly_martial_lifestyle_xp_gain_mult = 0.1
@@ -47,7 +48,7 @@ estex_tournament_grounds_01 = {
 }
 
 estex_berfrois_02 = {
-	construction_time = 730
+	construction_time = 1 # TESTING, was 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_tournament_grounds_01
 
@@ -56,9 +57,10 @@ estex_berfrois_02 = {
 		domicile ?= { has_domicile_building_or_higher = estex_estate_main_02 }
 	}
 
-	cost = {
-		gold = estate_external_building_high_cost_tier_2_value
-	}
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_2_value
+	#}
 
 	character_modifier = {
 		monthly_prestige = 0.15
@@ -93,13 +95,14 @@ estex_berfrois_02 = {
 
 # Knightly path
 estex_jousting_lists_03 = {
-	construction_time = 730
+	construction_time = 1 # TESTING, was 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_berfrois_02
 
-	cost = {
-		gold = estate_external_building_high_cost_tier_3_value
-	}
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_3_value
+	#}
 
 	character_modifier = {
 		knight_effectiveness_mult = 0.2
@@ -137,13 +140,14 @@ estex_jousting_lists_03 = {
 
 # Commons path
 estex_archery_butts_03 = {
-	construction_time = 730
+	construction_time = 1 # TESTING, was 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_berfrois_02
 
-	cost = {
-		gold = estate_external_building_high_cost_tier_3_value
-	}
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_3_value
+	#}
 
 	character_modifier = {
 		levy_reinforcement_rate = 0.2

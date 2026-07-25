@@ -6,12 +6,13 @@
 # External is the default slot_type so it's not declared here.
 
 estex_cellar_cells_01 = {
-	construction_time = 365
+	construction_time = 1 # TESTING, was 365
 	allowed_domicile_types = { estex_estate }
 
-	cost = {
-		gold = estate_external_building_high_cost_tier_1_value
-	}
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_1_value
+	#}
 
 	character_modifier = {
 		dread_baseline_add = 3
@@ -78,7 +79,7 @@ estex_cellar_cells_01 = {
 }
 
 estex_dungeon_02 = {
-	construction_time = 730
+	construction_time = 1 # TESTING, was 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_cellar_cells_01
 
@@ -87,9 +88,10 @@ estex_dungeon_02 = {
 		domicile ?= { has_domicile_building_or_higher = estex_estate_main_02 }
 	}
 
-	cost = {
-		gold = estate_external_building_high_cost_tier_2_value
-	}
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_2_value
+	#}
 
 	character_modifier = {
 		dread_baseline_add = 6
@@ -159,13 +161,14 @@ estex_dungeon_02 = {
 
 # Terror path. Dread and it sticks around.
 estex_oubliette_03 = {
-	construction_time = 730
+	construction_time = 1 # TESTING, was 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_dungeon_02
 
-	cost = {
-		gold = estate_external_building_high_cost_tier_3_value
-	}
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_3_value
+	#}
 
 	character_modifier = {
 		dread_baseline_add = 10
@@ -239,13 +242,14 @@ estex_oubliette_03 = {
 # does it through proven ones: schemes against you run slower (more monthly discovery
 # rolls for your spymaster before they land) and have a lower success chance.
 estex_interrogation_chamber_03 = {
-	construction_time = 730
+	construction_time = 1 # TESTING, was 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_dungeon_02
 
-	cost = {
-		gold = estate_external_building_high_cost_tier_3_value
-	}
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_3_value
+	#}
 
 	character_modifier = {
 		dread_baseline_add = 6
