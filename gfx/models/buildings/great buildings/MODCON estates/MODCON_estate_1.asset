@@ -27,4 +27,5 @@ pdxmesh = {
 entity = {
 	name = "MODCON_estate_1_entity"
 	pdxmesh = "MODCON_estate_1_mesh"
+	scale = 0.75
 }
