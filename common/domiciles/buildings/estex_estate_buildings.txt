@@ -621,9 +621,9 @@ estex_trophy_room_03 = {
 		advantage = 3
 	}
 
-	parameters = {
-		trophy_room_victory_influence = yes
-	}
+	#parameters = {
+	#	trophy_room_victory_influence = yes
+	#}
 	
 	ai_value = {
 		value = 5
@@ -663,9 +663,9 @@ estex_trophy_room_04 = {
 		prowess = 1
 	}
 
-	parameters = {
-		trophy_room_victory_influence = yes
-	}
+	#parameters = {
+	#	trophy_room_victory_influence = yes
+	#}
 	
 	ai_value = {
 		value = 4
@@ -696,10 +696,10 @@ estex_office_01 = {
 		}
 	}
 	
-	parameters = {
-		estate_local_theme_cost_reduction = yes
-		estate_unlock_teach_governor_interaction = yes
-	}
+	# parameters = {
+		# estate_local_theme_cost_reduction = yes
+		# estate_unlock_teach_governor_interaction = yes
+	# }
 
 	character_modifier = {
 		monthly_stewardship_lifestyle_xp_gain_mult = 0.05
@@ -733,11 +733,11 @@ estex_office_02 = {
 		}
 	}
 	
-	parameters = {
-		estate_local_theme_cost_reduction = yes
-		estate_governor_efficiency_bonus = yes
-		estate_unlock_teach_governor_interaction = yes
-	}
+	# parameters = {
+		# estate_local_theme_cost_reduction = yes
+		# estate_governor_efficiency_bonus = yes
+		# estate_unlock_teach_governor_interaction = yes
+	# }
 
 	character_modifier = {
 		monthly_stewardship_lifestyle_xp_gain_mult = 0.05
@@ -775,12 +775,12 @@ estex_office_03 = {
 		}
 	}
 	
-	parameters = {
-		estate_local_theme_cost_reduction = yes
-		estate_governor_efficiency_bonus = yes
-		estate_governor_efficiency_bonus_for_house_members = yes
-		estate_unlock_teach_governor_interaction = yes
-	}
+	# parameters = {
+		# estate_local_theme_cost_reduction = yes
+		# estate_governor_efficiency_bonus = yes
+		# estate_governor_efficiency_bonus_for_house_members = yes
+		# estate_unlock_teach_governor_interaction = yes
+	# }
 
 	character_modifier = {
 		monthly_stewardship_lifestyle_xp_gain_mult = 0.05
@@ -818,13 +818,13 @@ estex_office_04 = {
 		}
 	}
 	
-	parameters = {
-		estate_local_theme_cost_reduction = yes
-		estate_governor_efficiency_bonus = yes
-		estate_governor_efficiency_bonus_for_house_members = yes
-		estate_governor_trait_xp_bonus_for_contracts = yes
-		estate_unlock_teach_governor_interaction = yes
-	}
+	# parameters = {
+		# estate_local_theme_cost_reduction = yes
+		# estate_governor_efficiency_bonus = yes
+		# estate_governor_efficiency_bonus_for_house_members = yes
+		# estate_governor_trait_xp_bonus_for_contracts = yes
+		# estate_unlock_teach_governor_interaction = yes
+	# }
 
 	character_modifier = {
 		monthly_stewardship_lifestyle_xp_gain_mult = 0.05
@@ -1706,7 +1706,7 @@ estex_reception_hall_01 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.02
+		monthly_dynasty_prestige_mult = 0.02
 	}
 
 	parameters = {
@@ -1748,7 +1748,7 @@ estex_reception_hall_02 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.04
+		monthly_dynasty_prestige_mult = 0.04
 	}
 
 	parameters = {
@@ -1792,7 +1792,7 @@ estex_reception_hall_03 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.06
+		monthly_dynasty_prestige_mult = 0.06
 	}
 
 	parameters = {
@@ -1836,7 +1836,7 @@ estex_reception_hall_04 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.08
+		monthly_dynasty_prestige_mult = 0.08
 	}
 
 	parameters = {
@@ -1880,7 +1880,7 @@ estex_reception_hall_05 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_influence_mult = 0.1
+		monthly_dynasty_prestige_mult = 0.1
 	}
 
 	parameters = {
@@ -1924,8 +1924,8 @@ estex_cabinet_of_curiosities_01 = {
 	}
 
 	character_modifier = {
-		learning_per_influence_level = 1
-		domicile_monthly_influence_add = 0.1
+		learning_per_prestige_level = 1
+		monthly_dynasty_prestige = 0.1
 	}
 	
 	parameters = {
@@ -1974,9 +1974,8 @@ estex_cabinet_of_curiosities_02 = {
 	}
 
 	character_modifier = {
-		stewardship_per_influence_level = 1
-		monthly_dynasty_prestige = 0.5
-		domicile_monthly_influence_add = 0.2
+		stewardship_per_prestige_level = 1
+		monthly_dynasty_prestige = 0.7
 		monthly_court_grandeur_change_add = 0.2
 	}
 	
@@ -2028,10 +2027,9 @@ estex_cabinet_of_curiosities_03 = {
 	}
 
 	character_modifier = {
-		learning_per_influence_level = 1
-		stewardship_per_influence_level = 1
-		monthly_dynasty_prestige = 0.5
-		domicile_monthly_influence_add = 0.3
+		learning_per_prestige_level = 1
+		stewardship_per_prestige_level = 1
+		monthly_dynasty_prestige = 0.8
 		monthly_court_grandeur_change_add = 0.3
 		general_opinion = 10
 	}
