@@ -1653,3 +1653,374 @@ estex_estate.3202 = {
 		ai_chance = { base = 20 }
 	}
 }
+
+##################################################
+# Dovecote events (3301-3307)
+##################################################
+
+# The Wrong Window: a bird arrives with someone else's letter
+estex_estate.3301 = {
+	type = character_event
+	title = estex_estate.3301.t
+	desc = {
+		desc = estex_estate.3301.desc
+		desc = estex_source_rookery
+	}
+	theme = intrigue
+
+	cooldown = { years = 6 }
+
+	left_portrait = {
+		character = root
+		animation = reading
+	}
+	right_portrait = {
+		character = scope:fe_gossip_target
+		animation = personality_content
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_rookery }
+		any_courtier = {
+			any_secret = { count >= 1 }
+		}
+	}
+
+	immediate = {
+		random_courtier = {
+			limit = { any_secret = { count >= 1 } }
+			save_scope_as = fe_gossip_target
+		}
+	}
+
+	option = { # Read it
+		name = estex_estate.3301.a
+		custom_tooltip = estex_estate.3301.a.tt
+		hidden_effect = {
+			send_interface_message = {
+				type = event_intrigue_good
+				title = estex_estate.3301.message
+				left_icon = scope:fe_gossip_target
+				scope:fe_gossip_target = {
+					random_secret = { reveal_to = root }
+				}
+			}
+		}
+		stress_impact = {
+			honest = minor_stress_impact_gain
+		}
+		ai_chance = { base = 50 }
+	}
+	option = { # Send it on, sealed
+		name = estex_estate.3301.b
+		add_piety = 25
+		ai_chance = { base = 50 }
+	}
+}
+
+# Intercepted: the loft master nets a bird that was not yours
+estex_estate.3302 = {
+	type = character_event
+	title = estex_estate.3302.t
+	desc = {
+		desc = estex_estate.3302.desc
+		desc = estex_source_masters_loft
+	}
+	theme = intrigue
+
+	cooldown = { years = 6 }
+
+	left_portrait = {
+		character = root
+		animation = scheme
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_masters_loft }
+	}
+
+	immediate = {
+		random_targeting_scheme = {
+			limit = { is_hostile = yes }
+			save_scope_as = fe_plot
+		}
+	}
+
+	option = { # Open it
+		name = estex_estate.3302.a
+		if = {
+			limit = { exists = scope:fe_plot }
+			custom_tooltip = estex_estate.3302.a.plot.tt
+			hidden_effect = {
+				send_interface_message = {
+					type = event_intrigue_good
+					title = estex_estate.3302.message
+					left_icon = scope:fe_plot.scheme_owner
+					right_icon = root
+				}
+			}
+		}
+		else = {
+			custom_tooltip = estex_estate.3302.a.gossip.tt
+			add_dread = 2
+			add_intrigue_lifestyle_xp = 25
+		}
+		ai_chance = { base = 80 }
+	}
+	option = { # Let it fly on. I want no part of this
+		name = estex_estate.3302.b
+		add_piety = 15
+		ai_chance = { base = 20 }
+	}
+}
+
+# A Verse on White Wings: poetry by air mail
+estex_estate.3303 = {
+	type = character_event
+	title = estex_estate.3303.t
+	desc = {
+		desc = estex_estate.3303.desc
+		desc = estex_source_white_doves
+	}
+	theme = love
+
+	cooldown = { years = 5 }
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	right_portrait = {
+		character = scope:fe_beloved
+		animation = happiness
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_white_doves }
+		exists = primary_spouse
+	}
+
+	immediate = {
+		primary_spouse = { save_scope_as = fe_beloved }
+	}
+
+	option = { # Send the verse
+		name = estex_estate.3303.a
+		random_list = {
+			80 = {
+				custom_tooltip = estex_estate.3303.a.good.tt
+				hidden_effect = {
+					send_interface_message = {
+						type = event_diplomacy_good
+						title = estex_estate.3303.message.good
+						left_icon = scope:fe_beloved
+						scope:fe_beloved = {
+							add_opinion = {
+								target = root
+								modifier = grateful_opinion
+								opinion = 20
+							}
+						}
+						add_stress = minor_stress_loss
+					}
+				}
+			}
+			20 = {
+				custom_tooltip = estex_estate.3303.a.bad.tt
+				hidden_effect = {
+					send_interface_message = {
+						type = event_diplomacy_bad
+						title = estex_estate.3303.message.bad
+						left_icon = scope:fe_beloved
+						scope:fe_beloved = {
+							add_opinion = {
+								target = root
+								modifier = disappointed_opinion
+								opinion = -5
+							}
+						}
+						add_stress = minor_stress_gain
+					}
+				}
+			}
+		}
+		ai_chance = { base = 70 }
+	}
+	option = { # Poetry is not power
+		name = estex_estate.3303.b
+		add_prestige = 10
+		ai_chance = { base = 30 }
+	}
+}
+
+# A Hawk Among the Doves: a neighbor's falcon has expensive tastes
+estex_estate.3304 = {
+	type = character_event
+	title = estex_estate.3304.t
+	desc = {
+		desc = estex_estate.3304.desc
+		desc = estex_source_dovecote
+	}
+	theme = diplomacy
+
+	cooldown = { years = 6 }
+
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:fe_hawk_owner
+		animation = personality_bold
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_dovecote }
+		any_neighboring_and_across_water_realm_owner = { count >= 1 }
+	}
+
+	immediate = {
+		random_neighboring_and_across_water_realm_owner = {
+			save_scope_as = fe_hawk_owner
+		}
+	}
+
+	option = { # Demand compensation
+		name = estex_estate.3304.a
+		add_gold = 15
+		scope:fe_hawk_owner = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -10
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+	option = { # Shoot the hawk
+		name = estex_estate.3304.b
+		add_dread = 3
+		scope:fe_hawk_owner = {
+			add_opinion = {
+				target = root
+				modifier = insulted_opinion
+			}
+		}
+		ai_chance = { base = 25 }
+	}
+	option = { # A magnificent bird. Offer to buy it
+		name = estex_estate.3304.c
+		remove_short_term_gold = 20
+		add_prestige = 10
+		scope:fe_hawk_owner = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 10
+			}
+		}
+		ai_chance = { base = 35 }
+	}
+}
+
+# Pigeon Pie: the kitchen has committed a crime
+estex_estate.3305 = {
+	type = character_event
+	title = estex_estate.3305.t
+	desc = {
+		desc = estex_estate.3305.desc
+		desc = estex_source_rookery
+	}
+	theme = stewardship
+
+	cooldown = { years = 6 }
+
+	left_portrait = {
+		character = root
+		animation = disapproval
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_rookery }
+	}
+
+	option = { # That bird was worth more than the cook
+		name = estex_estate.3305.a
+		add_dread = 3
+		stress_impact = {
+			compassionate = minor_stress_impact_gain
+		}
+		ai_chance = { base = 40 }
+	}
+	option = { # It was, admittedly, delicious
+		name = estex_estate.3305.b
+		add_stress = minor_stress_loss
+		ai_chance = { base = 60 }
+	}
+}
+
+# The Homing Instinct: a bird comes home years too late
+estex_estate.3306 = {
+	type = character_event
+	title = estex_estate.3306.t
+	desc = {
+		desc = estex_estate.3306.desc
+		desc = estex_source_dovecote
+	}
+	theme = faith
+
+	cooldown = { years = 30 }
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_dovecote }
+	}
+
+	option = { # Read the old words
+		name = estex_estate.3306.a
+		add_prestige = 15
+		ai_chance = { base = 60 }
+	}
+	option = { # Bury it unread, with honor
+		name = estex_estate.3306.b
+		add_piety = 25
+		ai_chance = { base = 40 }
+	}
+}
+
+# Guano Gold: the gardens have never looked better
+estex_estate.3307 = {
+	type = character_event
+	title = estex_estate.3307.t
+	desc = {
+		desc = estex_estate.3307.desc
+		desc = estex_source_dovecote
+	}
+	theme = stewardship
+
+	cooldown = { years = 5 }
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_dovecote }
+	}
+
+	option = { # Sell the surplus
+		name = estex_estate.3307.a
+		add_gold = 15
+		ai_chance = { base = 60 }
+	}
+	option = { # Gift it to the village priest's garden
+		name = estex_estate.3307.b
+		add_piety = 20
+		ai_chance = { base = 40 }
+	}
+}
