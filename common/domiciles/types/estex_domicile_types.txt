@@ -848,8 +848,10 @@
 	# Just the green terrain background for now, we can bring back the per terrain
 	# and culture variants once the estate look settles down
 	domicile_asset = {
-		background = "gfx/interface/window_domiciles/estate_background_green_terrain.dds"
-		foreground = "gfx/interface/window_domiciles/estate_background_green_terrain_foreground.dds"
+		background = "gfx/interface/window_domiciles/estex_estate_background_plain_terrain.dds"
+		# old green terrain foreground kept handy in case the scene needs framing,
+		# it draws vanilla foliage over the edges so probably clashes with the new art
+		#foreground = "gfx/interface/window_domiciles/estate_background_green_terrain_foreground.dds"
 		ambience = "event:/DLC/EP3/SFX/Ambience/2D/Domicile/ep3_amb_2d_domicile_green_lands"
 	}
 }

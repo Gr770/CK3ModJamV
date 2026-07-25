@@ -48,6 +48,9 @@ estex_estate_main_02 = {
 	parameters = {
 		reduce_success_of_raid_estate = yes
 		estate_increase_house_member_investment_cap_1 = yes
+		# display only, the actual unlock check in the castellan position looks at
+		# has_domicile_building_or_higher directly
+		estex_estate_unlocks_castellan = yes
 	}
 
 	character_modifier = {
