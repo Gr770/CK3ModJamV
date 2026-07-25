@@ -425,7 +425,7 @@ estate_main_05 = {
 ### Diplomacy Upgrade
 living_quarters_01 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -462,7 +462,7 @@ living_quarters_01 = {
 }
 living_quarters_02 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = living_quarters_01
 
@@ -501,7 +501,7 @@ living_quarters_02 = {
 }
 living_quarters_03 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = living_quarters_02
 
@@ -543,7 +543,7 @@ living_quarters_03 = {
 }
 living_quarters_04 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = living_quarters_03
 
@@ -620,7 +620,7 @@ trophy_room_01 = {
 }
 trophy_room_02 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = trophy_room_01
 
@@ -653,7 +653,7 @@ trophy_room_02 = {
 }
 trophy_room_03 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = trophy_room_02
 
@@ -694,7 +694,7 @@ trophy_room_03 = {
 }
 trophy_room_04 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = trophy_room_03
 
@@ -738,7 +738,7 @@ trophy_room_04 = {
 ### Stewardship Upgrade
 office_01 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -775,7 +775,7 @@ office_01 = {
 }
 office_02 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = office_01
 
@@ -813,7 +813,7 @@ office_02 = {
 }
 office_03 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = office_02
 
@@ -856,7 +856,7 @@ office_03 = {
 }
 office_04 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = office_03
 
@@ -902,7 +902,7 @@ office_04 = {
 ### Intrigue Upgrade
 servants_quarters_01 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -935,7 +935,7 @@ servants_quarters_01 = {
 }
 servants_quarters_02 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = servants_quarters_01
 
@@ -971,7 +971,7 @@ servants_quarters_02 = {
 }
 servants_quarters_03 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = servants_quarters_02
 
@@ -1012,7 +1012,7 @@ servants_quarters_03 = {
 }
 servants_quarters_04 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = servants_quarters_03
 
@@ -1057,7 +1057,7 @@ servants_quarters_04 = {
 ### Learning Upgrade
 library_01 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -1093,7 +1093,7 @@ library_01 = {
 }
 library_02 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = library_01
 
@@ -1131,7 +1131,7 @@ library_02 = {
 # Observatory sub-branch
 library_observatory_03 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = library_02
 
@@ -1172,7 +1172,7 @@ library_observatory_03 = {
 }
 library_observatory_04 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = library_observatory_03
 
@@ -1215,7 +1215,7 @@ library_observatory_04 = {
 # Education sub-branch
 library_education_03 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = library_02
 
@@ -1257,7 +1257,7 @@ library_education_03 = {
 }
 library_education_04 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = library_education_03
 
@@ -1302,7 +1302,7 @@ library_education_04 = {
 ### Bath
 bath_01 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -1339,7 +1339,7 @@ bath_01 = {
 }
 bath_02 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = bath_01
 
@@ -1377,7 +1377,7 @@ bath_02 = {
 }
 bath_03 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = bath_02
 
@@ -1419,7 +1419,7 @@ bath_03 = {
 }
 bath_04 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = bath_03
 
@@ -1463,7 +1463,7 @@ bath_04 = {
 ### Guest Room
 guest_room_01 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -1504,7 +1504,7 @@ guest_room_01 = {
 }
 guest_room_02 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = guest_room_01
 
@@ -1548,7 +1548,7 @@ guest_room_02 = {
 }
 guest_room_03 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = guest_room_02
 
@@ -1597,7 +1597,7 @@ guest_room_03 = {
 }
 guest_room_04 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = guest_room_03
 
@@ -1645,7 +1645,7 @@ guest_room_04 = {
 }
 guest_room_05 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = guest_room_04
 
@@ -1694,7 +1694,7 @@ guest_room_05 = {
 }
 guest_room_06 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = guest_room_05
 
@@ -2233,7 +2233,7 @@ prison_04 = {
 ### Reception Hall
 reception_hall_01 = {
 	construction_time = 1000
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -2275,7 +2275,7 @@ reception_hall_01 = {
 
 reception_hall_02 = {
 	construction_time = 1000
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = reception_hall_01
 
@@ -2318,7 +2318,7 @@ reception_hall_02 = {
 
 reception_hall_03 = {
 	construction_time = 1000
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = reception_hall_02
 
@@ -2362,7 +2362,7 @@ reception_hall_03 = {
 
 reception_hall_04 = {
 	construction_time = 1000
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = reception_hall_03
 
@@ -2406,7 +2406,7 @@ reception_hall_04 = {
 
 reception_hall_05 = {
 	construction_time = 1000
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = reception_hall_04
 
@@ -2451,7 +2451,7 @@ reception_hall_05 = {
 ### Cabinet of Curiosities
 cabinet_of_curiosities_01 = {
 	construction_time = 1000 
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -2495,7 +2495,7 @@ cabinet_of_curiosities_01 = {
 
 cabinet_of_curiosities_02 = {
 	construction_time = 1000 
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = cabinet_of_curiosities_01
 
@@ -2549,7 +2549,7 @@ cabinet_of_curiosities_02 = {
 
 cabinet_of_curiosities_03 = {
 	construction_time = 1000 
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = cabinet_of_curiosities_02
 
@@ -2606,7 +2606,7 @@ cabinet_of_curiosities_03 = {
 #Grand Solar
 grand_solar_01 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = estate_main_01
 
@@ -2647,7 +2647,7 @@ grand_solar_01 = {
 
 grand_solar_02 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = grand_solar_01
 
@@ -2688,7 +2688,7 @@ grand_solar_02 = {
 
 grand_solar_03 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = grand_solar_02
 
@@ -2731,7 +2731,7 @@ grand_solar_03 = {
 
 grand_solar_04 = {
 	construction_time = 730
-	allowed_domicile_types = { estate estex_estate }
+	allowed_domicile_types = { estate }
 	slot_type = internal
 	previous_building = grand_solar_03
 
