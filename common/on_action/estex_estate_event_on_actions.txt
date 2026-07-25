@@ -27,6 +27,23 @@ estex_estate_yearly_pulse = {
 		20 = estex_estate.2002
 		75 = estex_estate.2003
 		75 = estex_estate.2004
+		# tournament grounds
+		75 = estex_estate.3001
+		75 = estex_estate.3002
+		50 = estex_estate.3003
+		50 = estex_estate.3004
+		50 = estex_estate.3005
+		15 = estex_estate.3006
+		# cells and dungeon
+		75 = estex_estate.3101
+		75 = estex_estate.3102
+		25 = estex_estate.3103
+		75 = estex_estate.3104
+		50 = estex_estate.3105
+		50 = estex_estate.3106
+		# crossovers
+		50 = estex_estate.3201
+		50 = estex_estate.3202
 	}
 }
 
@@ -46,5 +63,19 @@ estex_estate_debug_pulse = {
 		100 = estex_estate.2002
 		100 = estex_estate.2003
 		100 = estex_estate.2004
+		100 = estex_estate.3001
+		100 = estex_estate.3002
+		100 = estex_estate.3003
+		100 = estex_estate.3004
+		100 = estex_estate.3005
+		100 = estex_estate.3006
+		100 = estex_estate.3101
+		100 = estex_estate.3102
+		100 = estex_estate.3103
+		100 = estex_estate.3104
+		100 = estex_estate.3105
+		100 = estex_estate.3106
+		100 = estex_estate.3201
+		100 = estex_estate.3202
 	}
 }

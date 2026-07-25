@@ -10,7 +10,10 @@
 estex_estate.1001 = {
 	type = character_event
 	title = estex_estate.1001.t
-	desc = estex_estate.1001.desc
+	desc = {
+		desc = estex_estate.1001.desc
+		desc = estex_source_castellan
+	}
 	theme = travel_stewardship
 
 	cooldown = { years = 5 }
@@ -66,7 +69,10 @@ estex_estate.1001 = {
 estex_estate.1002 = {
 	type = character_event
 	title = estex_estate.1002.t
-	desc = estex_estate.1002.desc
+	desc = {
+		desc = estex_estate.1002.desc
+		desc = estex_source_castellan
+	}
 	theme = travel_stewardship
 
 	cooldown = { years = 5 }
@@ -123,7 +129,10 @@ estex_estate.1002 = {
 estex_estate.1003 = {
 	type = character_event
 	title = estex_estate.1003.t
-	desc = estex_estate.1003.desc
+	desc = {
+		desc = estex_estate.1003.desc
+		desc = estex_source_castellan
+	}
 	theme = corruption
 
 	cooldown = { years = 10 }
@@ -184,7 +193,10 @@ estex_estate.1003 = {
 estex_estate.1010 = {
 	type = character_event
 	title = estex_estate.1010.t
-	desc = estex_estate.1010.desc
+	desc = {
+		desc = estex_estate.1010.desc
+		desc = estex_source_castellan
+	}
 	theme = stewardship
 
 	cooldown = { years = 15 }
@@ -236,7 +248,10 @@ estex_estate.1010 = {
 estex_estate.1011 = {
 	type = character_event
 	title = estex_estate.1011.t
-	desc = estex_estate.1011.desc
+	desc = {
+		desc = estex_estate.1011.desc
+		desc = estex_source_castellan
+	}
 	theme = stewardship
 
 	cooldown = { years = 20 }
@@ -289,7 +304,10 @@ estex_estate.1011 = {
 estex_estate.2001 = {
 	type = character_event
 	title = estex_estate.2001.t
-	desc = estex_estate.2001.desc
+	desc = {
+		desc = estex_estate.2001.desc
+		desc = estex_source_hunting_grounds
+	}
 	theme = hunting
 
 	cooldown = { years = 4 }
@@ -332,7 +350,10 @@ estex_estate.2001 = {
 estex_estate.2002 = {
 	type = character_event
 	title = estex_estate.2002.t
-	desc = estex_estate.2002.desc
+	desc = {
+		desc = estex_estate.2002.desc
+		desc = estex_source_deer_park
+	}
 	theme = hunting
 
 	cooldown = { years = 20 }
@@ -370,7 +391,10 @@ estex_estate.2002 = {
 estex_estate.2007 = {
 	type = character_event
 	title = estex_estate.2007.t
-	desc = estex_estate.2007.desc
+	desc = {
+		desc = estex_estate.2007.desc
+		desc = estex_source_deer_park
+	}
 	theme = hunting
 
 	left_portrait = {
@@ -444,7 +468,10 @@ estex_estate.2007 = {
 estex_estate.2005 = {
 	type = character_event
 	title = estex_estate.2005.t
-	desc = estex_estate.2005.desc
+	desc = {
+		desc = estex_estate.2005.desc
+		desc = estex_source_deer_park
+	}
 	theme = hunting
 
 	immediate = {
@@ -489,7 +516,10 @@ estex_estate.2005 = {
 estex_estate.2006 = {
 	type = character_event
 	title = estex_estate.2006.t
-	desc = estex_estate.2006.desc
+	desc = {
+		desc = estex_estate.2006.desc
+		desc = estex_source_deer_park
+	}
 	theme = hunting
 
 	immediate = {
@@ -520,7 +550,10 @@ estex_estate.2006 = {
 estex_estate.2003 = {
 	type = character_event
 	title = estex_estate.2003.t
-	desc = estex_estate.2003.desc
+	desc = {
+		desc = estex_estate.2003.desc
+		desc = estex_source_fishponds
+	}
 	theme = stewardship
 
 	cooldown = { years = 5 }
@@ -560,7 +593,10 @@ estex_estate.2003 = {
 estex_estate.2004 = {
 	type = character_event
 	title = estex_estate.2004.t
-	desc = estex_estate.2004.desc
+	desc = {
+		desc = estex_estate.2004.desc
+		desc = estex_source_hunting_grounds
+	}
 	theme = hunting
 
 	cooldown = { years = 5 }
@@ -598,5 +634,1022 @@ estex_estate.2004 = {
 		name = estex_estate.2004.b
 		add_stress = minor_stress_loss
 		ai_chance = { base = 30 }
+	}
+}
+
+
+##################################################
+# Tournament grounds events (3001-3006)
+##################################################
+
+# The Broken Lance: a visiting knight is badly unhorsed at your lists
+estex_estate.3001 = {
+	type = character_event
+	title = estex_estate.3001.t
+	override_background = { reference = ep2_tournament }
+	desc = {
+		desc = estex_estate.3001.desc
+		desc = estex_source_tournament_grounds
+	}
+	theme = martial
+
+	cooldown = { years = 7 }
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	right_portrait = {
+		character = scope:fe_lance_knight
+		animation = sadness
+	}
+	lower_right_portrait = {
+		character = scope:fe_lance_rival
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_tournament_grounds }
+	}
+
+	immediate = {
+		create_character = {
+			template = wandering_knight_character
+			location = root.capital_province
+			save_scope_as = fe_lance_knight
+		}
+		create_character = {
+			template = wandering_knight_character
+			location = root.capital_province
+			save_scope_as = fe_lance_rival
+		}
+		scope:fe_lance_knight = { add_trait = wounded_1 }
+	}
+
+	option = { # Pay his debts, take him into service
+		name = estex_estate.3001.a
+		remove_short_term_gold = 25
+		add_courtier = scope:fe_lance_knight
+		scope:fe_lance_knight = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 25
+			}
+		}
+		scope:fe_lance_rival = { silent_disappearance_effect = yes }
+		ai_chance = { base = 40 }
+	}
+	option = { # His rival fought better anyway
+		name = estex_estate.3001.b
+		add_courtier = scope:fe_lance_rival
+		scope:fe_lance_knight = { silent_disappearance_effect = yes }
+		ai_chance = { base = 30 }
+	}
+	option = { # It is a rough sport
+		name = estex_estate.3001.c
+		add_prestige = 15
+		scope:fe_lance_knight = { silent_disappearance_effect = yes }
+		scope:fe_lance_rival = { silent_disappearance_effect = yes }
+		ai_chance = { base = 30 }
+	}
+}
+
+# Local Lads at the Butts: a commoner outshoots your soldiers
+estex_estate.3002 = {
+	type = character_event
+	title = estex_estate.3002.t
+	override_background = { reference = ep2_tournament }
+	desc = {
+		desc = estex_estate.3002.desc
+		desc = estex_source_archery_butts
+	}
+	theme = martial
+
+	cooldown = { years = 7 }
+
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+
+	right_portrait = {
+		character = scope:fe_archer
+		animation = shame
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_archery_butts }
+	}
+
+	immediate = {
+		create_character = {
+			location = root.capital_province
+			culture = root.culture
+			faith = root.faith
+			gender = male
+			age = { 18 25 }
+			martial = { 8 14 }
+			prowess = { 10 16 }
+			random_traits = yes
+			save_scope_as = fe_archer
+		}
+	}
+
+	option = { # Reward such an arm
+		name = estex_estate.3002.a
+		remove_short_term_gold = 15
+		add_prestige = 25
+		scope:fe_archer = { silent_disappearance_effect = yes }
+		ai_chance = { base = 40 }
+	}
+	option = { # Take him into my service
+		name = estex_estate.3002.b
+		add_courtier = scope:fe_archer
+		ai_chance = { base = 40 }
+	}
+	option = { # Embarrassing my soldiers is unwise
+		name = estex_estate.3002.c
+		add_dread = 5
+		stress_impact = {
+			compassionate = minor_stress_impact_gain
+		}
+		scope:fe_archer = { silent_disappearance_effect = yes }
+		ai_chance = { base = 20 }
+	}
+}
+
+# A Challenger Arrives: a wandering knight demands to try your lists
+estex_estate.3003 = {
+	type = character_event
+	title = estex_estate.3003.t
+	override_background = { reference = ep2_tournament }
+	desc = {
+		desc = estex_estate.3003.desc
+		desc = estex_source_tournament_grounds
+	}
+	theme = martial
+
+	cooldown = { years = 7 }
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:fe_challenger
+		animation = aggressive_sword
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_tournament_grounds }
+		is_available_adult = yes
+	}
+
+	immediate = {
+		create_character = {
+			template = wandering_knight_character
+			location = root.capital_province
+			save_scope_as = fe_challenger
+		}
+	}
+
+	option = { # I will answer him myself
+		name = estex_estate.3003.a
+		custom_tooltip = estex_estate.3003.a.tt
+		hidden_effect = {
+			random_list = {
+				50 = {
+					modifier = {
+						add = 30
+						prowess >= 12
+					}
+					modifier = {
+						add = 15
+						prowess >= 8
+					}
+					trigger_event = {
+						id = estex_estate.3007
+						days = 1
+					}
+				}
+				50 = {
+					trigger_event = {
+						id = estex_estate.3008
+						days = 1
+					}
+				}
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+	option = { # My champion will see to it
+		name = estex_estate.3003.b
+		trigger = {
+			exists = court_position:champion_court_position
+		}
+		add_prestige = 25
+		scope:fe_challenger = { silent_disappearance_effect = yes }
+		ai_chance = { base = 30 }
+	}
+	option = { # Turn him away
+		name = estex_estate.3003.c
+		add_prestige = -15
+		scope:fe_challenger = { silent_disappearance_effect = yes }
+		ai_chance = { base = 20 }
+	}
+}
+
+# Challenger follow up: you unhorse him
+estex_estate.3007 = {
+	type = character_event
+	title = estex_estate.3007.t
+	override_background = { reference = ep2_tournament }
+	desc = {
+		desc = estex_estate.3007.desc
+		desc = estex_source_tournament_grounds
+	}
+	theme = martial
+
+	left_portrait = {
+		character = root
+		animation = celebrate_spear
+	}
+	right_portrait = {
+		character = scope:fe_challenger
+		animation = sadness
+	}
+
+	immediate = {
+		add_prestige = 75
+	}
+
+	option = { # You fight well. Serve me
+		name = estex_estate.3007.a
+		add_courtier = scope:fe_challenger
+		scope:fe_challenger = {
+			add_opinion = {
+				target = root
+				modifier = impressed_opinion
+				opinion = 20
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+	option = { # A good bout. Send him on his way
+		name = estex_estate.3007.b
+		scope:fe_challenger = { silent_disappearance_effect = yes }
+		ai_chance = { base = 50 }
+	}
+}
+
+# Challenger follow up: he puts you in the dirt
+estex_estate.3008 = {
+	type = character_event
+	title = estex_estate.3008.t
+	override_background = { reference = ep2_tournament }
+	desc = {
+		desc = estex_estate.3008.desc
+		desc = estex_source_tournament_grounds
+	}
+	theme = martial
+
+	left_portrait = {
+		character = root
+		animation = shame
+	}
+	right_portrait = {
+		character = scope:fe_challenger
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_prestige = -25
+		add_stress = minor_stress_gain
+	}
+
+	option = { # Well struck, sir
+		name = estex_estate.3008.a
+		add_prestige = 10
+		scope:fe_challenger = { silent_disappearance_effect = yes }
+		ai_chance = { base = 60 }
+	}
+	option = { # Get out of my sight
+		name = estex_estate.3008.b
+		add_dread = 2
+		scope:fe_challenger = { silent_disappearance_effect = yes }
+		ai_chance = { base = 40 }
+	}
+}
+
+# The Grudge Match: two of your knights want to settle a feud at your grounds
+estex_estate.3004 = {
+	type = character_event
+	title = estex_estate.3004.t
+	override_background = { reference = ep2_tournament }
+	desc = {
+		desc = estex_estate.3004.desc
+		desc = estex_source_tournament_grounds
+	}
+	theme = martial
+
+	cooldown = { years = 8 }
+
+	left_portrait = {
+		character = scope:fe_knight_a
+		animation = aggressive_sword
+	}
+	right_portrait = {
+		character = scope:fe_knight_b
+		animation = anger
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_tournament_grounds }
+		number_of_knights >= 2
+	}
+
+	immediate = {
+		random_knight = { save_scope_as = fe_knight_a }
+		random_knight = {
+			limit = { NOT = { this = scope:fe_knight_a } }
+			save_scope_as = fe_knight_b
+		}
+	}
+
+	option = { # Let them settle it before witnesses
+		name = estex_estate.3004.a
+		add_prestige = 25
+		custom_tooltip = estex_estate.3004.a.tt
+		hidden_effect = {
+			random_list = {
+				50 = {
+					scope:fe_knight_b = { add_trait = wounded_1 }
+				}
+				50 = {
+					scope:fe_knight_a = { add_trait = wounded_1 }
+				}
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+	option = { # Forbid it
+		name = estex_estate.3004.b
+		scope:fe_knight_a = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -10
+			}
+		}
+		scope:fe_knight_b = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -10
+			}
+		}
+		ai_chance = { base = 30 }
+	}
+	option = { # Let them fight, and take wagers
+		name = estex_estate.3004.c
+		add_gold = 20
+		add_dread = 3
+		scope:fe_knight_a = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -5
+			}
+		}
+		scope:fe_knight_b = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -5
+			}
+		}
+		ai_chance = { base = 30 }
+	}
+}
+
+# Seats of Honor: precedence feud in the berfrois
+estex_estate.3005 = {
+	type = character_event
+	title = estex_estate.3005.t
+	override_background = { reference = ep2_tournament }
+	desc = {
+		desc = estex_estate.3005.desc
+		desc = estex_source_berfrois
+	}
+	theme = diplomacy
+
+	cooldown = { years = 6 }
+
+	left_portrait = {
+		character = scope:fe_guest_a
+		animation = disapproval
+	}
+	right_portrait = {
+		character = scope:fe_guest_b
+		animation = anger
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_berfrois }
+		any_courtier = {
+			count >= 2
+			is_adult = yes
+		}
+	}
+
+	immediate = {
+		random_courtier = {
+			limit = { is_adult = yes }
+			save_scope_as = fe_guest_a
+		}
+		random_courtier = {
+			limit = {
+				is_adult = yes
+				NOT = { this = scope:fe_guest_a }
+			}
+			save_scope_as = fe_guest_b
+		}
+	}
+
+	option = { # Smooth it over
+		name = estex_estate.3005.a
+		random_list = {
+			50 = {
+				modifier = {
+					add = 30
+					diplomacy >= 12
+				}
+				modifier = {
+					add = 15
+					diplomacy >= 8
+				}
+				custom_tooltip = estex_estate.3005.a.win.tt
+				scope:fe_guest_a = {
+					add_opinion = {
+						target = root
+						modifier = grateful_opinion
+						opinion = 10
+					}
+				}
+				scope:fe_guest_b = {
+					add_opinion = {
+						target = root
+						modifier = grateful_opinion
+						opinion = 10
+					}
+				}
+			}
+			50 = {
+				custom_tooltip = estex_estate.3005.a.lose.tt
+				scope:fe_guest_b = {
+					add_opinion = {
+						target = root
+						modifier = disappointed_opinion
+						opinion = -10
+					}
+				}
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+	option = { # Rank is rank
+		name = estex_estate.3005.b
+		scope:fe_guest_a = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		scope:fe_guest_b = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -15
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+# The Old Champion: a faded tourney legend offers his last years
+estex_estate.3006 = {
+	type = character_event
+	title = estex_estate.3006.t
+	override_background = { reference = ep2_tournament }
+	desc = {
+		desc = estex_estate.3006.desc
+		desc = estex_source_tournament_grounds
+	}
+	theme = martial
+
+	cooldown = { years = 50 }
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	right_portrait = {
+		character = scope:fe_champion
+		animation = obsequious_bow
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_tournament_grounds }
+		gold >= 35
+	}
+
+	immediate = {
+		create_character = {
+			template = old_knight_teacher
+			location = root.capital_province
+			save_scope_as = fe_champion
+		}
+	}
+
+	option = { # There is a place for you here
+		name = estex_estate.3006.a
+		remove_short_term_gold = 35
+		add_courtier = scope:fe_champion
+		add_character_modifier = {
+			modifier = estex_old_champion_modifier
+			years = 10
+		}
+		scope:fe_champion = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 20
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+	option = { # We have masters enough
+		name = estex_estate.3006.b
+		scope:fe_champion = { silent_disappearance_effect = yes }
+		ai_chance = { base = 50 }
+	}
+}
+
+##################################################
+# Cells and dungeon events (3101-3106)
+##################################################
+
+# Sounds From Below: the household hears the cells at night
+estex_estate.3101 = {
+	type = character_event
+	title = estex_estate.3101.t
+	desc = {
+		desc = estex_estate.3101.desc
+		desc = estex_source_cells
+	}
+	theme = dungeon
+
+	cooldown = { years = 5 }
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_cells }
+		any_prisoner = { count >= 1 }
+	}
+
+	option = { # Let them wail
+		name = estex_estate.3101.a
+		add_dread = 3
+		ai_chance = { base = 40 }
+	}
+	option = { # Good. Let it carry
+		name = estex_estate.3101.b
+		add_dread = 8
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+		}
+		ai_chance = { base = 30 }
+	}
+	option = { # See to their comfort
+		name = estex_estate.3101.c
+		remove_short_term_gold = 10
+		add_piety = 10
+		ai_chance = { base = 30 }
+	}
+}
+
+# The Escape Attempt: same event, three flavors by dungeon tier
+estex_estate.3102 = {
+	type = character_event
+	title = estex_estate.3102.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { domicile ?= { has_domicile_parameter = estex_estate_has_oubliette } }
+				desc = estex_estate.3102.desc.oubliette
+			}
+			triggered_desc = {
+				trigger = { domicile ?= { has_domicile_parameter = estex_estate_has_dungeon } }
+				desc = estex_estate.3102.desc.dungeon
+			}
+			desc = estex_estate.3102.desc.cells
+		}
+		desc = estex_source_cells
+	}
+	theme = dungeon
+
+	cooldown = { years = 5 }
+
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	right_portrait = {
+		character = scope:fe_escapee
+		animation = prisonhouse
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_cells }
+		any_prisoner = { count >= 1 }
+	}
+
+	immediate = {
+		random_prisoner = { save_scope_as = fe_escapee }
+	}
+
+	option = { # So it goes
+		name = estex_estate.3102.a
+		if = {
+			limit = { domicile ?= { has_domicile_parameter = estex_estate_has_oubliette } }
+			custom_tooltip = estex_estate.3102.a.oubliette.tt
+			add_dread = 5
+		}
+		else_if = {
+			limit = { domicile ?= { has_domicile_parameter = estex_estate_has_dungeon } }
+			custom_tooltip = estex_estate.3102.a.dungeon.tt
+			add_dread = 3
+		}
+		else = {
+			random_list = {
+				50 = {
+					custom_tooltip = estex_estate.3102.a.escaped.tt
+					hidden_effect = {
+						# the notification names the escapee and shows the fallout
+						send_interface_message = {
+							type = event_intrigue_bad
+							title = estex_estate.3102.message
+							left_icon = scope:fe_escapee
+							scope:fe_escapee = { release_from_prison = yes }
+							add_dread = -5
+						}
+					}
+				}
+				50 = {
+					custom_tooltip = estex_estate.3102.a.caught.tt
+					add_dread = 3
+				}
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+	option = { # Double the watch
+		name = estex_estate.3102.b
+		remove_short_term_gold = 10
+		add_dread = 2
+		ai_chance = { base = 40 }
+	}
+}
+
+# A Name You Forgot: the oubliette keeps what it is given
+estex_estate.3103 = {
+	type = character_event
+	title = estex_estate.3103.t
+	desc = {
+		desc = estex_estate.3103.desc
+		desc = estex_source_oubliette
+	}
+	theme = dungeon
+
+	cooldown = { years = 20 }
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_oubliette }
+	}
+
+	option = { # I meant every day of it
+		name = estex_estate.3103.a
+		add_dread = 10
+		ai_chance = { base = 40 }
+	}
+	option = { # I had honestly forgotten
+		name = estex_estate.3103.b
+		add_stress = minor_stress_gain
+		ai_chance = { base = 30 }
+	}
+	option = { # Bring them up. Give them burial
+		name = estex_estate.3103.c
+		add_piety = 35
+		add_dread = -5
+		ai_chance = { base = 30 }
+	}
+}
+
+# The Question: the interrogation chamber earns its keep
+estex_estate.3104 = {
+	type = character_event
+	title = estex_estate.3104.t
+	desc = {
+		desc = estex_estate.3104.desc
+		desc = estex_source_interrogation
+	}
+	theme = dungeon
+
+	cooldown = { years = 8 }
+
+	left_portrait = {
+		character = root
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:fe_prisoner
+		animation = fear
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_interrogation_chamber }
+		any_prisoner = { count >= 1 }
+	}
+
+	immediate = {
+		random_prisoner = {
+			limit = { any_secret = { count >= 1 } }
+			save_scope_as = fe_prisoner
+		}
+		if = {
+			limit = { NOT = { exists = scope:fe_prisoner } }
+			random_prisoner = { save_scope_as = fe_prisoner }
+		}
+	}
+
+	option = { # Put the question
+		name = estex_estate.3104.a
+		if = {
+			limit = { scope:fe_prisoner = { any_secret = { count >= 1 } } }
+			custom_tooltip = estex_estate.3104.a.secret.tt
+			hidden_effect = {
+				# the message shows the player exactly which secret was pried loose
+				send_interface_message = {
+					type = event_intrigue_good
+					title = estex_estate.3104.message
+					left_icon = scope:fe_prisoner
+					scope:fe_prisoner = {
+						random_secret = { reveal_to = root }
+						add_opinion = {
+							target = root
+							modifier = insulted_opinion
+						}
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = estex_estate.3104.a.nothing.tt
+			add_dread = 5
+		}
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+		}
+		ai_chance = { base = 60 }
+	}
+	option = { # Not today
+		name = estex_estate.3104.b
+		ai_chance = { base = 40 }
+	}
+}
+
+# The Ransom Note: a family that cannot pay in coin
+estex_estate.3105 = {
+	type = character_event
+	title = estex_estate.3105.t
+	desc = {
+		desc = estex_estate.3105.desc
+		desc = estex_source_cells
+	}
+	theme = dungeon
+
+	cooldown = { years = 8 }
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	right_portrait = {
+		character = scope:fe_prisoner
+		animation = worry
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_cells }
+		any_prisoner = { count >= 1 }
+	}
+
+	immediate = {
+		random_prisoner = { save_scope_as = fe_prisoner }
+	}
+
+	option = { # A favor, then. Owed and remembered
+		name = estex_estate.3105.a
+		add_hook = {
+			type = favor_hook
+			target = scope:fe_prisoner
+		}
+		hidden_effect = {
+			scope:fe_prisoner = { release_from_prison = yes }
+		}
+		ai_chance = { base = 40 }
+	}
+	option = { # Coin or nothing
+		name = estex_estate.3105.b
+		add_gold = 25
+		hidden_effect = {
+			scope:fe_prisoner = { release_from_prison = yes }
+		}
+		ai_chance = { base = 40 }
+	}
+	option = { # They stay where they are
+		name = estex_estate.3105.c
+		add_dread = 3
+		ai_chance = { base = 20 }
+	}
+}
+
+# Rats in the Walls: the damp takes its toll below
+estex_estate.3106 = {
+	type = character_event
+	title = estex_estate.3106.t
+	desc = {
+		desc = estex_estate.3106.desc
+		desc = estex_source_dungeon
+	}
+	theme = dungeon
+
+	cooldown = { years = 6 }
+
+	left_portrait = {
+		character = root
+		animation = disapproval
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_dungeon }
+		any_prisoner = { count >= 1 }
+	}
+
+	option = { # Pay for repairs
+		name = estex_estate.3106.a
+		remove_short_term_gold = 15
+		ai_chance = { base = 60 }
+	}
+	option = { # Prisoners cannot be choosers
+		name = estex_estate.3106.b
+		custom_tooltip = estex_estate.3106.b.tt
+		hidden_effect = {
+			random_prisoner = { add_trait = ill }
+		}
+		add_dread = 2
+		stress_impact = {
+			compassionate = minor_stress_impact_gain
+		}
+		ai_chance = { base = 40 }
+	}
+}
+
+##################################################
+# Crossover events (3201-3202)
+##################################################
+
+# A Guest of Quality: highborn captive, two very different doors
+estex_estate.3201 = {
+	type = character_event
+	title = estex_estate.3201.t
+	desc = {
+		desc = estex_estate.3201.desc
+		desc = estex_source_guest_quarters
+	}
+	theme = hostage
+
+	cooldown = { years = 6 }
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	right_portrait = {
+		character = scope:fe_guest
+		animation = worry
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_cells }
+		domicile ?= { has_domicile_parameter = estex_estate_has_guest_quarters }
+		any_prisoner = { is_lowborn = no }
+	}
+
+	immediate = {
+		random_prisoner = {
+			limit = { is_lowborn = no }
+			save_scope_as = fe_guest
+		}
+	}
+
+	option = { # Rooms befitting their station
+		name = estex_estate.3201.a
+		scope:fe_guest = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 20
+			}
+		}
+		add_gold = 15
+		ai_chance = { base = 60 }
+	}
+	option = { # The cells will do
+		name = estex_estate.3201.b
+		add_dread = 5
+		ai_chance = { base = 40 }
+	}
+}
+
+# The Sore Loser: a defeated knight caught cutting a saddle girth
+estex_estate.3202 = {
+	type = character_event
+	title = estex_estate.3202.t
+	override_background = { reference = ep2_tournament }
+	desc = {
+		desc = estex_estate.3202.desc
+		desc = estex_source_tournament_grounds
+	}
+	theme = martial
+
+	cooldown = { years = 7 }
+
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:fe_loser
+		animation = fear
+	}
+
+	trigger = {
+		domicile ?= { has_domicile_parameter = estex_estate_has_tournament_grounds }
+	}
+
+	immediate = {
+		create_character = {
+			template = wandering_knight_character
+			location = root.capital_province
+			save_scope_as = fe_loser
+		}
+	}
+
+	option = { # Fine him and be done
+		name = estex_estate.3202.a
+		add_gold = 15
+		scope:fe_loser = { silent_disappearance_effect = yes }
+		ai_chance = { base = 40 }
+	}
+	option = { # Throw him in the cells
+		name = estex_estate.3202.b
+		trigger = {
+			domicile ?= { has_domicile_parameter = estex_estate_has_cells }
+		}
+		imprison = {
+			target = scope:fe_loser
+			type = dungeon
+		}
+		add_dread = 5
+		add_prestige = 15
+		ai_chance = { base = 40 }
+	}
+	option = { # Let him slink home
+		name = estex_estate.3202.c
+		scope:fe_loser = { silent_disappearance_effect = yes }
+		add_prestige = -10
+		ai_chance = { base = 20 }
 	}
 }

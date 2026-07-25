@@ -1,0 +1,5 @@
+﻿# Timed modifier from the Old Champion event, a retired tourney legend drilling
+# your knights
+estex_old_champion_modifier = {
+	knight_effectiveness_mult = 0.1
+}
