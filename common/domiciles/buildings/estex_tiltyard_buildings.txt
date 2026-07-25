@@ -24,6 +24,7 @@ estex_tournament_grounds_01 = {
 
 	parameters = {
 		estex_estate_has_tournament_grounds = yes
+		estex_tournament_discount_1 = yes
 	}
 
 	ai_value = {
@@ -70,6 +71,7 @@ estex_berfrois_02 = {
 	parameters = {
 		estex_estate_has_tournament_grounds = yes
 		estex_estate_has_berfrois = yes
+		estex_tournament_discount_2 = yes
 	}
 
 	ai_value = {
@@ -115,6 +117,7 @@ estex_jousting_lists_03 = {
 		estex_estate_has_tournament_grounds = yes
 		estex_estate_has_berfrois = yes
 		estex_estate_has_jousting_lists = yes
+		estex_tournament_discount_3 = yes
 	}
 
 	ai_value = {
@@ -158,6 +161,7 @@ estex_archery_butts_03 = {
 		estex_estate_has_tournament_grounds = yes
 		estex_estate_has_berfrois = yes
 		estex_estate_has_archery_butts = yes
+		estex_tournament_discount_3 = yes
 	}
 
 	ai_value = {

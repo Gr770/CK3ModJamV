@@ -1,0 +1,14 @@
+﻿# Tournament hosting discounts from the estate tournament grounds line, scaling
+# by building tier. Stored like the vanilla ones: cost multiplier deltas, so
+# 0.85 - 1 = -0.15 means 15% off. Tier 1 reuses the vanilla discount rate
+estex_tournament_discount_1_value = {
+	value = tournament_activity_cost_discount_value
+}
+estex_tournament_discount_2_value = {
+	value = 0.85
+	subtract = 1
+}
+estex_tournament_discount_3_value = {
+	value = 0.8
+	subtract = 1
+}
