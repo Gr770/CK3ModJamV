@@ -4,10 +4,6 @@
 # Names are the real terms btw: a warren was the right to take small game, a park was
 # an enclosed deer ground (you needed a royal license to empark in England), and a
 # chase was a magnate's larger hunting territory.
-#
-# Art note: using the empty grassland slot texture as a stand in for a forest until
-# we have proper art, so there's just one asset block per building instead of the
-# usual per culture set.
 
 estex_warren_01 = {
 	construction_time = 1 # TESTING, was 365
@@ -42,7 +38,7 @@ estex_warren_01 = {
 
 	asset = {
 		icon = "gfx/interface/icons/domicile_building/domicile_hunt.dds"
-		texture = "gfx/interface/window_domiciles/estate_jungle_empty_03.dds"
+		texture = "gfx/interface/window_domiciles/deer_park.dds"
 		intersectionmask_texture = "gfx/interface/window_domiciles/estate_jungle_empty_03_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_garden_fruit"
 	}
@@ -88,7 +84,9 @@ estex_deer_park_02 = {
 
 	asset = {
 		icon = "gfx/interface/icons/domicile_building/domicile_hunt.dds"
-		texture = "gfx/interface/window_domiciles/estate_jungle_empty_03.dds"
+		# custom art, mask still borrowed from the old placeholder so the hover
+		# outline will be off until a matching mask gets made
+		texture = "gfx/interface/window_domiciles/deer_park.dds"
 		intersectionmask_texture = "gfx/interface/window_domiciles/estate_jungle_empty_03_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_garden_fruit"
 	}
@@ -135,7 +133,8 @@ estex_chase_03 = {
 
 	asset = {
 		icon = "gfx/interface/icons/domicile_building/domicile_building_trackers.dds"
-		texture = "gfx/interface/window_domiciles/estate_jungle_empty_03.dds"
+		# custom art variant 2, borrowed mask same as the deer park
+		texture = "gfx/interface/window_domiciles/deer_park.dds"
 		intersectionmask_texture = "gfx/interface/window_domiciles/estate_jungle_empty_03_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_garden_fruit"
 	}
