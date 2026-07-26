@@ -291,7 +291,7 @@ estex_estate_main_05 = {
 	previous_building = estex_estate_main_04
 	
 	can_construct = {
-		culture ?= { has_innovation = innovation_cranes } #reasonable
+		# culture ?= { has_innovation = innovation_cranes } #reasonable
 	}
 
 	# TESTING, cost disabled
@@ -307,7 +307,9 @@ estex_estate_main_05 = {
 	character_modifier = {
 		domicile_monthly_gold_add = 0.75
 		domicile_monthly_gold_mult = 0.05
-		domicile_external_slots_capacity_add = 1
+		# 2 instead of vanilla's 1, we have a 7th slot and the keep chain's summed
+		# bonus is what sets the slot count, base_external_slots is just the floor
+		domicile_external_slots_capacity_add = 2
 	}
 
 	ai_value = {
