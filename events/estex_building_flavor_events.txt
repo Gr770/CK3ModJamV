@@ -17,17 +17,33 @@ estex_building_flavor.0100 = {
 	option = { # Begin the inspection!
 		name = estex_building_flavor.0100.a
 		random_list = {
-			5 = { # Nothing out of the ordinary
+			10 = { # Nothing out of the ordinary
 				desc = estex_building_flavor.0100.toast.1
 				show_chance = no
+				modifier = {
+					domicile ?= { has_domicile_building_or_higher = estex_kitchen_02 }	
+					add = 5
+				}
+				modifier = {
+					domicile ?= { has_domicile_building_or_higher = estex_kitchen_03 }	
+					add = 5
+				}
 				trigger_event = estex_building_flavor.0101
 			}
-			5 = { # Inspired kitchen staff
+			10 = { # Inspired kitchen staff
 				desc = estex_building_flavor.0100.toast.2
 				show_chance = no
+				modifier = {
+					domicile ?= { has_domicile_building_or_higher = estex_kitchen_02 }	
+					add = 5
+				}
+				modifier = {
+					domicile ?= { has_domicile_building_or_higher = estex_kitchen_03 }	
+					add = 5
+				}
 				trigger_event = estex_building_flavor.0102
 			}
-			5 = { # Very bad!
+			10 = { # Very bad!
 				desc = estex_building_flavor.0100.toast.3
 				show_chance = no
 				trigger_event = estex_building_flavor.0103
@@ -139,3 +155,100 @@ estex_building_flavor.0103 = {
 # 		name = estex_building_flavor.0104.a
 # 	}
 # }
+
+
+
+# Character practices hunting
+estex_building_flavor.0110 = {
+	type = character_event
+	title = estex_building_flavor.0110.t
+	desc = estex_building_flavor.0110.desc
+	theme = hunting
+
+	left_portrait = {
+		character = root
+		triggered_animation = {
+			trigger = {
+				culture_has_central_asian_heritage_pillar_trigger = yes
+			}
+			animation = hunting_shortbow_aim_arrow_default
+		}
+		animation = hunting_knife_start
+	}
+	
+	option = { # Begin the inspection!
+		name = estex_building_flavor.0110.a
+		estex_train_hunting_decision_effect = yes
+	}
+}
+
+# Character enjoys luxurious bath
+estex_building_flavor.0120 = {
+	type = character_event
+	title = estex_building_flavor.0120.t
+	desc = estex_building_flavor.0120.desc
+	theme = friendly
+	override_background  = { reference = bath_house }
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	immediate = {
+		add_character_flag = is_naked
+	}
+	
+	option = { # ok
+		name = estex_building_flavor.0120.a
+		estex_enjoy_luxurious_bath_decision_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = { has_character_flag = is_naked }
+			remove_character_flag = is_naked
+		}		
+	}
+
+}
+
+# Character purchases more dungeon equipment
+estex_building_flavor.0130 = {
+	type = character_event
+	title = estex_building_flavor.0130.t
+	desc = estex_building_flavor.0130.desc
+	theme = intrigue_intimidation_focus
+
+	right_portrait = {
+		character = root
+		animation = hunting_knife_start
+	}
+	
+	option = { # ok
+		name = estex_building_flavor.0130.a
+		estex_purchase_dungeon_equipment_effect = yes
+	}
+
+}
+
+# Character reads inside the library
+estex_building_flavor.0140 = {
+	type = character_event
+	title = estex_building_flavor.0140.t
+	desc = estex_building_flavor.0140.desc
+	theme = learning
+
+	left_portrait = {
+		character = root
+		animation = reading
+	}
+	
+	option = { # ok
+		name = estex_building_flavor.0140.a
+		estex_read_in_library_effect = yes
+	}
+
+}
+
+

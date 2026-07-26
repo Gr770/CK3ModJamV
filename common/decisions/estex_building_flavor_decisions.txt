@@ -1,5 +1,6 @@
 ﻿# Simple flavor decisions based on various estate buildings
 
+# Inspect Kitchens
 estex_inspect_kitchen_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_kitchen.dds" }
 	#decision_group_type = major
@@ -15,7 +16,7 @@ estex_inspect_kitchen_decision = {
 		hegemony = 64
 	}
 
-	#cooldown = { days = 1095 } 
+	cooldown = { days = 1095 } 
 
 	is_shown = {
 		is_playable_character = yes
@@ -23,7 +24,7 @@ estex_inspect_kitchen_decision = {
 	}
 	
 	is_valid = {
-		domicile ?= { has_domicile_parameter = estex_estate_has_kitchen }	
+		domicile ?= { has_domicile_building_or_higher = estex_kitchen_01 }	
 	}
 
 	is_valid_showing_failures_only = {
@@ -34,21 +35,320 @@ estex_inspect_kitchen_decision = {
 
 		custom_tooltip = estex_inspect_kitchen_decision_effect_tooltip_1
 
-		show_as_tooltip = {			
-			estex_inspect_kitchen_decision_effect = yes
-		}
-
 		trigger_event = {
 			id = estex_building_flavor.0100
 		}
 	}
 
 	cost = { 
-		gold = { value = 666 } # Will depend 
+		prestige = { value = minor_prestige_value } # Will depend 
 	}	
 
 	ai_potential = {
-		short_term_gold >= 666
+		prestige >= minor_prestige_value
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			add = 10
+			has_trait = gluttonous
+		}
+
+		modifier = {
+			add = -10
+			has_trait = temperate
+		}
+		modifier = {
+			add = 10
+			has_trait = diligent
+		}
+
+		modifier = {
+			add = -10
+			has_trait = lazy
+		}
+
+	}
+}
+
+# Practice Hunting
+estex_train_hunting_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_activity.dds" }
+	#decision_group_type = major
+
+	desc = estex_train_hunting_decision_desc
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 64
+		duchy = 64
+		kingdom = 64
+		empire = 64
+		hegemony = 64
+	}
+
+	cooldown = { days = 1095 } 
+
+	is_shown = {
+		is_playable_character = yes
+		government_has_flag = government_is_feudal_estate	
+	}
+	
+	is_valid = {
+		has_trait = lifestyle_hunter
+		domicile ?= { has_domicile_building_or_higher = estex_warren_01 }	
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+
+		show_as_tooltip = {			
+			estex_train_hunting_decision_effect = yes
+		}
+
+		trigger_event = {
+			id = estex_building_flavor.0110
+		}
+	}
+
+	cost = { 
+		gold = { value = minor_gold_value } # Will depend 
+	}	
+
+	ai_potential = {
+		short_term_gold >= minor_gold_value
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			add = 10
+			has_trait = brave
+		}
+
+		modifier = {
+			add = -10
+			has_trait = craven
+		}
+		modifier = {
+			add = 10
+			has_trait = diligent
+		}
+
+		modifier = {
+			add = -10
+			has_trait = lazy
+		}
+
+	}
+}
+
+# Enjoy luxurious baths
+estex_enjoy_luxurious_bath_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/ep3_decision_estate.dds" }
+	#decision_group_type = major
+
+	desc = estex_enjoy_luxurious_bath_decision_desc
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 64
+		duchy = 64
+		kingdom = 64
+		empire = 64
+		hegemony = 64
+	}
+
+	cooldown = { days = 1095 } 
+
+	is_shown = {
+		is_playable_character = yes
+		government_has_flag = government_is_feudal_estate	
+	}
+	
+	is_valid = {
+		domicile ?= { has_domicile_building_or_higher = estex_bath_01 }	
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+
+		show_as_tooltip = {			
+			estex_enjoy_luxurious_bath_decision_effect = yes
+		}
+
+		trigger_event = {
+			id = estex_building_flavor.0120
+		}
+	}
+
+	cost = { 
+		gold = { value = tiny_gold_value } # Will depend 
+	}	
+
+	ai_potential = {
+		short_term_gold >= tiny_gold_value
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			add = 10
+			has_trait = calm
+		}
+
+		modifier = {
+			add = -10
+			has_trait = paranoid
+		}
+		modifier = {
+			add = 10
+			has_trait = lazy
+		}
+
+		modifier = {
+			add = -10
+			has_trait = diligent
+		}
+
+	}
+}
+
+# Purchase dungeon equipment
+estex_purchase_dungeon_equipment = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_prison.dds" }
+	#decision_group_type = major
+
+	desc = estex_purchase_dungeon_equipment_desc
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 64
+		duchy = 64
+		kingdom = 64
+		empire = 64
+		hegemony = 64
+	}
+
+	cooldown = { days = 1095 } 
+
+	is_shown = {
+		is_playable_character = yes
+		government_has_flag = government_is_feudal_estate	
+	}
+	
+	is_valid = {
+		domicile ?= { has_domicile_building_or_higher = estex_library_01 }	
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+
+		show_as_tooltip = {			
+			estex_purchase_dungeon_equipment_effect = yes
+		}
+
+		trigger_event = {
+			id = estex_building_flavor.0130
+		}
+	}
+
+	cost = { 
+		gold = { value = minor_gold_value } # Will depend 
+	}	
+
+	ai_potential = {
+		short_term_gold >= minor_gold_value
+	}
+
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			add = 10
+			has_trait = sadistic
+		}
+
+		modifier = {
+			add = -10
+			has_trait = compassionate
+		}
+		modifier = {
+			add = 10
+			has_trait = paranoid
+		}
+
+		modifier = {
+			add = -10
+			has_trait = trusting
+		}
+
+	}
+}
+
+# Read in library
+estex_read_in_library = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_study.dds" }
+	#decision_group_type = major
+
+	desc = estex_read_in_library_desc
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 64
+		duchy = 64
+		kingdom = 64
+		empire = 64
+		hegemony = 64
+	}
+
+	cooldown = { days = 1095 } 
+
+	is_shown = {
+		is_playable_character = yes
+		government_has_flag = government_is_feudal_estate	
+	}
+	
+	is_valid = {
+		domicile ?= { has_domicile_building_or_higher = estex_library_01 }	
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+
+		custom_tooltip = estex_read_in_library_effect_tooltip
+
+		show_as_tooltip = {			
+			estex_read_in_library_effect = yes
+		}
+
+		trigger_event = {
+			id = estex_building_flavor.0140
+		}
+	}
+
+	cost = { 
+		prestige = { value = minor_prestige_value } # Will depend 
+	}	
+
+	ai_potential = {
+		prestige >= minor_prestige_value
 	}
 
 	ai_will_do = {

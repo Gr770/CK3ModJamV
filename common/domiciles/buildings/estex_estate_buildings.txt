@@ -1016,6 +1016,7 @@ estex_library_01 = {
 
 	parameters = {
 		estate_increase_physician_aptitude_1 = yes
+		estex_enables_library_decision = yes
 	}
 
 	character_modifier = {
@@ -1052,6 +1053,8 @@ estex_library_02 = {
 	
 	parameters = {
 		estate_increase_physician_aptitude_2 = yes
+		estex_enables_library_decision = yes
+		estex_enables_library_decision_bonus = yes
 	}
 
 	character_modifier = {
@@ -1266,6 +1269,7 @@ estex_bath_01 = {
 
 	parameters = {
 		estate_increase_safe_treatment_success_1 = yes
+		estex_enables_bathing_decision = yes
 	}
 	
 	ai_value = {
@@ -1304,6 +1308,8 @@ estex_bath_02 = {
 
 	parameters = {
 		estate_increase_safe_treatment_success_1 = yes
+		estex_enables_bathing_decision = yes
+		estex_enables_bathing_decision_bonus = yes
 	}
 	
 	ai_value = {
@@ -1346,6 +1352,8 @@ estex_bath_03 = {
 
 	parameters = {
 		estate_increase_safe_treatment_success_1 = yes
+		estex_enables_bathing_decision = yes
+		estex_enables_bathing_decision_bonus = yes
 	}
 	
 	ai_value = {
@@ -1388,6 +1396,8 @@ estex_bath_04 = {
 
 	parameters = {
 		estate_increase_safe_treatment_success_2 = yes
+		estex_enables_bathing_decision = yes
+		estex_enables_bathing_decision_bonus = yes
 	}
 	
 	ai_value = {
@@ -2267,6 +2277,7 @@ estex_kitchen_01 = {
 
 	parameters = {
 		estex_estate_has_kitchen = yes
+		estex_enables_kitchen_decision = yes
 	}
 
 	ai_value = {
@@ -2343,6 +2354,8 @@ estex_kitchen_02 = {
 	parameters = {
 		estex_estate_has_kitchen = yes
 		estate_improved_feast_opinion = yes
+		estex_enables_kitchen_decision = yes
+		estex_enables_kitchen_decision_minor_bonus = yes
 	}
 
 	ai_value = {
@@ -2421,6 +2434,8 @@ estex_kitchen_03 = {
 		estex_estate_has_kitchen = yes
 		estate_improved_feast_opinion = yes
 		estate_cheaper_feast_cost = yes
+		estex_enables_kitchen_decision = yes
+		estex_enables_kitchen_decision_major_bonus = yes
 	}
 
 	ai_value = {

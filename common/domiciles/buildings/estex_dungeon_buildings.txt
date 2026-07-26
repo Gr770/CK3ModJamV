@@ -20,6 +20,7 @@ estex_cellar_cells_01 = {
 
 	parameters = {
 		estex_estate_has_cells = yes
+		estex_enables_dungeon_decision = yes
 	}
 
 	ai_value = {
@@ -101,6 +102,7 @@ estex_dungeon_02 = {
 	parameters = {
 		estex_estate_has_cells = yes
 		estex_estate_has_dungeon = yes
+		estex_enables_dungeon_decision = yes
 	}
 
 	ai_value = {
@@ -180,6 +182,7 @@ estex_oubliette_03 = {
 		estex_estate_has_cells = yes
 		estex_estate_has_dungeon = yes
 		estex_estate_has_oubliette = yes
+		estex_enables_dungeon_decision = yes
 	}
 
 	ai_value = {
@@ -261,6 +264,7 @@ estex_interrogation_chamber_03 = {
 		estex_estate_has_cells = yes
 		estex_estate_has_dungeon = yes
 		estex_estate_has_interrogation_chamber = yes
+		estex_enables_dungeon_decision = yes
 	}
 
 	ai_value = {

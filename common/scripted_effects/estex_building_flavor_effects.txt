@@ -1,0 +1,221 @@
+﻿
+estex_train_hunting_decision_effect = {
+	random_list = {
+		15 = {
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				left_icon = scope:milk_bather
+				title = estex_building_flavor.0110.small.hunter
+				stress_impact = {
+					base = minor_stress_impact_loss
+				}
+				add_trait_xp = {
+					trait = lifestyle_hunter
+					track = hunter
+					value = 2
+				}				
+			}			
+		}
+		15 = {
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				left_icon = scope:milk_bather
+				title = estex_building_flavor.0110.small.falconer
+				stress_impact = {
+					base = minor_stress_impact_loss
+				}
+				add_trait_xp = {
+					trait = lifestyle_hunter
+					track = falconer
+					value = 2
+				}				
+			}			
+		}
+		10 = {
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				left_icon = scope:milk_bather
+				title = estex_building_flavor.0110.medium.hunter
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}
+				add_trait_xp = {
+					trait = lifestyle_hunter
+					track = hunter
+					value = 5
+				}				
+			}			
+		}
+		10 = {
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				left_icon = scope:milk_bather
+				title = estex_building_flavor.0110.medium.falconer
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}
+				add_trait_xp = {
+					trait = lifestyle_hunter
+					track = falconer
+					value = 5
+				}				
+			}			
+		}
+		5 = {
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				left_icon = scope:milk_bather
+				title = estex_building_flavor.0110.large.hunter
+				stress_impact = {
+					base = major_stress_impact_loss
+				}
+				add_trait_xp = {
+					trait = lifestyle_hunter
+					track = hunter
+					value = 8
+				}				
+			}			
+		}
+		5 = {
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				left_icon = scope:milk_bather
+				title = estex_building_flavor.0110.large.falconer
+				stress_impact = {
+					base = major_stress_impact_loss
+				}
+				add_trait_xp = {
+					trait = lifestyle_hunter
+					track = falconer
+					value = 8
+				}				
+			}			
+		}
+	}
+}
+
+
+estex_enjoy_luxurious_bath_decision_effect = {
+	if = {
+		limit = {
+			domicile ?= { has_domicile_building_or_higher = estex_bath_04 }
+		}
+		stress_impact = {
+			base = major_stress_impact_loss
+			lazy = minor_stress_impact_loss
+			content = minor_stress_impact_loss
+			calm = minor_stress_impact_loss
+		}	
+	}
+	else_if = {
+		limit = {
+			domicile ?= { has_domicile_building_or_higher = estex_bath_03 }
+		}
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lazy = minor_stress_impact_loss
+			content = minor_stress_impact_loss
+			calm = minor_stress_impact_loss
+		}	
+	}
+	else_if = {
+		limit = {
+			domicile ?= { has_domicile_building_or_higher = estex_bath_02 }
+		}
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lazy = miniscule_stress_impact_loss
+			content = miniscule_stress_impact_loss
+			calm = miniscule_stress_impact_loss
+		}	
+	}
+	else = {
+		stress_impact = {
+			base = miniscule_stress_impact_loss
+			lazy = miniscule_stress_impact_loss
+			content = miniscule_stress_impact_loss
+			calm = miniscule_stress_impact_loss
+		}		
+	}
+}
+
+
+estex_purchase_dungeon_equipment_effect = {
+	stress_impact = {
+		compassionate = minor_stress_impact_gain
+		sadistic = minor_stress_impact_loss
+	}
+	add_character_modifier = {
+		modifier = estex_purchased_dungeon_equipment_modifier
+		years = 10
+	}
+}
+
+estex_read_in_library_effect = {
+	stress_impact = {
+		gregarious = medium_stress_impact_gain
+		shy = medium_stress_impact_loss
+		scholar = miniscule_stress_impact_loss
+		lifestyle_poet = miniscule_stress_impact_loss
+		education_learning_1 = miniscule_stress_impact_loss
+		education_learning_2 = miniscule_stress_impact_loss
+		education_learning_3 = miniscule_stress_impact_loss
+		education_learning_4 = miniscule_stress_impact_loss
+		education_learning_5 = miniscule_stress_impact_loss
+	}
+	if = {
+		limit = {
+			domicile ?= { has_domicile_building_or_higher = estex_library_02 }	
+		}
+		if = {
+			limit = { has_lifestyle = diplomacy_lifestyle }
+			add_diplomacy_lifestyle_xp = major_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = martial_lifestyle }
+			add_martial_lifestyle_xp = major_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = stewardship_lifestyle }
+			add_stewardship_lifestyle_xp = major_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = intrigue_lifestyle }
+			add_intrigue_lifestyle_xp = major_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = learning_lifestyle }
+			add_learning_lifestyle_xp = major_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = wanderer_lifestyle }
+			add_wanderer_lifestyle_xp = major_lifestyle_xp
+		}
+	}
+	else = {
+		if = {
+			limit = { has_lifestyle = diplomacy_lifestyle }
+			add_diplomacy_lifestyle_xp = medium_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = martial_lifestyle }
+			add_martial_lifestyle_xp = medium_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = stewardship_lifestyle }
+			add_stewardship_lifestyle_xp = medium_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = intrigue_lifestyle }
+			add_intrigue_lifestyle_xp = medium_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = learning_lifestyle }
+			add_learning_lifestyle_xp = medium_lifestyle_xp
+		}
+		else_if = {
+			limit = { has_lifestyle = wanderer_lifestyle }
+			add_wanderer_lifestyle_xp = medium_lifestyle_xp
+		}
+	}
+}

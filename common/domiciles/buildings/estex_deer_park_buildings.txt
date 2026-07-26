@@ -22,6 +22,7 @@ estex_warren_01 = {
 
 	parameters = {
 		estex_estate_has_hunting_grounds = yes
+		estex_enables_hunting_decision = yes
 	}
 
 	ai_value = {
@@ -69,6 +70,7 @@ estex_deer_park_02 = {
 	parameters = {
 		estex_estate_has_hunting_grounds = yes
 		estex_estate_has_deer_park = yes
+		estex_enables_hunting_decision = yes
 	}
 
 	ai_value = {
@@ -119,6 +121,7 @@ estex_chase_03 = {
 		estex_estate_has_deer_park = yes
 		estex_estate_has_chase = yes
 		kennels_more_successful_hunts_1 = yes
+		estex_enables_hunting_decision = yes
 	}
 
 	ai_value = {
@@ -164,6 +167,7 @@ estex_fishponds_03 = {
 		estex_estate_has_hunting_grounds = yes
 		estex_estate_has_deer_park = yes
 		estex_estate_has_fishponds = yes
+		estex_enables_hunting_decision = yes
 	}
 
 	ai_value = {
