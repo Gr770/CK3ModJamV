@@ -3046,7 +3046,12 @@ temple_small_03 = {
 	previous_building = temple_small_02
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_02 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_02 
+				has_domicile_building_or_higher = estex_estate_main_02 
+			}
+		}
 	}
 
 	cost = {
@@ -3179,7 +3184,12 @@ temple_crypt_04 = {
 	previous_building = temple_small_03
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_03 
+				has_domicile_building_or_higher = estex_estate_main_03 
+			}
+		}
 	}
 
 	cost = {
@@ -3325,7 +3335,12 @@ temple_crypt_05 = {
 	previous_building = temple_crypt_04
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_04 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_04 
+				has_domicile_building_or_higher = estex_estate_main_04
+			}
+		}
 	}
 
 	cost = {
@@ -3471,7 +3486,12 @@ temple_crypt_06 = {
 	previous_building = temple_crypt_05
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_05 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_05
+				has_domicile_building_or_higher = estex_estate_main_05
+			}
+		}
 	}
 
 	cost = {
@@ -3620,7 +3640,12 @@ temple_large_04 = {
 	previous_building = temple_small_03
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_03 
+				has_domicile_building_or_higher = estex_estate_main_03
+			}
+		}
 	}
 
 	cost = {
@@ -3754,7 +3779,12 @@ temple_large_05 = {
 	previous_building = temple_large_04
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_04 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_04 
+				has_domicile_building_or_higher = estex_estate_main_04 
+			}
+		}
 	}
 
 	cost = {
@@ -3888,7 +3918,12 @@ temple_large_06 = {
 	previous_building = temple_large_05
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_05 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_05
+				has_domicile_building_or_higher = estex_estate_main_05
+			}
+		}
 	}
 
 	cost = {
@@ -4027,7 +4062,12 @@ temple_monastery_04 = {
 	
 	can_construct = {
 		faith = { has_doctrine = tenet_monasticism }
-		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_03 
+				has_domicile_building_or_higher = estex_estate_main_03 
+			}
+		}
 	}
 	
 	cost = {
@@ -4164,7 +4204,12 @@ temple_monastery_05 = {
 	
 	can_construct = {
 		faith = { has_doctrine = tenet_monasticism }
-		domicile ?= { has_domicile_building_or_higher = estate_main_04 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_04 
+				has_domicile_building_or_higher = estex_estate_main_04 
+			}
+		}
 	}
 	
 	cost = {
@@ -4301,7 +4346,12 @@ temple_monastery_06 = {
 	
 	can_construct = {
 		faith = { has_doctrine = tenet_monasticism }
-		domicile ?= { has_domicile_building_or_higher = estate_main_05 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_05
+				has_domicile_building_or_higher = estex_estate_main_05
+			}
+		}
 	}
 	
 	cost = {
@@ -7232,7 +7282,12 @@ stable_grand_04 = {
 	previous_building = stable_03
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_03 
+				has_domicile_building_or_higher = estex_estate_main_03 
+			}
+		}
 	}
 
 	cost = {
@@ -7317,7 +7372,12 @@ stable_grand_05 = {
 	previous_building = stable_grand_04
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_04 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_04 
+				has_domicile_building_or_higher = estex_estate_main_04
+			}
+		}
 	}
 
 	cost = {
@@ -7403,7 +7463,12 @@ stable_grand_06 = {
 	previous_building = stable_grand_05
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_05 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_05 
+				has_domicile_building_or_higher = estex_estate_main_05 
+			}
+		}
 	}
 
 	cost = {
@@ -7491,7 +7556,12 @@ stable_kennel_04 = {
 	previous_building = stable_03
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_03 
+				has_domicile_building_or_higher = estex_estate_main_03 
+			}
+		}
 	}
 
 	cost = {
@@ -7585,7 +7655,12 @@ stable_kennel_05 = {
 	previous_building = stable_kennel_04
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_04 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_04 
+				has_domicile_building_or_higher = estex_estate_main_04 
+			}
+		}
 	}
 
 	cost = {
@@ -7680,7 +7755,12 @@ stable_kennel_06 = {
 	previous_building = stable_kennel_05
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_05 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_05 
+				has_domicile_building_or_higher = estex_estate_main_05 
+			}
+		}
 	}
 
 	cost = {
@@ -7779,7 +7859,12 @@ stable_chariot_04 = {
 
 	can_construct_potential = {
 		culture = { has_cultural_parameter = hosts_chariot_races }
-		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_03
+				has_domicile_building_or_higher = estex_estate_main_03 
+			}
+		}
 	}
 
 	cost = {
@@ -7862,7 +7947,12 @@ stable_chariot_05 = {
 	previous_building = stable_chariot_04
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_04 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_04
+				has_domicile_building_or_higher = estex_estate_main_04
+			}
+		}
 	}
 
 	cost = {
@@ -7947,7 +8037,12 @@ stable_chariot_06 = {
 	previous_building = stable_chariot_05
 
 	can_construct = {
-		domicile ?= { has_domicile_building_or_higher = estate_main_05 }
+		domicile ?= { 
+			OR ={ 
+				has_domicile_building_or_higher = estate_main_05
+				has_domicile_building_or_higher = estex_estate_main_05
+			}
+		}
 	}
 
 	cost = {
