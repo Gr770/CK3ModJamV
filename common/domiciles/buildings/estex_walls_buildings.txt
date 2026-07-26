@@ -4,7 +4,7 @@
 # province, domicile buildings support province_modifier.
 
 estex_walls_01 = {
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 
 	# earthworks and palisades are one thing, real walls want a stone keep
@@ -12,10 +12,9 @@ estex_walls_01 = {
 		domicile ?= { has_domicile_building_or_higher = estex_estate_main_02 }
 	}
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_2_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_2_value
+	}
 
 	character_modifier = {
 		dread_baseline_add = 2
@@ -44,7 +43,7 @@ estex_walls_01 = {
 }
 
 estex_gatehouse_02 = {
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_walls_01
 
@@ -52,10 +51,9 @@ estex_gatehouse_02 = {
 		domicile ?= { has_domicile_building_or_higher = estex_estate_main_03 }
 	}
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_3_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_3_value
+	}
 
 	character_modifier = {
 		dread_baseline_add = 4

@@ -1,13 +1,12 @@
 ﻿estex_estate_main_01 = { #keep
 	slot_type = main
 	internal_slots = 2
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_2_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_2_value
+	}
 
 	character_modifier = {
 		domicile_monthly_gold_add = 0.25
@@ -31,7 +30,7 @@
 estex_estate_main_02 = {
 	slot_type = main
 	internal_slots = 4
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_estate_main_01
 
@@ -39,10 +38,9 @@ estex_estate_main_02 = {
 		culture ?= { has_innovation = innovation_burhs } #switch to different one
 	}
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_3_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_3_value
+	}
 	
 	parameters = {
 		reduce_success_of_raid_estate = yes
@@ -116,7 +114,7 @@ estex_estate_main_02 = {
 estex_estate_main_03 = {
 	slot_type = main
 	internal_slots = 6
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_estate_main_02
 	
@@ -124,10 +122,9 @@ estex_estate_main_03 = {
 		culture ?= { has_innovation = innovation_castle_baileys } #reasonable
 	}
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_4_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_4_value
+	}
 	
 	parameters = {
 		reduce_success_of_raid_estate = yes
@@ -201,18 +198,17 @@ estex_estate_main_03 = {
 estex_estate_main_04 = {
 	slot_type = main
 	internal_slots = 8
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_estate_main_03
 	
 	can_construct = {
-		# culture ?= { has_innovation = innovation_machicolations } #switch if necessary
+		culture ?= { has_innovation = innovation_machicolations }
 	}
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_5_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_5_value
+	}
 	
 	parameters = {
 		reduce_success_of_raid_estate = yes
@@ -286,18 +282,17 @@ estex_estate_main_04 = {
 estex_estate_main_05 = {
 	slot_type = main
 	internal_slots = 10
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_estate_main_04
 	
 	can_construct = {
-		# culture ?= { has_innovation = innovation_cranes } #reasonable
+		culture ?= { has_innovation = innovation_cranes }
 	}
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_6_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_6_value
+	}
 	
 	parameters = {
 		reduce_success_of_raid_estate = yes
@@ -2092,7 +2087,7 @@ estex_cabinet_of_curiosities_03 = {
 
 #Grand Solar
 estex_grand_solar_01 = {
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_estate_main_01
@@ -2266,13 +2261,12 @@ estex_grand_solar_04 = {
 }
 
 estex_kitchen_01 = {
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_internal_building_normal_cost_tier_1_value
-	#}
+	cost = {
+		gold = estate_internal_building_normal_cost_tier_1_value
+	}
 
 	character_modifier = {
 		courtier_and_guest_opinion = 5
@@ -2341,14 +2335,13 @@ estex_kitchen_01 = {
 }
 
 estex_kitchen_02 = {
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_kitchen_01
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_internal_building_normal_cost_tier_2_value
-	#}
+	cost = {
+		gold = estate_internal_building_normal_cost_tier_2_value
+	}
 
 	character_modifier = {
 		courtier_and_guest_opinion = 5
@@ -2419,14 +2412,13 @@ estex_kitchen_02 = {
 }
 
 estex_kitchen_03 = {
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_kitchen_02
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_internal_building_normal_cost_tier_3_value
-	#}
+	cost = {
+		gold = estate_internal_building_normal_cost_tier_3_value
+	}
 
 	character_modifier = {
 		negate_health_penalty_add = 0.05
