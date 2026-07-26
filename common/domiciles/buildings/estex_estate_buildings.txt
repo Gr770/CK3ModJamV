@@ -2103,6 +2103,10 @@ estex_grand_solar_01 = {
 		# }
 	}
 
+	parameters = {
+		estex_enables_relax_decision = yes
+	}
+
 	cost = {
 		#gold = {
 		#	value = estate_internal_building_high_cost_tier_1_value
@@ -2139,6 +2143,7 @@ estex_grand_solar_02 = {
 		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
 		# }
 	}
+  
 	parameters = {
 		estex_enables_relax_decision = yes
 	}
@@ -2181,6 +2186,10 @@ estex_grand_solar_03 = {
 		domicile ?= { has_domicile_building_or_higher = estate_main_02 }
 	}
 
+	parameters = {
+		estex_enables_relax_decision = yes
+	}
+
 	cost = {
 		#gold = {
 		#	value = estate_internal_building_high_cost_tier_3_value
@@ -2212,14 +2221,16 @@ estex_grand_solar_04 = {
 	previous_building = estex_grand_solar_03
 
 	can_construct = {
-		custom_tooltip = {
-			text = unlocked_via_event
-			house.house_head = { has_character_flag = ep3_construct_grand_solar }
-		}
+		# ENABLED for ESTEX
+		# custom_tooltip = {
+		# 	text = unlocked_via_event
+		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
+		# }
 		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
 	}
 
 	parameters = {
+		estex_enables_relax_decision = yes
 		solar_white_peace_stress_loss = yes
 	}
 

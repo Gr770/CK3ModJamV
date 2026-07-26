@@ -1,0 +1,14 @@
+﻿ESTEX_ck2_theme = {
+	music = "file:/music/in_game/CK2_theme.ogg"
+    can_be_interrupted = yes
+}
+
+ESTEX_relax_success = {
+	music = "event:/MUSIC/Cues/Events/Positive/mx_cue_postive_effect"
+    can_be_interrupted = yes
+}
+
+ESTEX_relax_failure = {
+	music = "event:/MUSIC/Cues/Events/Murder/mx_cue_murder"
+    can_be_interrupted = yes
+}

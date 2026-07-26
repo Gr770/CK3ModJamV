@@ -1,0 +1,30 @@
+﻿l_english:
+ domicile_building_parameter_estex_enables_relax_decision: "Enables the [decision|E] to #V $estex_relax_in_solar$#!"
+ estex_relax_in_solar: "Relax in Solar"
+ estex_relax_in_solar_tooltip: "I need to decompress..."
+ estex_relax_in_solar_desc: "My face is tired from dealing with... #emp everything#!. A moment to myself can make the difference."
+ estex_relax_in_solar_confirm: "To the solar."
+ estex_relax_in_solar_effect_tooltip: "You will try to lose some [stress|E]"
+
+ ESTEX_relax.1.t: "In the Solar"
+ ESTEX_relax.1.desc: "Ah, the room where the [ROOT.Char.GetLadyLord] of the manor can put up [ROOT.Char.GetHerHis] feet, have some [ROOT.Char.Custom('RegionalAlcoholicDrink')] or listen to a calm, lyrical [ROOT.GetCharacter.Custom('GetMusicalInstrument')] player. This is where we can be free of our ails, our thoughts.\n\n#EMP Alone. Finally.#!"
+ ESTEX_relax.1.a: "That's enough bliss for today."
+
+ EXTEX_relax.1.tt: "MASH MASH"
+
+ ESTEX_relax_success_msg: "You relaxed a little"
+ ESTEX_relax_failure_msg: "You failed to relax"
+
+ ESTEX_relax_UI.START_RELAXING: "Start relaxing"
+
+ ESTEX_relax_UI.RELAX_NOW: "RELAX RELAX RELAX"
+ ESTEX_relax_UI.MASH_SPACEBAR: "mash spacebar to relax!"
+ ESTEX_relax_UI.SUCCESS: "YOU MANAGED TO RELAX"
+ ESTEX_relax_UI.SUCCESS_EFFECT: "[stress|E] loss: [stress_loss_i] [GetPlayer.MakeScope.Var('ESTEX_stress_change').GetValue|0]"
+
+ ESTEX_relax_UI.FAILURE: "YOU FAILED TO RELAX"
+ ESTEX_relax_UI.FAILURE_EFFECT: "[stress|E] gain: [stress_gain_i] [GetPlayer.MakeScope.Var('ESTEX_stress_change').GetValue|0]"
+
+ ESTEX_relax_UI.COUNTDOWN_3: "3"
+ ESTEX_relax_UI.COUNTDOWN_2: "2"
+ ESTEX_relax_UI.COUNTDOWN_1: "1"

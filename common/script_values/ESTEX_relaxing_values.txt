@@ -1,0 +1,8 @@
+﻿
+ESTEX_relax_mash_meter = {
+	value = 0
+	if = {
+		limit = { has_variable = ESTEX_relax_score }
+		add = var:ESTEX_relax_score
+	}
+}

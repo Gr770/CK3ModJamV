@@ -3,7 +3,7 @@
 # Inspect Kitchens
 estex_inspect_kitchen_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_kitchen.dds" }
-	#decision_group_type = major
+	decision_group_type = ESTEX_estate_decisions
 
 	desc = estex_inspect_kitchen_decision_desc
 
@@ -76,7 +76,7 @@ estex_inspect_kitchen_decision = {
 # Practice Hunting
 estex_train_hunting_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_activity.dds" }
-	#decision_group_type = major
+	decision_group_type = ESTEX_estate_decisions
 
 	desc = estex_train_hunting_decision_desc
 
@@ -152,7 +152,7 @@ estex_train_hunting_decision = {
 # Enjoy luxurious baths
 estex_enjoy_luxurious_bath_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/ep3_decision_estate.dds" }
-	#decision_group_type = major
+	decision_group_type = ESTEX_estate_decisions
 
 	desc = estex_enjoy_luxurious_bath_decision_desc
 
@@ -227,7 +227,7 @@ estex_enjoy_luxurious_bath_decision = {
 # Purchase dungeon equipment
 estex_purchase_dungeon_equipment = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_prison.dds" }
-	#decision_group_type = major
+	decision_group_type = ESTEX_estate_decisions
 
 	desc = estex_purchase_dungeon_equipment_desc
 
@@ -302,7 +302,7 @@ estex_purchase_dungeon_equipment = {
 # Read in library
 estex_read_in_library = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_study.dds" }
-	#decision_group_type = major
+	decision_group_type = ESTEX_estate_decisions
 
 	desc = estex_read_in_library_desc
 
@@ -373,5 +373,56 @@ estex_read_in_library = {
 			has_trait = lazy
 		}
 
+	}
+}
+
+
+# Relax in the solar (joke decision, don't actually use for serious modding)
+estex_relax_in_solar = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_relaxing_room.dds" }
+	decision_group_type = ESTEX_estate_decisions
+
+	desc = estex_relax_in_solar_desc
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 64
+		duchy = 64
+		kingdom = 64
+		empire = 64
+		hegemony = 64
+	}
+
+	cooldown = { days = 1095 } 
+
+	is_shown = {
+		is_playable_character = yes
+		government_has_flag = government_is_feudal_estate	
+	}
+	
+	is_valid = {
+		stress_level >= 1
+		domicile ?= { has_domicile_building_or_higher = estex_grand_solar_01 }
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		custom_tooltip = estex_relax_in_solar_effect_tooltip
+
+
+		trigger_event = {
+			id = ESTEX_relax.1
+		}
+	}
+
+	cost = { 
+		prestige = { value = minor_prestige_value }
+	}
+
+	ai_will_do = {
+		base = 0
 	}
 }
