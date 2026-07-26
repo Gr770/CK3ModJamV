@@ -8,13 +8,12 @@
 # outbuilding), bird and whisper icons until we get real art.
 
 estex_dovecote_01 = {
-	construction_time = 1 # TESTING, was 365
+	construction_time = 365
 	allowed_domicile_types = { estex_estate }
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_1_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_1_value
+	}
 
 	character_modifier = {
 		domicile_monthly_gold_add = 0.1
@@ -39,7 +38,7 @@ estex_dovecote_01 = {
 }
 
 estex_rookery_02 = {
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_dovecote_01
 
@@ -47,10 +46,9 @@ estex_rookery_02 = {
 		domicile ?= { has_domicile_building_or_higher = estex_estate_main_02 }
 	}
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_2_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_2_value
+	}
 
 	character_modifier = {
 		domicile_monthly_gold_add = 0.1
@@ -78,14 +76,13 @@ estex_rookery_02 = {
 
 # Plotter's path: your birds carry the words that make things happen
 estex_masters_loft_03 = {
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_rookery_02
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_3_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_3_value
+	}
 
 	character_modifier = {
 		domicile_monthly_gold_add = 0.1
@@ -114,14 +111,13 @@ estex_masters_loft_03 = {
 
 # Courtier's path: love letters, sweet nothings and elegant persuasion
 estex_white_doves_03 = {
-	construction_time = 1 # TESTING, was 730
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	previous_building = estex_rookery_02
 
-	# TESTING, cost disabled
-	#cost = {
-	#	gold = estate_external_building_high_cost_tier_3_value
-	#}
+	cost = {
+		gold = estate_external_building_high_cost_tier_3_value
+	}
 
 	character_modifier = {
 		domicile_monthly_gold_add = 0.1
