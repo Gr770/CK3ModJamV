@@ -1,0 +1,84 @@
+﻿ESTEX_relax_mash_sgui = {
+	scope = character
+	is_valid = {
+		has_variable = ESTEX_is_mashing
+	}
+	effect = {
+		change_variable = {
+			name = ESTEX_relax_score
+			add = {
+				integer_range = { min = 2 max = 6 }
+			}
+		}
+		if = {
+			limit = {
+				var:ESTEX_relax_score >= 100
+			}
+			set_variable = { name = ESTEX_relax_succeeded value = yes }
+			play_music_cue = ESTEX_relax_success
+			set_variable = {
+				name = ESTEX_stress_change
+				value = stress
+			}
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = ESTEX_relax_success_msg
+				left_icon = root
+				add_stress = {
+					value = 0
+					subtract = var:ESTEX_stress_change
+				}
+			}
+			remove_variable = ESTEX_is_mashing
+			remove_variable = ESTEX_relax_score
+		}
+	}
+}
+
+ESTEX_relax_start_mashing_sgui = {
+	scope = character
+	effect = {
+		remove_variable = ESTEX_relax_failed
+		remove_variable = ESTEX_relax_succeeded
+		remove_variable = ESTEX_stress_change
+		set_variable = {
+			name = ESTEX_is_mashing
+			value = yes
+		}
+		set_variable = {
+			name = ESTEX_relax_score
+			value = 0
+		}
+		play_music_cue = ESTEX_ck2_theme
+	}
+}
+
+ESTEX_relax_stop_mashing_sgui = {
+	scope = character
+	effect = {
+		if = {
+			limit = {
+				exists = var:ESTEX_is_mashing
+			}
+			set_variable = { name = ESTEX_relax_failed value = yes }
+			set_variable = {
+				name = ESTEX_stress_change
+				value = {
+					value = stress
+					divide = 1.5
+					min = 50
+				}
+			}
+			play_music_cue = ESTEX_relax_failure
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				title = ESTEX_relax_failure_msg
+				left_icon = root
+				add_stress = var:ESTEX_stress_change
+			}
+		}
+		remove_variable = ESTEX_is_mashing
+		remove_variable = ESTEX_relax_score
+	}
+
+}

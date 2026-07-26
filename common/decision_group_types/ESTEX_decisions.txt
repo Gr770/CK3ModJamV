@@ -1,0 +1,3 @@
+﻿ESTEX_estate_decisions = {
+	sort_order = 20
+}

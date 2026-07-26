@@ -2096,10 +2096,15 @@ estex_grand_solar_01 = {
 	previous_building = estex_estate_main_01
 
 	can_construct = {
-		custom_tooltip = {
-			text = unlocked_via_event
-			house.house_head = { has_character_flag = ep3_construct_grand_solar }
-		}
+		# ENABLED for ESTEX
+		# custom_tooltip = {
+		# 	text = unlocked_via_event
+		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
+		# }
+	}
+
+	parameters = {
+		estex_enables_relax_decision = yes
 	}
 
 	cost = {
@@ -2137,10 +2142,15 @@ estex_grand_solar_02 = {
 	previous_building = estex_grand_solar_01
 
 	can_construct = {
-		custom_tooltip = {
-			text = unlocked_via_event
-			house.house_head = { has_character_flag = ep3_construct_grand_solar }
-		}
+		# ENABLED for ESTEX
+		# custom_tooltip = {
+		# 	text = unlocked_via_event
+		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
+		# }
+	}
+
+	parameters = {
+		estex_enables_relax_decision = yes
 	}
 
 	cost = {
@@ -2178,11 +2188,16 @@ estex_grand_solar_03 = {
 	previous_building = estex_grand_solar_02
 
 	can_construct = {
-		custom_tooltip = {
-			text = unlocked_via_event
-			house.house_head = { has_character_flag = ep3_construct_grand_solar }
-		}
+		# ENABLED for ESTEX
+		# custom_tooltip = {
+		# 	text = unlocked_via_event
+		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
+		# }
 		domicile ?= { has_domicile_building_or_higher = estate_main_02 }
+	}
+
+	parameters = {
+		estex_enables_relax_decision = yes
 	}
 
 	cost = {
@@ -2221,14 +2236,16 @@ estex_grand_solar_04 = {
 	previous_building = estex_grand_solar_03
 
 	can_construct = {
-		custom_tooltip = {
-			text = unlocked_via_event
-			house.house_head = { has_character_flag = ep3_construct_grand_solar }
-		}
+		# ENABLED for ESTEX
+		# custom_tooltip = {
+		# 	text = unlocked_via_event
+		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
+		# }
 		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
 	}
 
 	parameters = {
+		estex_enables_relax_decision = yes
 		solar_white_peace_stress_loss = yes
 	}
 

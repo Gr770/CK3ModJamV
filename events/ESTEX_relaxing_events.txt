@@ -1,0 +1,26 @@
+﻿namespace = ESTEX_relax
+
+ESTEX_relax.1 = {
+	type = character_event
+	window = ESTEX_relaxing_event
+	theme = healthcare
+	override_background = ESTEX_relaxing_room
+	center_portrait = {
+		character = root
+		animation = throne_room_ruler
+		camera = camera_event_center_coronation_kneeling
+		hide_info = yes
+	}
+
+	title = ESTEX_relax.1.t
+	desc = ESTEX_relax.1.desc
+
+	option = {
+		name = ESTEX_relax.1.a
+		remove_variable = ESTEX_is_mashing
+		remove_variable = ESTEX_relax_score
+		remove_variable = ESTEX_relax_failed
+		remove_variable = ESTEX_relax_succeeded
+		remove_variable = ESTEX_stress_change
+	}
+}

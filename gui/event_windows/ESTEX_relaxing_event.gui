@@ -1,0 +1,303 @@
+﻿# All is well here. Your problems are drifting away like clouds in the summer breeze. You'll be fine!
+
+big_event_window = {
+	name = "ESTEX_relaxing_event"
+	ESTEX_fake_event_button = {
+		parentanchor = bottom|right
+		position = { -90 -83 }
+		blockoverride "text" {
+			text = ESTEX_relax_UI.START_RELAXING
+		}
+		onclick = "[GetScriptedGui('ESTEX_relax_start_mashing_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[PdxGuiTriggerAllAnimations( 'ESTEX_relax_start_countdown' )]"
+		enabled = "[Not(GetPlayer.MakeScope.Var('ESTEX_is_mashing').IsSet)]"
+
+		
+		alpha = 0
+		state = {
+			name = appear
+			trigger_on_create = yes
+			delay = 0.8
+			using = Animation_Curve_Default
+			alpha = 1
+			duration = 0.6
+		}
+		state = {
+			name = ESTEX_appear_fast
+			using = Animation_Curve_Default
+			alpha = 1
+			duration = 0.6
+		}
+
+		state = {
+			name = _hide
+			using = Animation_FadeOut_Standard
+		}
+	}
+	
+	widget = {
+		name = "failure_panel"
+		visible = "[GetPlayer.MakeScope.Var('ESTEX_relax_failed').IsSet]"
+		size = { 700 300 }
+		parentanchor = center
+		background = {
+			using = Background_Area_Dark
+			color = { 0.1 0.02 0.02 0.7 }
+		}
+		text_single = {
+			parentanchor = center
+			position = { 0 -10 }
+			text = "ESTEX_relax_UI.FAILURE"
+			using = Font_Type_Flavor
+			default_format = "#color_red"
+			fontsize = 50
+			align = center|nobaseline
+		}
+		text_single = {
+			parentanchor = center
+			position = { 0 50 }
+			text = "ESTEX_relax_UI.FAILURE_EFFECT"
+			default_format = "#color_red"
+			fontsize = 25
+			align = center|nobaseline
+		}
+	}
+	
+	widget = {
+		name = "success_panel"
+		visible = "[GetPlayer.MakeScope.Var('ESTEX_relax_succeeded').IsSet]"
+		size = { 700 300 }
+		parentanchor = center
+		background = {
+			using = Background_Area_Dark
+			color = { 0.02 0.1 0.02 0.7 }
+		}
+		text_single = {
+			parentanchor = center
+			position = { 0 -10 }
+			text = "ESTEX_relax_UI.SUCCESS"
+			using = Font_Type_Flavor
+			default_format = "#color_green"
+			fontsize = 50
+			align = center|nobaseline
+		}
+		text_single = {
+			parentanchor = center
+			position = { 0 50 }
+			text = "ESTEX_relax_UI.SUCCESS_EFFECT"
+			default_format = "#color_green"
+			fontsize = 25
+			align = center|nobaseline
+		}
+	}
+
+	widget = {
+		name = "mashing_panel"
+		visible = "[GetPlayer.MakeScope.Var('ESTEX_is_mashing').IsSet]"
+		size = { 700 300 }
+		parentanchor = center
+		background = {
+			using = Background_Area_Dark
+		}
+		ESTEX_relax_flash = {}
+
+		widget = {
+			parentanchor = top|right
+			size = { 100 100 }
+			text_single = {
+				name = "text_3"
+				parentanchor = center
+				text = "ESTEX_relax_UI.COUNTDOWN_3"
+				fontsize = 50
+				align = center|nobaseline
+				alpha = 0
+				state = {
+					name = "ESTEX_relax_start_countdown"
+					next = b
+					duration = 0
+					alpha = 1
+				}
+				state = {
+					name = b
+					next = c
+					duration = 1.0
+					alpha = 1
+				}
+				state = {
+					name = c
+					duration = 0
+					alpha = 0
+					on_finish = "[PdxGuiWidget.AccessParent.FindChild('text_2').TriggerAnimation('show')]"
+				}
+			}
+			text_single = {
+				name = "text_2"
+				parentanchor = center
+				text = "ESTEX_relax_UI.COUNTDOWN_2"
+				fontsize = 50
+				align = center|nobaseline
+				alpha = 0
+				state = {
+					name = "show"
+					next = b
+					duration = 0
+					alpha = 1
+				}
+				state = {
+					name = b
+					next = c
+					duration = 1.0
+					alpha = 1
+				}
+				state = {
+					name = c
+					duration = 0
+					alpha = 0
+					on_finish = "[PdxGuiWidget.AccessParent.FindChild('text_1').TriggerAnimation('show')]"
+				}
+			}
+			text_single = {
+				name = "text_1"
+				parentanchor = center
+				text = "ESTEX_relax_UI.COUNTDOWN_1"
+				fontsize = 50
+				align = center|nobaseline
+				alpha = 0
+				state = {
+					name = "show"
+					next = b
+					duration = 0
+					alpha = 1
+				}
+				state = {
+					name = b
+					next = c
+					duration = 1.0
+					alpha = 1
+				}
+				state = {
+					name = c
+					duration = 0
+					alpha = 0
+					on_finish = "[GetScriptedGui('ESTEX_relax_stop_mashing_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				}
+			}
+		}
+
+		text_single = {
+			parentanchor = center
+			position = { 0 -10 }
+			text = "ESTEX_relax_UI.RELAX_NOW"
+			fontsize = 50
+			align = center|nobaseline
+		}
+		text_single = {
+			parentanchor = center
+			position = { 0 35 }
+			text = "ESTEX_relax_UI.MASH_SPACEBAR"
+			fontsize = 30
+			align = center|nobaseline
+		}
+		progressbar_green = {
+			size = { 400 40 }
+			parentanchor = center
+			position = { 0 85 }
+			value = "[GetPlayer.MakeScope.Var('ESTEX_relax_score').GetValue]"
+			tooltip = "EXTEX_relax.1.tt"
+		}
+
+
+		button = {
+			shortcut = _space
+			onclick = "[GetScriptedGui('ESTEX_relax_mash_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			onclick = "[PdxGuiTriggerAllAnimations( 'ESTEX_relax_bg_flash' )]"
+		}
+	}
+}
+
+types ESTEX_Types {
+	type ESTEX_fake_event_button = button_event_standard {
+		block "button_size" {
+			size = { 500 36 }
+		}
+
+		default_clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_icon_select"
+		icon = {
+			texture = "gfx/interface/buttons/button_event.dds"
+			alpha = 1
+			spriteType = Corneredtiled
+			spriteborder = { 3 3 }
+			framesize = { 249 78 }
+			size = { 100% 100% }
+
+			modify_texture = {
+				name = "mask"
+				texture = "gfx/interface/component_masks/mask_fade_horizontal_middle_thick.dds"
+				spriteType = Corneredtiled
+				spriteborder_left = 40
+				spriteborder_right = 40
+				blend_mode = alphamultiply
+			}
+		}
+
+		modify_texture = {
+			name = "mask"
+			texture = "gfx/interface/component_masks/mask_fade_horizontal_middle_thick.dds"
+			spriteType = Corneredtiled
+			spriteborder_left = 40
+			spriteborder_right = 40
+			blend_mode = alphamultiply
+		}
+
+		### BUTTON CONTENT ####
+		hbox = {
+			margin = { 5 0 }
+			
+			text_single = {
+				layoutpolicy_horizontal = expanding
+				margin = { 5 0 }
+				alwaystransparent = yes
+
+				block "text" {
+					raw_text = "TEST"
+				}
+				autoresize = no
+				default_format = "#high"
+				align = center|nobaseline
+				fontsize_min = 12
+			}
+		}
+	}
+
+	type ESTEX_relax_flash = icon {
+		size = { 100% 100% }
+		parentanchor = center
+		spriteType = Corneredtiled
+		spriteborder = { 10 10 }
+
+		texture = "gfx/interface/component_overlay/overlay_noise.dds"
+		using = Color_Orange
+		alpha = 0
+		modify_texture = {
+			texture = "gfx/interface/component_masks/mask_vignette.dds"
+			blend_mode = alphamultiply
+		}
+
+		state = {
+			name = "ESTEX_relax_bg_flash"
+			next = b
+
+			using = Animation_Curve_Default
+			duration = 0.0
+			alpha = 1
+		}
+
+		state = {
+			name = b
+
+			using = Animation_Curve_Default
+			duration = 0.2
+			alpha = 0
+		}
+	}
+}
