@@ -17,6 +17,7 @@ estex_warren_01 = {
 	character_modifier = {
 		domicile_monthly_gold_add = 0.1
 		stress_gain_mult = -0.05
+		lifestyle_hunter_xp_gain_mult = 0.05
 	}
 
 	parameters = {
@@ -62,6 +63,7 @@ estex_deer_park_02 = {
 	character_modifier = {
 		monthly_prestige = 0.15
 		stress_gain_mult = -0.1
+		lifestyle_hunter_xp_gain_mult = 0.1
 	}
 
 	parameters = {
@@ -109,6 +111,7 @@ estex_chase_03 = {
 		monthly_prestige = 0.3
 		prowess = 1
 		stress_gain_mult = -0.1
+		lifestyle_hunter_xp_gain_mult = 0.2
 	}
 
 	parameters = {
@@ -154,6 +157,7 @@ estex_fishponds_03 = {
 	character_modifier = {
 		domicile_monthly_gold_add = 0.5
 		stress_gain_mult = -0.15
+		lifestyle_hunter_xp_gain_mult = 0.1
 	}
 
 	parameters = {
