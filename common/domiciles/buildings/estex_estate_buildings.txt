@@ -2090,27 +2090,23 @@ estex_cabinet_of_curiosities_03 = {
 
 #Grand Solar
 estex_grand_solar_01 = {
-	construction_time = 730
+	construction_time = 1
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_estate_main_01
 
 	can_construct = {
-		custom_tooltip = {
-			text = unlocked_via_event
-			house.house_head = { has_character_flag = ep3_construct_grand_solar }
-		}
+		# ENABLED for ESTEX
+		# custom_tooltip = {
+		# 	text = unlocked_via_event
+		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
+		# }
 	}
 
 	cost = {
-		gold = {
-			value = estate_internal_building_high_cost_tier_1_value
-			if = {
-				limit = { has_character_modifier = raid_insight_grand_solar }
-				multiply = 0.75
-				desc = raid_insight_grand_solar
-			}
-		}
+		#gold = {
+		#	value = estate_internal_building_high_cost_tier_1_value
+		#}
 	}
 
 	character_modifier = {
@@ -2131,27 +2127,26 @@ estex_grand_solar_01 = {
 }
 
 estex_grand_solar_02 = {
-	construction_time = 730
+	construction_time = 1
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_grand_solar_01
 
 	can_construct = {
-		custom_tooltip = {
-			text = unlocked_via_event
-			house.house_head = { has_character_flag = ep3_construct_grand_solar }
-		}
+		# ENABLED for ESTEX
+		# custom_tooltip = {
+		# 	text = unlocked_via_event
+		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
+		# }
+	}
+	parameters = {
+		estex_enables_relax_decision = yes
 	}
 
 	cost = {
-		gold = {
-			value = estate_internal_building_high_cost_tier_2_value
-			if = {
-				limit = { has_character_modifier = raid_insight_grand_solar }
-				multiply = 0.75
-				desc = raid_insight_grand_solar
-			}
-		}
+		#gold = {
+		#	value = estate_internal_building_high_cost_tier_2_value
+		#}
 	}
 
 	character_modifier = {
@@ -2172,28 +2167,24 @@ estex_grand_solar_02 = {
 }
 
 estex_grand_solar_03 = {
-	construction_time = 730
+	construction_time = 1
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_grand_solar_02
 
 	can_construct = {
-		custom_tooltip = {
-			text = unlocked_via_event
-			house.house_head = { has_character_flag = ep3_construct_grand_solar }
-		}
+		# ENABLED for ESTEX
+		# custom_tooltip = {
+		# 	text = unlocked_via_event
+		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
+		# }
 		domicile ?= { has_domicile_building_or_higher = estate_main_02 }
 	}
 
 	cost = {
-		gold = {
-			value = estate_internal_building_high_cost_tier_3_value
-			if = {
-				limit = { has_character_modifier = raid_insight_grand_solar }
-				multiply = 0.75
-				desc = raid_insight_grand_solar
-			}
-		}
+		#gold = {
+		#	value = estate_internal_building_high_cost_tier_3_value
+		#}
 	}
 
 	character_modifier = {
