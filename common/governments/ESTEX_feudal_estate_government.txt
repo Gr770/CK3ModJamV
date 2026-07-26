@@ -37,7 +37,8 @@ feudal_estate_government = {
 
 	mechanic_type = feudal
 
-	color = hsv{ 0.55 0.90 0.85 }
+	# same color as vanilla feudal so the government map mode doesn't give us away
+	color = hsv{ 0.67 1.00 0.78 }
 	realm_mask_offset = { 0.0 0.01 }
 	realm_mask_scale = { 1 1 }
 }

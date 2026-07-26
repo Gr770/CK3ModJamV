@@ -1,9 +1,13 @@
 ﻿l_english:
- feudal_estate_government: "Feudal Estate"
- feudal_estate_government_adjective: "Feudal Estate"
- feudal_estate_government_realm: "Feudal Estate Realm"
- feudal_estate_government_vassals_label: "Feudal [obligations|E] are based on each [vassal|E]'s [vassal_contract|E]"
- feudal_estate_government_desc: "A feudal government whose ruler keeps a personal [domicile|E], an estate built around their castle."
+ # Deliberately displayed as plain Feudal so players never see it's a separate
+ # government type, all references point at the vanilla feudal strings so any
+ # patch wording changes carry over automatically
+ feudal_estate_government: "$feudal_government$"
+ feudal_estate_government_adjective: "$feudal_government_adjective$"
+ feudal_estate_government_realm: "$feudal_government_realm$"
+ feudal_estate_government_vassals_label: "$feudal_government_vassals_label$"
+ feudal_estate_government_desc: "$feudal_government_desc$"
+ feudal_estate_government_with_icon: "@government_type_feudal! $feudal_estate_government$"
  establish_feudal_estate_decision: "Establish a Feudal Estate"
  establish_feudal_estate_decision_desc: "Set aside lands around our castle as a personal estate, to be managed directly by our own household."
  establish_feudal_estate_decision_tooltip: "Establish a personal [domicile|E] at your capital"
