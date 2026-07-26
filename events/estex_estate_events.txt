@@ -1333,6 +1333,17 @@ estex_estate.3102 = {
 			custom_tooltip = estex_estate.3102.a.dungeon.tt
 			add_dread = 3
 		}
+		else_if = {
+			# the castellan is on Secure the Holding, nobody is going anywhere.
+			# The position check guards against a stale variable if the castellan
+			# died mid task and on_end never fired
+			limit = {
+				has_variable = estex_holding_secured
+				exists = court_position:estex_castellan_court_position
+			}
+			custom_tooltip = estex_estate.3102.a.secured.tt
+			add_dread = 3
+		}
 		else = {
 			random_list = {
 				50 = {
