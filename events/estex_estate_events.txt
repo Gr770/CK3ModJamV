@@ -2072,3 +2072,57 @@ estex_estate.3307 = {
 		ai_chance = { base = 40 }
 	}
 }
+
+##################################################
+# The founding ceremony (4001), fired by the family seat decision
+##################################################
+
+estex_estate.4001 = {
+	type = character_event
+	title = estex_estate.4001.t
+	override_background = { reference = ESTEX_estate_garden }
+	desc = estex_estate.4001.desc
+	theme = realm
+
+	left_portrait = {
+		character = root
+		animation = toast_goblet
+	}
+	right_portrait = {
+		character = scope:fe_seat_witness
+		animation = throne_room_cheer_1
+	}
+
+	override_effect_2d = {
+		reference = legend_glow
+	}
+
+	immediate = {
+		# spouse at your side if you have one, otherwise your heir
+		if = {
+			limit = { exists = primary_spouse }
+			primary_spouse = { save_scope_as = fe_seat_witness }
+		}
+		else_if = {
+			limit = { exists = player_heir }
+			player_heir = { save_scope_as = fe_seat_witness }
+		}
+	}
+
+	option = { # Proud: let them see what we have built
+		name = estex_estate.4001.a
+		add_prestige = 50
+		ai_chance = { base = 40 }
+	}
+	option = { # Practical: the ledgers come first
+		name = estex_estate.4001.b
+		add_gold = 50
+		ai_chance = { base = 30 }
+	}
+	option = { # Dynastic: this is for those who come after
+		name = estex_estate.4001.c
+		add_piety = 25
+		add_dynasty_prestige = 50
+		ai_chance = { base = 30 }
+	}
+}

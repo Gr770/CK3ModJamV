@@ -1,16 +1,23 @@
-﻿# Lets a feudal ruler set up an estate. The estate itself comes from the noble family
-# title below, change_government on its own never creates estate domiciles (camps and
-# yurts yes, estates no, they hang off the title).
+﻿# The front door of the mod: a feudal ruler founds their family seat. The estate
+# itself comes from the noble family title below, change_government on its own
+# never creates estate domiciles (camps and yurts yes, estates no, they hang off
+# the title). All the plumbing is hidden, the player just sees the summary and
+# gets the founding event.
 establish_feudal_estate_decision = {
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/ep3_decision_estate.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_castle_view.dds"
 	}
 	decision_group_type = major
-	ai_check_interval = 0 # players only for now
+	ai_check_interval = 0 # AI off for now, team decision pending
 
 	desc = establish_feudal_estate_decision_desc
 	selection_tooltip = establish_feudal_estate_decision_tooltip
 	confirm_text = establish_feudal_estate_decision_confirm
+
+	cost = {
+		gold = 150
+		prestige = 100
+	}
 
 	is_shown = {
 		government_has_flag = government_is_feudal
@@ -20,13 +27,15 @@ establish_feudal_estate_decision = {
 
 	is_valid = {
 		is_available_adult = yes
+		is_at_war = no
 	}
 
 	effect = {
-		# noble family titles can only go to house heads, so sort that out first.
-		# Same logic as create_noble_family_effect: grab headship off a less important
-		# AI head, otherwise split off a cadet branch.
+		custom_tooltip = establish_feudal_estate_effect_tt
 		hidden_effect = {
+			# noble family titles can only go to house heads, so sort that out first.
+			# Same logic as create_noble_family_effect: grab headship off a less
+			# important AI head, otherwise split off a cadet branch.
 			if = {
 				limit = {
 					exists = house.house_head
@@ -56,44 +65,50 @@ establish_feudal_estate_decision = {
 					create_cadet_branch = {}
 				}
 			}
-		}
-		if = {
-			limit = { has_domicile = no }
-			# NOTE: this has to run before change_government, the title creation fails
-			# if the holder already has the government we pass in here.
-			# Tier matches the holder so counts don't get bumped up a rank by a
-			# landless duchy title. County tier NF titles are a thing in vanilla (japan/china).
 			if = {
-				limit = { highest_held_title_tier >= tier_duchy }
-				give_noble_family_title = {
-					name = noble_family_name
-					tier = duchy
-					article = DEFAULT_TITLE_NAME_ARTICLE
-					government = feudal_estate_government
-					save_scope_as = feudal_estate_title
+				limit = { has_domicile = no }
+				# NOTE: this has to run before change_government, the title creation
+				# fails if the holder already has the government we pass in here.
+				# Tier matches the holder so counts don't get bumped up a rank by a
+				# landless duchy title.
+				if = {
+					limit = { highest_held_title_tier >= tier_duchy }
+					give_noble_family_title = {
+						name = noble_family_name
+						tier = duchy
+						article = DEFAULT_TITLE_NAME_ARTICLE
+						government = feudal_estate_government
+						save_scope_as = feudal_estate_title
+					}
+				}
+				else = {
+					give_noble_family_title = {
+						name = noble_family_name
+						tier = county
+						article = DEFAULT_TITLE_NAME_ARTICLE
+						government = feudal_estate_government
+						save_scope_as = feudal_estate_title
+					}
+				}
+				# mark it as ours so the on_actions can find it (succession + cleanup
+				# on land loss)
+				scope:feudal_estate_title ?= {
+					set_variable = {
+						name = feudal_estate_title
+						value = yes
+					}
 				}
 			}
-			else = {
-				give_noble_family_title = {
-					name = noble_family_name
-					tier = county
-					article = DEFAULT_TITLE_NAME_ARTICLE
-					government = feudal_estate_government
-					save_scope_as = feudal_estate_title
-				}
+			change_government = feudal_estate_government
+			domicile ?= {
+				move_domicile = root.capital_province
+				set_up_domicile_estate_effect = yes
 			}
-			# mark it as ours so the on_actions can find it (succession + cleanup on land loss)
-			scope:feudal_estate_title ?= {
-				set_variable = {
-					name = feudal_estate_title
-					value = yes
-				}
+			# the founding ceremony
+			trigger_event = {
+				id = estex_estate.4001
+				days = 1
 			}
-		}
-		change_government = feudal_estate_government
-		domicile ?= {
-			move_domicile = root.capital_province
-			set_up_domicile_estate_effect = yes
 		}
 	}
 

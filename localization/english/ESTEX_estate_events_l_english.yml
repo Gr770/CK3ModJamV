@@ -209,3 +209,9 @@
  estex_estate.3307.desc: "The gardeners are cagey about their methods this year, but the kitchen garden has gone berserk, the roses are the size of cabbages, and the dovecote's undercroft has been swept suspiciously clean. Whatever is in there, the neighbors want some."
  estex_estate.3307.a: "Sell the surplus."
  estex_estate.3307.b: "Gift it to the village priest's garden."
+ ### The founding ceremony
+ estex_estate.4001.t: "The Seat of the House"
+ estex_estate.4001.desc: "The household is gathered on the new grounds, from the gray-bearded steward down to the newest kitchen boy, and for once nobody is working. The masons' stakes mark where walls will rise. Somewhere behind you the banner of [ROOT.Char.GetHouse.GetName] goes up over the gate, and the sound the wind makes in it is the sound of something beginning."
+ estex_estate.4001.a: "Let them see what we are building."
+ estex_estate.4001.b: "Enough ceremony. The ledgers come first."
+ estex_estate.4001.c: "This is for those who come after us."
