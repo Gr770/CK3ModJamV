@@ -2090,7 +2090,7 @@ estex_cabinet_of_curiosities_03 = {
 
 #Grand Solar
 estex_grand_solar_01 = {
-	construction_time = 1
+	construction_time = 1 # TESTING, was 730
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_estate_main_01
@@ -2131,7 +2131,7 @@ estex_grand_solar_01 = {
 }
 
 estex_grand_solar_02 = {
-	construction_time = 1
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_grand_solar_01
@@ -2172,7 +2172,7 @@ estex_grand_solar_02 = {
 }
 
 estex_grand_solar_03 = {
-	construction_time = 1
+	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_grand_solar_02

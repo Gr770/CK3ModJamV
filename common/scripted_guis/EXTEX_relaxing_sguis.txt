@@ -7,7 +7,7 @@
 		change_variable = {
 			name = ESTEX_relax_score
 			add = {
-				integer_range = { min = 2 max = 6 }
+				integer_range = { min = 1 max = 7 }
 			}
 		}
 		if = {
@@ -38,18 +38,25 @@
 ESTEX_relax_start_mashing_sgui = {
 	scope = character
 	effect = {
-		remove_variable = ESTEX_relax_failed
-		remove_variable = ESTEX_relax_succeeded
-		remove_variable = ESTEX_stress_change
-		set_variable = {
-			name = ESTEX_is_mashing
-			value = yes
+		if = {
+			limit = {
+				NOT = {
+					exists = var:ESTEX_is_mashing
+				}
+			}
+			remove_variable = ESTEX_relax_failed
+			remove_variable = ESTEX_relax_succeeded
+			remove_variable = ESTEX_stress_change
+			set_variable = {
+				name = ESTEX_is_mashing
+				value = yes
+			}
+			set_variable = {
+				name = ESTEX_relax_score
+				value = 0
+			}
+			play_music_cue = ESTEX_ck2_theme
 		}
-		set_variable = {
-			name = ESTEX_relax_score
-			value = 0
-		}
-		play_music_cue = ESTEX_ck2_theme
 	}
 }
 
