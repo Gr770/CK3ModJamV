@@ -1,0 +1,179 @@
+﻿# Castellan tasks. Vanilla locks its estate management task (the seneschal's) to
+# administrative government, these are the feudal counterpart. Costs follow the
+# standard monthly task cost, gold and prestige, no treasury branch since our
+# government never has one.
+
+# Stand over the masons: the estate builds faster
+estex_castellan_oversee_works = {
+	court_position_types = { estex_castellan_court_position }
+
+	is_shown = {
+		government_has_flag = government_is_feudal_estate
+		has_domicile = yes
+	}
+
+	cost = {
+		round = no
+		gold = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+		prestige = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+	}
+
+	scaling_employer_modifiers = {
+		terrible = {
+			domicile_build_speed = -0.05
+		}
+		poor = {
+			domicile_build_speed = -0.07
+		}
+		average = {
+			domicile_build_speed = -0.1
+		}
+		good = {
+			domicile_build_speed = -0.15
+			domicile_monthly_gold_add = 0.1
+		}
+		excellent = {
+			domicile_build_speed = -0.2
+			domicile_monthly_gold_add = 0.2
+		}
+	}
+
+	ai_will_do = {
+		value = 80
+	}
+}
+
+# Double the watch: schemes against you falter, and our estate events notice
+estex_castellan_secure_holding = {
+	court_position_types = { estex_castellan_court_position }
+
+	is_shown = {
+		government_has_flag = government_is_feudal_estate
+		has_domicile = yes
+	}
+
+	cost = {
+		round = no
+		gold = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+		prestige = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+	}
+
+	# the variable is what our estate events check, e.g. the escape attempt
+	# cannot succeed while the holding is secured
+	on_start = {
+		scope:liege = {
+			set_variable = {
+				name = estex_holding_secured
+				value = yes
+			}
+		}
+	}
+	on_end = {
+		scope:liege = {
+			remove_variable = estex_holding_secured
+		}
+	}
+
+	scaling_employer_modifiers = {
+		terrible = {
+			enemy_hostile_scheme_success_chance_add = -1
+		}
+		poor = {
+			enemy_hostile_scheme_success_chance_add = -2
+		}
+		average = {
+			enemy_hostile_scheme_success_chance_add = -3
+		}
+		good = {
+			enemy_hostile_scheme_success_chance_add = -4
+			dread_baseline_add = 1
+		}
+		excellent = {
+			enemy_hostile_scheme_success_chance_add = -5
+			dread_baseline_add = 2
+		}
+	}
+
+	ai_will_do = {
+		value = 60
+	}
+}
+
+# Mind the larders and the ledgers: steady income, content household
+estex_castellan_keep_stores = {
+	court_position_types = { estex_castellan_court_position }
+
+	is_shown = {
+		government_has_flag = government_is_feudal_estate
+		has_domicile = yes
+	}
+
+	cost = {
+		round = no
+		gold = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+		prestige = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+	}
+
+	scaling_employer_modifiers = {
+		terrible = {
+			domicile_monthly_gold_add = 0.1
+		}
+		poor = {
+			domicile_monthly_gold_add = 0.15
+		}
+		average = {
+			domicile_monthly_gold_add = 0.2
+			courtier_and_guest_opinion = 1
+		}
+		good = {
+			domicile_monthly_gold_add = 0.3
+			courtier_and_guest_opinion = 2
+			hostage_income_mult = 0.05
+		}
+		excellent = {
+			domicile_monthly_gold_add = 0.4
+			courtier_and_guest_opinion = 3
+			hostage_income_mult = 0.1
+		}
+	}
+
+	ai_will_do = {
+		value = 90
+	}
+}

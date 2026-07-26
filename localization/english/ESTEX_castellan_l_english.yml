@@ -5,3 +5,11 @@
  estex_castellan_needs_stone_keep_tt: "Your estate needs a stone keep before it warrants a Castellan"
  government_is_feudal_estate: "Feudal Estate"
  domicile_building_parameter_estex_estate_unlocks_castellan: "Unlocks the #high $estex_castellan_court_position$#! [court_position|E]"
+
+ estex_castellan_oversee_works: "Oversee the Works"
+ estex_castellan_oversee_works_desc: "The $estex_castellan_court_position$ stands over the masons and carpenters, and things get built the way they were drawn, on time or close to it."
+ estex_castellan_secure_holding: "Secure the Holding"
+ estex_castellan_secure_holding_desc: "Doubled watches, checked locks, and a $estex_castellan_court_position$ who walks the walls at odd hours. Schemes falter at your gate, and no prisoner slips the cells while the holding is secured."
+ estex_castellan_keep_stores: "Keep the Stores"
+ estex_castellan_keep_stores_desc: "Ledgers balanced, larders full, nothing wasted and nothing wanting. The household runs so smoothly it is easy to forget how much that is worth."
+ estex_estate.3102.a.secured.tt: "The holding is secured, the escape never had a chance, and everyone hears of it"
