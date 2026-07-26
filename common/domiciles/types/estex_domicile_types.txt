@@ -179,8 +179,12 @@
 			}
 		}
 
+		# bottom right corner, open from the start and meant for the walls line,
+		# though the engine has no way to restrict a slot to one building so any
+		# external can go here. Position swapped with slot 7 rather than moving
+		# blocks around, definition order maps buildings to slots in saves
 		external_slot_4 = {
-			position = { 53.0% 12.5% }
+			position = { 73% 59% }
 			size = { 9.9% 19.8% }
 
 			empty_slot_asset = {
@@ -856,11 +860,49 @@
 				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_construction_byzantine_mask.png"
 			}
 		}
+
+		# top middle spot, unlocks with the later keep tiers. Took over slot 4's
+		# old position when that one moved to the bottom right corner
+		external_slot_7 = {
+			position = { 53.0% 12.5% }
+			size = { 9.9% 19.8% }
+
+			empty_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_grassland_empty.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_grassland_empty_mask.png"
+			}
+
+			# Under Construction
+			construction_slot_asset = {
+				trigger = {
+					domicile_location.culture = {
+						has_graphical_western_culture_group_trigger = yes
+					}
+				}
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_building_construction_western.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_construction_western_mask.png"
+			}
+			construction_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_building_construction_byzantine.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_construction_byzantine_mask.png"
+			}
+		}
 	}
 
 	# Backgrounds
 	# Just the green terrain background for now, we can bring back the per terrain
 	# and culture variants once the estate look settles down
+	# First valid block wins, so the walled version has to sit above the plain one
+	domicile_asset = {
+		# parameter check instead of has_domicile_building_or_higher, the latter
+		# didn't want to match external slot buildings when we tested it
+		trigger = { has_domicile_parameter = estex_estate_has_walls }
+		background = "gfx/interface/window_domiciles/estex_estate_background_plain_terrain_walled.dds"
+		ambience = "event:/DLC/EP3/SFX/Ambience/2D/Domicile/ep3_amb_2d_domicile_green_lands"
+	}
 	domicile_asset = {
 		background = "gfx/interface/window_domiciles/estex_estate_background_plain_terrain.dds"
 		# old green terrain foreground kept handy in case the scene needs framing,

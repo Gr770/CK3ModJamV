@@ -1,0 +1,85 @@
+﻿# Walls line for the external estate slots. Building the walls swaps the whole
+# estate background to the walled art (the domicile_asset trigger in the domicile
+# type checks for estex_walls_01 or higher). Defensive stats land on the capital
+# province, domicile buildings support province_modifier.
+
+estex_walls_01 = {
+	construction_time = 1 # TESTING, was 730
+	allowed_domicile_types = { estex_estate }
+
+	# earthworks and palisades are one thing, real walls want a stone keep
+	can_construct = {
+		domicile ?= { has_domicile_building_or_higher = estex_estate_main_02 }
+	}
+
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_2_value
+	#}
+
+	character_modifier = {
+		dread_baseline_add = 2
+	}
+
+	province_modifier = {
+		fort_level = 1
+		monthly_county_control_decline_at_war_factor = -0.05
+	}
+
+	parameters = {
+		estex_estate_has_walls = yes
+	}
+
+	ai_value = {
+		value = 8
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_palisade.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_guard_house_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_guard_house_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}
+
+estex_gatehouse_02 = {
+	construction_time = 1 # TESTING, was 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = estex_walls_01
+
+	can_construct = {
+		domicile ?= { has_domicile_building_or_higher = estex_estate_main_03 }
+	}
+
+	# TESTING, cost disabled
+	#cost = {
+	#	gold = estate_external_building_high_cost_tier_3_value
+	#}
+
+	character_modifier = {
+		dread_baseline_add = 4
+	}
+
+	province_modifier = {
+		fort_level = 2
+		monthly_county_control_decline_at_war_factor = -0.1
+	}
+
+	parameters = {
+		estex_estate_has_walls = yes
+		estex_estate_has_gatehouse = yes
+	}
+
+	ai_value = {
+		value = 7
+		add = estate_building_ai_modifier_value
+	}
+
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_guardhouse.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_guard_house_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_guard_house_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_guardhouse"
+	}
+}
