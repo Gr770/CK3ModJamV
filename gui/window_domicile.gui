@@ -2134,7 +2134,7 @@ types DomicileWindowTypes {
 			visible = "[And( Not( GetVariableSystem.Exists( 'hide_ui' ) ), GetPlayer.GetGovernment.IsType( 'feudal_estate_government' ) )]"
 
 			parentanchor = top|hcenter
-			position = { 0 -35 }
+			position = { 0 -45 }
 
 			allow_outside = yes
 

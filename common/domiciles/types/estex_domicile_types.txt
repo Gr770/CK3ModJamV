@@ -17,12 +17,14 @@
 	# in for the holding if the province has none). Model steps up with the keep,
 	# first matching entry wins so the highest tier is checked first.
 	# root = the domicile
+	# tiers match the 2d slot art: motte at keep 1, stone keep at 2 and 3,
+	# keep with bailey at 4 and 5
 	map_entity = {
-		trigger = { has_domicile_building_or_higher = estex_estate_main_05 }
+		trigger = { has_domicile_building_or_higher = estex_estate_main_04 }
 		reference = "MODCON_estate_3_entity"
 	}
 	map_entity = {
-		trigger = { has_domicile_building_or_higher = estex_estate_main_03 }
+		trigger = { has_domicile_building_or_higher = estex_estate_main_02 }
 		reference = "MODCON_estate_2_entity"
 	}
 	map_entity = "MODCON_estate_1_entity"
@@ -298,7 +300,7 @@
 
 		main_slot = {
 			slot_type = main
-			position = { 25.2% 15% }
+			position = { 31% 17.6% }
 			size = { 18.48% 22.77% }
 
 			empty_slot_asset = {
