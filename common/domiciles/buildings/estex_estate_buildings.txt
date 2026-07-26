@@ -2090,7 +2090,7 @@ estex_cabinet_of_curiosities_03 = {
 
 #Grand Solar
 estex_grand_solar_01 = {
-	construction_time = 730
+	construction_time = 1
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_estate_main_01
@@ -2108,14 +2108,9 @@ estex_grand_solar_01 = {
 	}
 
 	cost = {
-		gold = {
-			value = estate_internal_building_high_cost_tier_1_value
-			if = {
-				limit = { has_character_modifier = raid_insight_grand_solar }
-				multiply = 0.75
-				desc = raid_insight_grand_solar
-			}
-		}
+		#gold = {
+		#	value = estate_internal_building_high_cost_tier_1_value
+		#}
 	}
 
 	character_modifier = {
@@ -2136,7 +2131,7 @@ estex_grand_solar_01 = {
 }
 
 estex_grand_solar_02 = {
-	construction_time = 730
+	construction_time = 1
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_grand_solar_01
@@ -2148,20 +2143,15 @@ estex_grand_solar_02 = {
 		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
 		# }
 	}
-
+  
 	parameters = {
 		estex_enables_relax_decision = yes
 	}
 
 	cost = {
-		gold = {
-			value = estate_internal_building_high_cost_tier_2_value
-			if = {
-				limit = { has_character_modifier = raid_insight_grand_solar }
-				multiply = 0.75
-				desc = raid_insight_grand_solar
-			}
-		}
+		#gold = {
+		#	value = estate_internal_building_high_cost_tier_2_value
+		#}
 	}
 
 	character_modifier = {
@@ -2182,7 +2172,7 @@ estex_grand_solar_02 = {
 }
 
 estex_grand_solar_03 = {
-	construction_time = 730
+	construction_time = 1
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
 	previous_building = estex_grand_solar_02
@@ -2201,14 +2191,9 @@ estex_grand_solar_03 = {
 	}
 
 	cost = {
-		gold = {
-			value = estate_internal_building_high_cost_tier_3_value
-			if = {
-				limit = { has_character_modifier = raid_insight_grand_solar }
-				multiply = 0.75
-				desc = raid_insight_grand_solar
-			}
-		}
+		#gold = {
+		#	value = estate_internal_building_high_cost_tier_3_value
+		#}
 	}
 
 	character_modifier = {
@@ -2508,5 +2493,504 @@ estex_kitchen_03 = {
 		texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine.dds"
 		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_watchtower_byzantine_mask.png"
 		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_watchtower"
+	}
+}
+
+### Barracks
+blacksmith_01 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+
+	cost = {
+		gold = {
+			value = estate_external_building_normal_cost_tier_1_value
+		}
+	}
+
+	character_modifier = {
+		skirmishers_damage_mult = 0.03
+		skirmishers_toughness_mult = 0.01
+	}
+
+	parameters = {
+		house_head_can_ask_for_knight = yes
+		house_head_can_ask_for_maa = yes
+		reduce_success_of_raid_estate = yes
+	}
+	
+	ai_value = {
+		value = 9
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+}
+blacksmith_02 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = blacksmith_01
+
+	cost = {
+		gold = {
+			value = estate_external_building_normal_cost_tier_2_value
+		}
+	}
+
+	character_modifier = {
+		skirmishers_damage_mult = 0.03
+		skirmishers_toughness_mult = 0.01
+		heavy_infantry_damage_mult = 0.02
+		heavy_infantry_toughness_mult = 0.01
+		pikemen_damage_mult = 0.02
+		pikemen_toughness_mult = 0.01
+	}
+
+	parameters = {
+		house_head_can_ask_for_knight = yes
+		house_head_can_ask_for_maa = yes
+		reduce_success_of_raid_estate = yes
+	}
+	
+	ai_value = {
+		value = 8
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+}
+blacksmith_03 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = blacksmith_02
+
+	can_construct = {
+		estate_can_construct_barracks_03_trigger = yes
+	}
+
+	cost = {
+		gold = {
+			value = estate_external_building_normal_cost_tier_3_value
+		}
+	}
+
+	character_modifier = {
+		skirmishers_damage_mult = 0.03
+		skirmishers_toughness_mult = 0.01
+		heavy_infantry_damage_mult = 0.02
+		heavy_infantry_toughness_mult = 0.01
+		pikemen_damage_mult = 0.02
+		pikemen_toughness_mult = 0.01
+	}
+
+	parameters = {
+		house_head_can_ask_for_knight = yes
+		house_head_can_ask_for_maa = yes
+		reduce_success_of_raid_estate = yes
+	}
+	
+	ai_value = {
+		value = 7
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+}
+blacksmith_04 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = blacksmith_03
+
+	can_construct = {
+		estate_can_construct_barracks_04_trigger = yes
+	}
+
+	cost = {
+		gold = {
+			value = estate_external_building_normal_cost_tier_4_value
+		}
+	}
+
+	character_modifier = {
+		skirmishers_damage_mult = 0.03
+		skirmishers_toughness_mult = 0.01
+		heavy_infantry_damage_mult = 0.02
+		heavy_infantry_toughness_mult = 0.01
+		pikemen_damage_mult = 0.02
+		pikemen_toughness_mult = 0.01
+	}
+
+	parameters = {
+		house_head_can_ask_for_knight = yes
+		house_head_can_ask_for_maa = yes
+		reduce_success_of_raid_estate = yes
+	}
+	
+	ai_value = {
+		value = 6
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+}
+blacksmith_05 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = blacksmith_04
+
+	can_construct = {
+		estate_can_construct_barracks_05_trigger = yes
+	}
+
+	cost = {
+		gold = {
+			value = estate_external_building_normal_cost_tier_5_value
+		}
+	}
+
+	character_modifier = {
+		skirmishers_damage_mult = 0.04
+		skirmishers_toughness_mult = 0.03
+		heavy_infantry_damage_mult = 0.02
+		heavy_infantry_toughness_mult = 0.01
+		pikemen_damage_mult = 0.02
+		pikemen_toughness_mult = 0.01
+	}
+
+	parameters = {
+		house_head_can_ask_for_knight = yes
+		house_head_can_ask_for_maa = yes
+		reduce_success_of_raid_estate = yes
+	}
+	
+	ai_value = {
+		value = 5
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+}
+blacksmith_06 = {
+	construction_time = 730
+	allowed_domicile_types = { estex_estate }
+	previous_building = blacksmith_05
+
+	can_construct = {
+		estate_can_construct_barracks_06_trigger = yes
+	}
+
+	cost = {
+		gold = {
+			value = estate_external_building_normal_cost_tier_6_value
+		}
+	}
+
+	character_modifier = {
+		skirmishers_damage_mult = 0.04
+		skirmishers_toughness_mult = 0.03
+		heavy_infantry_damage_mult = 0.02
+		heavy_infantry_toughness_mult = 0.01
+		pikemen_damage_mult = 0.02
+		pikemen_toughness_mult = 0.01
+	}
+
+	parameters = {
+		house_head_can_ask_for_knight = yes
+		house_head_can_ask_for_maa = yes
+		reduce_success_of_raid_estate = yes
+	}
+	
+	ai_value = {
+		value = 4
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_barracks.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_barracks_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_barracks"
 	}
 }
