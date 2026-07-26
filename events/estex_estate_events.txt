@@ -405,6 +405,18 @@ estex_estate.2007 = {
 	option = { # Spur on
 		name = estex_estate.2007.a
 		custom_tooltip = estex_estate.2007.a.tt
+		# every round in the saddle hones the craft
+		if = {
+			limit = { has_trait = lifestyle_hunter }
+			add_trait_xp = {
+				trait = lifestyle_hunter
+				track = hunter
+				value = 2
+			}
+		}
+		else = {
+			add_trait = lifestyle_hunter
+		}
 		random_list = {
 			40 = { # The kill
 				modifier = {
@@ -480,6 +492,19 @@ estex_estate.2005 = {
 			remove_variable = estex_hart_chase_rounds
 		}
 		add_prestige = 100
+		# a legendary kill makes a hunter of anyone, vanilla pattern from the
+		# legendary hunting lodge
+		if = {
+			limit = { has_trait = lifestyle_hunter }
+			add_trait_xp = {
+				trait = lifestyle_hunter
+				track = hunter
+				value = 15
+			}
+		}
+		else = {
+			add_trait = lifestyle_hunter
+		}
 		# antler trinket rather than a wall skull: personal artifact, works for
 		# any rank, no royal court needed
 		create_artifact_animal_trinket_effect = {
@@ -526,6 +551,18 @@ estex_estate.2006 = {
 		if = {
 			limit = { has_variable = estex_hart_chase_rounds }
 			remove_variable = estex_hart_chase_rounds
+		}
+		# days of hard riding teach something even when the quarry wins
+		if = {
+			limit = { has_trait = lifestyle_hunter }
+			add_trait_xp = {
+				trait = lifestyle_hunter
+				track = hunter
+				value = 5
+			}
+		}
+		else = {
+			add_trait = lifestyle_hunter
 		}
 	}
 
