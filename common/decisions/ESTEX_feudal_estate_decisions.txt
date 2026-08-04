@@ -21,8 +21,13 @@ establish_feudal_estate_decision = {
 
 	is_shown = {
 		government_has_flag = government_is_feudal
-		NOT = { government_has_flag = government_is_feudal_estate }
 		is_landed = yes
+		trigger_if = {
+			limit = { government_has_flag = government_is_feudal_estate }
+			# recovery for pre-succession-fix saves: an heir stuck in our
+			# government without the estate title gets to refound
+			NOT = { any_held_title = { has_variable = feudal_estate_title } }
+		}
 	}
 
 	is_valid = {
@@ -33,6 +38,33 @@ establish_feudal_estate_decision = {
 	effect = {
 		custom_tooltip = establish_feudal_estate_effect_tt
 		hidden_effect = {
+			# recovery path (pre-succession-fix saves): the ruler is stuck in the
+			# estate government without the estate title. If a landless relative
+			# still holds the old title, destroy it so the house gets a clean
+			# slate, then drop to plain feudal - the title creation below refuses
+			# to run when the holder already has the government we pass in.
+			if = {
+				limit = { government_has_flag = government_is_feudal_estate }
+				house ?= {
+					random_house_member = {
+						limit = {
+							NOT = { this = root }
+							is_ai = yes
+							is_landed = no
+							any_held_title = { has_variable = feudal_estate_title }
+						}
+						random_held_title = {
+							limit = { has_variable = feudal_estate_title }
+							save_scope_as = fe_stray_title
+						}
+					}
+				}
+				if = {
+					limit = { exists = scope:fe_stray_title }
+					destroy_title = scope:fe_stray_title
+				}
+				change_government = feudal_government
+			}
 			# noble family titles can only go to house heads, so sort that out first.
 			# Same logic as create_noble_family_effect: grab headship off a less
 			# important AI head, otherwise split off a cadet branch.
@@ -97,6 +129,9 @@ establish_feudal_estate_decision = {
 						name = feudal_estate_title
 						value = yes
 					}
+					# swap out the engine-assigned house-head succession so the
+					# estate follows the realm heir (and displays them as heir)
+					add_title_law = estex_feudal_estate_succession_law
 				}
 			}
 			change_government = feudal_estate_government

@@ -1,0 +1,19 @@
+title_succession_laws = {
+	# Applied through script to the feudal estate noble family title (never shown
+	# in the UI). The engine default for noble family titles is house-head order
+	# (noble_family_succession_law), which ignores the realm's succession and
+	# shows the wrong heir in the domicile window. player_heir order makes the
+	# title track whoever actually inherits the realm, same pattern vanilla uses
+	# for temporal head of faith titles. The fe_on_death_handler on_action stays
+	# as a backstop for cases the engine resolves oddly (co-monarchies).
+	estex_feudal_estate_succession_law = {
+		can_title_have = {
+			is_noble_family_title = yes
+		}
+		should_show_for_title = { always = no }
+		can_remove_from_title = { always = no }
+		succession = {
+			order_of_succession = player_heir
+		}
+	}
+}

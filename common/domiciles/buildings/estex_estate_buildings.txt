@@ -531,7 +531,7 @@ estex_trophy_room_01 = {
 	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
-	previous_building = estate_main_01
+	previous_building = estex_estate_main_01
 
 	cost = {
 		gold = {
@@ -953,7 +953,7 @@ estex_servants_quarters_04 = {
 	construction_time = 730
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
-	previous_building = servants_quarters_03
+	previous_building = estex_servants_quarters_03
 
 	can_construct = {
 		domicile ?= { has_domicile_building_or_higher = estex_estate_main_03 }
@@ -2034,7 +2034,7 @@ estex_cabinet_of_curiosities_03 = {
 	construction_time = 1000 
 	allowed_domicile_types = { estex_estate }
 	slot_type = internal
-	previous_building = cabinet_of_curiosities_02
+	previous_building = estex_cabinet_of_curiosities_02
 
 	can_construct = {
 		dynasty ?= {
@@ -2180,7 +2180,7 @@ estex_grand_solar_03 = {
 		# 	text = unlocked_via_event
 		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
 		# }
-		domicile ?= { has_domicile_building_or_higher = estate_main_02 }
+		domicile ?= { has_domicile_building_or_higher = estex_estate_main_02 }
 	}
 
 	parameters = {
@@ -2223,7 +2223,7 @@ estex_grand_solar_04 = {
 		# 	text = unlocked_via_event
 		# 	house.house_head = { has_character_flag = ep3_construct_grand_solar }
 		# }
-		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
+		domicile ?= { has_domicile_building_or_higher = estex_estate_main_03 }
 	}
 
 	parameters = {

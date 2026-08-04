@@ -11,12 +11,79 @@ on_title_gain = {
 fe_on_title_gain_handler = {
 	effect = {
 		if = {
-			limit = {
-				scope:title = { has_variable = feudal_estate_title }
-				NOT = { government_has_flag = government_is_feudal_estate }
+			limit = { scope:title = { has_variable = feudal_estate_title } }
+			# retrofit the realm-heir succession law on titles from older saves
+			scope:title = {
+				if = {
+					limit = {
+						NOT = { has_title_law = estex_feudal_estate_succession_law }
+					}
+					add_title_law = estex_feudal_estate_succession_law
+				}
 			}
-			change_government = feudal_estate_government
+			if = {
+				limit = {
+					NOT = { government_has_flag = government_is_feudal_estate }
+				}
+				change_government = feudal_estate_government
+			}
 		}
+	}
+}
+
+on_death = {
+	on_actions = { fe_on_death_handler }
+}
+
+# The engine forces noble family titles onto noble_family_succession_law (house
+# head order), which ignores the realm's succession entirely - so the estate
+# could wander off to some landless relative instead of the realm heir. Hand it
+# to the heir directly before regular succession runs; vanilla pulls the same
+# maneuver for ceremonial liege family titles in death.txt.
+fe_on_death_handler = {
+	trigger = {
+		any_held_title = { has_variable = feudal_estate_title }
+		OR = {
+			AND = {
+				has_active_diarchy = yes
+				has_diarchy_active_parameter = diarchy_is_co_rulership
+				exists = diarch
+			}
+			exists = player_heir
+			exists = primary_heir
+		}
+	}
+	effect = {
+		# co-monarchies hand the realm to the junior co-ruler outside the normal
+		# line of succession (vanilla special-cases this in death.txt too), so
+		# player_heir can't be trusted there - target the diarch directly
+		if = {
+			limit = {
+				has_active_diarchy = yes
+				has_diarchy_active_parameter = diarchy_is_co_rulership
+				exists = diarch
+			}
+			diarch = { save_scope_as = fe_realm_heir }
+		}
+		else_if = {
+			limit = { exists = player_heir }
+			player_heir = { save_scope_as = fe_realm_heir }
+		}
+		else = {
+			primary_heir = { save_scope_as = fe_realm_heir }
+		}
+		create_title_and_vassal_change = {
+			type = appointment
+			save_scope_as = fe_change
+		}
+		random_held_title = {
+			limit = { has_variable = feudal_estate_title }
+			change_title_holder = {
+				holder = scope:fe_realm_heir
+				change = scope:fe_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:fe_change
 	}
 }
 
